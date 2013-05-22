@@ -1,0 +1,224 @@
+\chapter{数值解}
+对于大部分的偏微分方程模型问题来说,解得它们的解析解是比较困难的.在大部分的情况下,我们不能也没有必要求得它们的解析解.
+因此,研究它们的数值解的求解方法是很有必要的.\par
+在这一章中,我们同样从简单的方程开始解,建立数值解的求解方法的基本体系,然后我们再研究复杂模型的求解方法.
+\section{常系数扩散方程}
+考虑常系数扩散方程
+\begin{equation}\label{eq:04_cxsks_o}
+\begin{cases}
+ \dfrac{\partial u}{\partial t}=a\dfrac{\partial^2 u}{\partial x^2} \\
+ u(x,0)=g(x),\quad x\in\mathbb{R}
+\end{cases}
+\end{equation}
+构成了初值问题,其向前差分格式为
+\begin{gather}
+ \dfrac{u_{j}^{n+1}-u_j^n}{\tau}-a\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}=0,\label{eq:04_cxsks_xq}\\
+ u_j^0 = g(x_j)
+\end{gather}
+其截断误差为$O(\tau+h^2)$.\par
+考虑它的向后差分格式
+\begin{equation}\label{eq:04_cxsks_xh}
+ \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\dfrac{u_{j+1}^n-2u_j^n+u_{j+1}^n}{h^2}=0
+\end{equation}
+其截断误差也是$O(\tau+h^2)$.
+\subsection{加权隐式格式}
+将式~\ref{eq:04_cxsks_xq}~改写为
+\begin{equation}\label{eq:04_cxsks_xq_gx}
+ \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\dfrac{u_{j+1}^{n-1}-2u_{j}^{n-1}+u_{j-1}^{n-1}}{h^2}=0
+\end{equation}
+在式~\ref{eq:04_cxsks_xq}~乘以$\theta$,用$(1-\theta)$乘以~\ref{eq:04_cxsks_xq_gx},得到差分格式
+\begin{equation}\label{eq:04_cxsks_js}
+ \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\left[\theta\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}
+ +(1-\theta)\dfrac{u_{j+1}^{n-1}-2u_j^{n-1}+u_{j-1}^{n-1}}{h^2}\right]=0
+\end{equation}
+其中,~$0\leq\theta\leq 1$,这种差分格式称为加权差分格式,将其改写为易于计算的格式
+\begin{multline}
+ -a\lambda\theta_{j+1}^n+(1+2a\lambda\theta)u_j^n-a\lambda\theta u_{j-1}^n = \\
+ a\lambda(1-\theta)u_{j+1}^{n-1}+[1-2a\lambda(1-\theta)]u_j^{n-1}+a\lambda(1-\theta)u_{j-1}^{n-1}
+\end{multline}
+其中,$\lambda=\tau/h^2$,我们求差分格式~\ref{eq:04_cxsks_js}~的截断误差,设$u(x,t)$是方程~\ref{eq:04_cxsks_o}~的
+充分光滑的解,在$(x_j,t_n)$处进行Taylor级数展开得
+\begin{equation*}
+E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{\partial t}\right]_j^n
++O(\tau^2+h^2)
+\end{equation*}
+当$\theta\not=1/2$时,其截断误差为$O(\tau+h^2)$.当$\theta=1/2$时,其截断误差为$O(\tau^2+h^2)$.\par
+采用Fourier方法分析差分格式~\ref{eq:04_cxsks_js}~的稳定性,求得其增长因子为
+\begin{equation}
+ G(\tau,k)=\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}
+\end{equation}
+我们给出用于判断差分格式稳定性的\textbf{von Neumann}~定理，即
+\begin{Theorem}[von Neumann定理]
+差分格式
+\begin{equation}
+	u^{n+1}_j=C(x_j,\tau)u^n_j
+\end{equation}
+稳定的必要条件是当$\tau\leq\tau_0$，$n\tau\leq T$，对所有的k有
+\begin{equation}
+	\left|\lambda_j(G(\tau,k))\right| \leq 1+M\tau,\quad j=1,2,\cdots,p,
+\end{equation}
+其中$\left|\lambda_j(G(\tau,k))\right|$表示$G(\tau,k)$的特征值，$M$为常数。
+\end{Theorem}\par
+因此,要$|G(\tau,k)|\leq 1$,即
+\begin{equation*}
+ -1\leq\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}\leq 1
+\end{equation*}
+考虑左边的不等式,得
+\begin{equation*}
+4a\lambda(1-2\theta)\sin^2\dfrac{kh}{2}\leq2
+\end{equation*}
+因为$\sin^2\dfrac{kh}{2}\leq 1$,要求化为
+\begin{equation}
+ 2a\lambda(1-2\theta)\leq 1.
+\end{equation}
+这是~\ref{eq:04_cxsks_js}~的稳定性要求.
+\subsection{三层隐式格式}
+考虑三层隐式差分格式,考虑
+\begin{equation}\label{eq:04_cxsks_scys}
+\dfrac{3}{2}\dfrac{u_j^{n+1}-u_j^n}{\tau}-\dfrac{1}{2}\dfrac{u_j^n-u_j^{n-1}}{\tau}
+-a\dfrac{u_{j+1}^{n+1}-2u_{j}^{n+1}+u_{j-1}^{n+1}}{h^2}=0
+\end{equation}
+改写成便于计算的格式
+\begin{equation}
+ (3+4a\lambda)u_j^{n+1}-2a\lambda(u_{j+1}^{n+1}+u_{j-1}^{n+1})=4u_j^n-4u_j^{j-1}
+\end{equation}
+其中,~$\lambda=\tau/h^2$,易证差分格式~\ref{eq:04_cxsks_scys}~以二阶的精度逼近原微分方程.\par
+将其化为等价的二层差分方程组
+\begin{equation*}
+\begin{cases}
+(3+4a\lambda)u_j^{n+1}-2a\lambda(u_{j+1}^{n+1}+u_{j-1}^{n+1})=4u_j^n-v_j^n \\
+v_j^{n+1}=u_j^n
+\end{cases}
+\end{equation*}
+求得其增长矩阵为
+\begin{equation*}
+ G(\tau,k)=\begin{bmatrix}
+  \dfrac{4}{3+8a\sin^2\dfrac{kh}{2}} & \dfrac{-1}{3+8a\sin^2\dfrac{kh}{2}} \\
+                     1		     &			0		   \\
+ \end{bmatrix}
+\end{equation*}
+其中,~$a=a\lambda$,$G$的特征方程为
+\begin{equation*}
+ \mu^2-\dfrac{4}{3+8\alpha\sin^2\dfrac{kh}{2}}\mu+\dfrac{1}{3+8\alpha\sin^2\dfrac{kh}{2}}=0
+\end{equation*}
+得$|\mu_i|\leq1(i=1,2)$.写出$\mu_i$的表达式
+\begin{equation*}
+\mu_{1,2}=\dfrac{2\pm\sqrt{1-8\alpha\sin^2\dfrac{kh}{2}}}{3+8\alpha\sin^2\dfrac{kh}{2}}.
+\end{equation*}
+若解为重根,显然有$|\mu_i|$,由此得出差分格式~\ref{eq:04_cxsks_scys}~是无条件稳定的.
+\subsection{初边值问题}
+我们考虑第一类边值问题,有
+\begin{equation}
+\begin{cases}
+\dfrac{\partial u}{\partial t}-a\dfrac{\partial^2 u}{\partial x^2}=0,\quad 0<x<1,t>0 \\
+u(x,0)=g(x),\quad 0\leq x\leq 1 \\
+u(0,t)=\phi(t),\quad t\geq 0 \\
+u(1,t)=\psi(t),\quad t\geq 0 
+\end{cases}
+\end{equation}
+其计算区域为$x=[0,1]$,因此我们分开区间$0=x_0<x_1<\cdots<x_J=1$,第一边值问题的边界处理可取
+\begin{equation}
+\begin{cases}
+u_0^n=\phi(t_n),\quad n\geq0 \\
+u_J^n=\psi(t_n),\quad n\geq0
+\end{cases}
+\end{equation}\par
+在初始线我们利用初始条件的离散
+\begin{equation}
+ u_j^0=g(x_j)=g_j
+\end{equation}
+得到边界点上的差分格式.\par
+由于本研究不涉及第三类贬值条件,这一方面的差分处理方法就不叙述了.
+
+\section{对流扩散方程}
+考虑一个简单的对流扩散方程
+\begin{equation}\label{equ:cf_dkfangc}
+	\dfrac{\partial u}{\partial t}+a\dfrac{\partial u}{\partial x}=\nu\dfrac{\partial^2 u}{\partial x^2}
+\end{equation}
+其中a、$\nu$ 为常数，$\nu>0$，给定初值
+\begin{equation}
+	u(x,0)=g(x)
+\end{equation}
+构成了\textbf{对流扩散方程}的初值问题，在我们的模型中，它是一个对流占优的扩散问题。\par
+\subsection{中心显式差分格式}
+将方程~\ref{equ:cf_dkfangc}~差分，有
+\begin{equation}\label{equ:cf_dkfangct}
+	\dfrac{u^{n+1}_j-u^{n}_{j}}{\tau}+a\dfrac{u^{n}_{j+1}-u^n_{j-1}}{2h}=\nu\dfrac{u^n_{j+1}-2u^n_j+u^n_{j-1}}{h^2}
+\end{equation}
+其截断误差为$O(\tau+h^2)$。\par
+下面来分析差分格式~\ref{equ:cf_dkfangct}~的稳定性，令
+\begin{equation}
+	\lambda = a\dfrac{\tau}{h}，\quad\mu=\nu\dfrac{\tau}{h^2}
+\end{equation}
+则差分格式~\ref{equ:cf_dkfangct}~改写为
+\begin{equation}\label{equ:cf_dkmmm}
+u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n_{j-1})
+\end{equation}\par
+式~\ref{equ:cf_dkmmm}~的增长因子为
+\begin{equation}
+	G(\tau,k)=1-2\mu(1-\cos kh)-i\lambda\sin kh
+\end{equation}
+模的平方为
+\begin{equation}
+\begin{aligned}
+	|G(\tau,k)|^2 &= [1-2\mu(1-\cos kh)]^2+\lambda^2\sin^2 kh\\
+				  &= 1-4\mu(1-\cos kh)+4\mu^2(1-\cos kh)^2+\lambda^2\sin^2 kh\\
+				  &= 1-(1-\cos kh)[4\mu-4\mu^2(1-\cos kh)-\lambda^2(1+\cos kh)]
+\end{aligned}				  
+\end{equation}
+差分格式稳定的充分条件为
+\begin{equation}
+4\mu-4\mu^2(1-\cos kh)-\lambda^2(1+\cos kh) \geq 0
+\end{equation}
+即
+\begin{equation}
+(2\lambda^2-8\mu^2)\dfrac{1-\cos kh}{2}+4\mu-2\lambda^2 \geq 0
+\end{equation}
+注意到$\dfrac{1}{2}(1-\cos kh)\in[0,1]$，上式应满足
+\begin{equation}
+(2\lambda^2-8\mu^2)+4\mu-2\lambda^2 \geq 0,\quad 4\mu-2\lambda^2 \geq 0
+\end{equation}
+由此得到差分格式~\ref{equ:cf_dkfangct}~的稳定性限制为
+\begin{equation}
+\tau \leq \dfrac{2\nu}{a^2}
+\end{equation}
+\begin{equation}
+\nu\dfrac{\tau}{h^2}=\dfrac{1}{2}
+\end{equation}\par
+\subsection{迎风差分格式}
+根据中心显式差分格式的稳定性要求可知,当$\nu/a^2$比较小时,时间步长是比较小的.我们在一阶空间偏导数的离散中采用单边差商,
+令$a>0$,得到方程~\ref{equ:cf_dkfangc}~的迎风差分格式为
+\begin{equation}\label{eq:cf_dkfangc_yf}
+ \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_j^n-u_{j-1}^n}{h}=\mu\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^{n}}{h^2}
+\end{equation}
+容易看出,其截断误差为$O(\tau+h)$.\par
+讨论其稳定性,将上式变为
+\begin{equation}
+ \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_{j+1}^n-u_{j-1}^n}{2h} = \left(\mu+\dfrac{ah}{2}\right)
+ \dfrac{u_{j+1}^{n}-2u_j^n+u_{j-1}^n}{h^2}
+\end{equation}
+令$\bar{\mu}=\mu+\dfrac{ah}{2}$,可以得到式~\ref{eq:cf_dkfangc_yf}~的稳定性条件为
+\begin{equation*}
+\begin{split}
+  \tau\leq&\dfrac{2}{a^2}\bar{\mu} \\[0.7em]
+  \bar{\mu}\dfrac{\tau}{h^2}\leq&\dfrac{1}{2}
+\end{split}
+\end{equation*}
+注意到,第一个稳定性条件等价于$\dfrac{\tau}{\dfrac{2\mu}{a^2}+\dfrac{h}{a}}\leq 1$,而
+\begin{equation*}
+\dfrac{\tau}{\dfrac{2\mu}{a^2}+\dfrac{h}{a}}=\dfrac{2\mu\dfrac{\tau}{h^2}\left(\dfrac{ah}{2\mu}\right)^2}{1+\dfrac{ah}{2\mu}}
+\end{equation*}
+利用不等式
+\begin{equation*}
+\dfrac{\left(\dfrac{ah}{2\mu}\right)^2}{1+\dfrac{ah}{2\mu}}\leq 1+\dfrac{ah}{2\mu}
+\end{equation*}
+这样得到
+\begin{equation*}
+\dfrac{\tau}{\dfrac{2\mu}{a^2}+\dfrac{h}{a}}\leq 2\mu\dfrac{\tau}{h^2}\left(1+\dfrac{ah}{2\mu}\right)
+\end{equation*}
+因此差分格式的稳定性条件为
+\begin{equation}
+ \left(\mu+\dfrac{ah}{2}\right)\dfrac{\tau}{h^2}\leq\dfrac{1}{2}
+\end{equation}\par
+迎风差分格式主要用于对流占优的扩散问题,采用中心差分格式不能很好地得出结果,采用迎风格式可以计算出问题的近似解.
+\section{

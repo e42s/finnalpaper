@@ -1,0 +1,82 @@
+\documentclass[a4paper,cs4size,adobefonts,fancyhdr]{ctexbook}[2005/11/25]
+
+
+\usepackage[
+     left=2.7cm,
+     right=2.7cm,
+     top=3.5cm,
+     bottom=2.6cm]{geometry}
+%-------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[EC,OC]{\zihao{-5}北京化工大学毕业设计（论文）}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%-------------------------------------------------------------------------
+\CTEXsetup[format+={\zihao{-3}},name={第,节}]{section}
+\CTEXsetup[format+={\zihao{-4}}]{subsection}
+\CTEXsetup[format+={\zihao{-4}}]{subsubsection}
+% \CTEXsetup[format+={\zihao{-3}}]{chapter}
+\CTEXsetup[nameformat+={\zihao{3}}]{chapter}
+\CTEXsetup[titleformat+={\zihao{3}}]{chapter}
+\CTEXoptions[contentsname={目\hspace{3em}录}]
+%-------------------------------------------------------------------------
+\usepackage{mdwlist}
+\usepackage{sistyle}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cases}
+
+\usepackage{tikz}
+% \usepackage{wrapfig}
+\usepackage{floatflt}
+\usepackage{yhmath}
+%\usepackage{mathptmx}
+
+%上标定义-----------------------------------------------------------------------------
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\dif}{\mathrm{d}}
+\makeatother
+\newtheorem{Definition}{定义}[section]
+\newtheorem{Theorem}[Definition]{定理}
+%------------------------------------------------------------------------------------
+\newenvironment{paralist}{\begin{quote}	\begin{description}\setlength{\itemsep}{0em}}
+			 {\end{description}\end{quote}\par}
+
+			 
+			 
+\newcommand*{\me}{\ensuremath{\mathrm{e}}}    %自然对数的底
+\newcommand*{\mi}{\ensuremath{\mathrm{i}}}        %虚数单位
+%\newcommand*{\dif}{\ensuremath{\mathrm{d}}}        %微分算子
+\begin{document}
+\setlength{\baselineskip}{22pt}
+\begin{titlepage}
+\input{cxsm.tex}
+\newpage
+\input{zy.tex}
+\end{titlepage}
+\frontmatter
+  \pagenumbering{Roman}
+  \input{perface.tex}
+  \tableofcontents
+\mainmatter
+  \input{chap_01.tex}
+  \input{chap_02.tex}
+  \input{chap_03.tex}
+  \input{chap_04.tex}
+  \input{simulink.tex}
+  \input{conclusion.tex}
+\backmatter
+  \input{thanks.tex}
+\end{document}
