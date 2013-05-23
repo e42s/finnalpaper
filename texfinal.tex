@@ -40,6 +40,8 @@
 % \usepackage{wrapfig}
 \usepackage{floatflt}
 \usepackage{yhmath}
+\usepackage[normalem]{ulem}
+\usepackage{paralist}
 %\usepackage{mathptmx}
 
 %上标定义-----------------------------------------------------------------------------
@@ -62,13 +64,17 @@
 \begin{document}
 \setlength{\baselineskip}{22pt}
 \begin{titlepage}
-\input{cxsm.tex}
-\newpage
-\input{zy.tex}
-\end{titlepage}
+  \input{cxsm.tex}
+  \newpage
+  \end{titlepage}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 \frontmatter
   \pagenumbering{Roman}
+%   \input{rws.tex}
+  \input{zy.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{perface.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
   \tableofcontents
 \mainmatter
   \input{chap_01.tex}

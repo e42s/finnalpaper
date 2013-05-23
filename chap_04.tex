@@ -221,4 +221,204 @@ u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n
  \left(\mu+\dfrac{ah}{2}\right)\dfrac{\tau}{h^2}\leq\dfrac{1}{2}
 \end{equation}\par
 迎风差分格式主要用于对流占优的扩散问题,采用中心差分格式不能很好地得出结果,采用迎风格式可以计算出问题的近似解.
-\section{
+\subsection{隐式差分格式}
+考虑到隐性差分格式带来的诸多好处(如无条件稳定),给出迎风差分格式的隐式格式为
+\begin{equation}\label{eq:04_yfcf_ys}
+ \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_{j+1}^{n+1}-u_{j-1}^{n+1}}{2h}=\nu\sigma\dfrac{u_{j+1}^{n+1}
+ -2u_j^{n+1}+u_{j-1}^{n+1}}{h^2}
+\end{equation}
+此格式是无条件稳定的.\par
+现在考虑隐式差分格式的解法,将式~\ref{eq:04_yfcf_ys}~化为
+\begin{equation*}
+-\left(\dfrac{a}{2h}+\dfrac{\nu\sigma}{h^2}\right)u_{j-1}^{n+1}+\left(\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}\right)u_{j+1}^{n+1}
++\left(\dfrac{1}{2}+\dfrac{2\sigma}{h^2}\right)u_j^{n+1}=\dfrac{1}{2}u_j^n
+\end{equation*}
+令
+\begin{equation*}
+\begin{aligned}
+A_j &= -\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2} & \qquad & B_j = \dfrac{1}{2}+\dfrac{2\sigma}{h^2} \\[0.6em]
+C_j &= \dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}  &  \qquad & D_j = \dfrac{1}{2}   \\
+\end{aligned}
+\end{equation*}
+则方程可以写为
+\begin{equation}\label{eq:04_yfcf_ys_b}
+ A_j u_{j-1}^{n+1} + B_j u_j^{n+1} + C_j u_{j+1}^{n+1} = D_j
+\end{equation}
+其中,$j=1,2,\ldots,J-1$.我们令
+\begin{equation}\label{eq:04_yfcf_ys_bj}
+ u_0^{n+1}=0,\quad u_J^{n+1}=0
+\end{equation}
+为边界条件,方程~\ref{eq:04_yfcf_ys_b}~和方程~\ref{eq:04_yfcf_ys_bj}~构成系数为三对角矩阵的方程组,我们可以利用
+追赶法求解这一方程组.\par
+我们给出三对角矩阵存在Crout分解的充分条件,有
+\begin{Theorem}[Crout分解的充分条件]
+对于三对角矩阵
+\begin{equation*}
+A=\begin{bmatrix}
+   b_1 & c_1 \\
+   a_2 & b_2 & c_2 \\
+       & a_3 & b_3    & c_3 \\
+       &     & \ddots & \ddots  & \ddots            \\
+       &     &        & a_{n-1} & b_{n-1} & c_{n-1} \\
+       &     &        &         &   a_n   & b_n     \\
+  \end{bmatrix}
+\end{equation*}
+存在Crout分解的充分条件为$a_i\not=0,(i=2,3,\ldots,n),c_1\not=0$,且
+\begin{equation*}
+\begin{split}
+|b_1|&>|c_1|>0 \\
+|b_i|&>|a_1|+|c_i|,(i=2,3,\ldots,n-1) \\
+|b_n|&>|a_n|   \\
+\end{split}
+\end{equation*}
+\end{Theorem}\par
+方程~\ref{eq:04_yfcf_ys_b}~和方程~\ref{eq:04_yfcf_ys_bj}~的追赶法
+求解充分条件为
+\begin{equation}
+\begin{cases}
+|B_1|>|C_1|>0,\\
+|B_j|\geq |A_j|+|C_j|,\quad A_j C_j\not=0,\quad j=2,\ldots,J-2,\\
+|B_{J-1}|>|A_{J-1}| \\
+\end{cases}
+\end{equation}\par
+利用矩阵的Crout分解解方程组,差分后得到的方程组可以写为
+\begin{equation}~\label{eq:04_yfcf_jgmt}
+\begin{bmatrix}
+   B_1 & C_1 \\
+   A_2 & B_2 & C_2 \\
+       &  & \ddots    &  \\
+       &     & A_j &  B_j    & C_j          \\
+       &     &        &  & \ddots     \\
+       &     &        &        &   A_{J-1}   & B_{J-1}     \\
+\end{bmatrix}
+\begin{bmatrix}
+u_0^{n+1} \\
+u_1^{n+1} \\
+\vdots    \\
+\vdots    \\
+u_{J-2}^{n+1} \\
+u_{J-1}^{n+1} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+D_0 \\
+D_1\\
+\vdots    \\
+\vdots    \\
+D_{J-2} \\
+D_{J-1} \\
+\end{bmatrix}
+\end{equation}
+对式~\ref{eq:04_yfcf_jgmt}~中的矩阵系数$A$进行Court分解,得
+\begin{multline}
+\begin{bmatrix}
+   B_1 & C_1 \\
+   A_2 & B_2 & C_2 \\
+       &  & \ddots    &  \\
+       &     & A_j &  B_j    & C_j          \\
+       &     &        &  & \ddots     \\
+       &     &        &        &   A_{J-1}   & B_{J-1}     \\
+\end{bmatrix}=\\
+\begin{bmatrix}
+l_1 & \\
+m_2 & l_2 \\
+    & m_3 & l_3 \\
+    &     & \ddots & \ddots & \\
+    &     &        & m_{J-2} & l_{J-1} \\
+    &	  &	   &	     &  m_{J-1} & l_{J-1} \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & u_0       \\
+  &  1  & u_1 \\
+  &     &   1  &  u_2 \\
+  &     &      &   \ddots & \ddots \\
+  &     &      &          &    1   & u_{J-1} \\
+  &     &      &          &        &      1   \\
+\end{bmatrix}
+\end{multline}
+其中,
+\begin{equation}
+\begin{cases}
+m_i=a_i,\quad (i=2,3,\ldots,J-1) \\
+l_1=b_1,u=c_1/l_1 \\
+l_i=b_i-m_iu_{i-1},\quad (i=2,3,\ldots,J-1) \\
+u_i=c_i/l_i,\quad (i=2,3,\ldots,J-2) 
+\end{cases}
+\end{equation}\par
+利用
+\begin{equation}
+\begin{bmatrix}
+l_1 & \\
+m_2 & l_2 \\
+    & m_3 & l_3 \\
+    &     & \ddots & \ddots & \\
+    &     &        & m_{J-2} & l_{J-1} \\
+    &	  &	   &	     &  m_{J-1} & l_{J-1} \\
+\end{bmatrix}
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+y_2 \\
+\vdots \\
+y_{J-2} \\
+y_{J-1} \\
+\end{bmatrix}=
+\begin{bmatrix}
+ d_0 \\
+ d_1 \\
+ d_2 \\
+ \vdots \\
+ d_{J-2} \\
+ d_{J-1} \\
+\end{bmatrix}
+\end{equation}
+其中,
+\begin{equation}
+\begin{cases}
+y_1=d_1/l_1 \\
+y_i=(d_i-m_iy_{i-1})/l_i,\quad (i=2,3,\ldots,J-1)
+\end{cases}
+\end{equation}
+解得$Y^{\mathrm{T}}$.\par
+将$Y^{\mathrm{T}}$代入
+\begin{equation}
+\begin{bmatrix}
+1 & u_0       \\
+  &  1  & u_1 \\
+  &     &   1  &  u_2 \\
+  &     &      &   \ddots & \ddots \\
+  &     &      &          &    1   & u_{J-1} \\
+  &     &      &          &        &      1   \\
+\end{bmatrix}
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+x_2 \\
+\vdots \\
+x_{J-2} \\
+x_{J-1} \\
+\end{bmatrix}=
+\begin{bmatrix}
+y_0 \\
+y_1 \\
+y_2 \\
+\vdots \\
+y_{J-2} \\
+y_{J-1} \\ 
+\end{bmatrix}
+\end{equation}
+其中,
+\begin{equation}
+\begin{cases}
+x_n=y_n \\
+x_i=y_i-u_ix_{i+1},\quad (i=J-1,J-2,\ldots,1)
+\end{cases}
+\end{equation}
+就解得了$X^{\mathrm{T}}$.
+\section{多维度方程}
+现在我们开始讨论在空间上建立和求解数学模型,根据运动控制方程,我们得到物质在空间上的分布为
+\begin{equation}
+ \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}
+ +\dfrac{\partial^2 u}{\partial z^2}\right)-b\left(\dfrac{\partial u}{\partial x}+\dfrac{\partial u}{\partial y}
+ +\dfrac{\partial u}{\partial z}\right)+cu+d
+\end{equation}
