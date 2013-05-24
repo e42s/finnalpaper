@@ -420,7 +420,7 @@ x_i=y_i-u_ix_{i+1},\quad (i=J-1,J-2,\ldots,1)
 采用隐式格式会无法使用追赶法从而导致求解困难.所以,在本节我们重点讨论多维方程差分格式的建立过程.
 \subsection{二维扩散方程}
 考虑二维上的扩散方程的初边值问题
-\begin{equation}
+\begin{equation}\label{eq:04_ew_q}
 \begin{cases}
 \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}\right),& 0<x,y<1,\quad t>0, \\
 u(x,y,0)=u_0(x,y),& 0<x,y<1 \\
@@ -447,9 +447,120 @@ y_l=dh,l=0,1,\ldots,J;\quad t_n=n\tau,n\geq0\},
 \delta_y^2 u_{jl}^n =& u_{j,l+1}^n-2u_{jl}^n+u_{j,l-1}^n.
 \end{split}
 \end{equation*}
-
-
-
+现在介绍Peaceman-Rachford格式(P--R格式),即
+\begin{equation}\label{eq:04_ew_pr}
+\begin{cases}
+\dfrac{u_{jl}^{n+\frac{1}{2}}-u_{jl}^n}{\dfrac{\tau}{2}}=a\dfrac{1}{h^2}(\delta_x^2u_{jl}^{n+\frac{1}{2}}+
+\delta_y^2 u_{jl}^n),\\
+\dfrac{u_{jl}^{n+1}-u_{jl}^{n+\frac{1}{2}}}{\dfrac{\tau}{2}}=a\dfrac{1}{h^2}(\delta_x^2u_{jl}^{n+\frac{1}{2}}+
+\delta_y^2u_{jl}^{n+1}). 
+\end{cases}
+\end{equation}\par
+可以看到,计算$u_{jl}^{n+1}$由两步组成,在每一个方向上是隐式差分的.所以多次利用追赶法来求解.\par
+我们来分析P--R格式的精确度.将式~\ref{eq:04_ew_pr}~两式相加,得
+\begin{equation}\label{eq:04_ew_pr_plus}
+\dfrac{u_{jl}^{n+1}-u_{jl}^n}{\dfrac{\tau}{2}}=\dfrac{2a}{h^2}\delta_x^2u_{jl}^{n+\tfrac{1}{2}}
++\dfrac{a}{h^2}\delta_y^2(u_{jl}^{n+1}+u_{jl}^n).
+\end{equation}
+再将式~\ref{eq:04_ew_pr}~两式相减,有
+\begin{equation}
+4u_{jl}^{n+\frac{1}{2}}=2(u_{jl}^{n+1}+u_{jl}^n)-\dfrac{\tau a}{h^2}\delta_y^2(u_{jl}^{n+1}+u_{jl}^n)
+\end{equation}
+代入式~\ref{eq:04_ew_pr_plus}~中,得
+\begin{equation}\label{eq:04_ew_pr_zl}
+\left(1+\dfrac{1}{4}\dfrac{\tau^2 a^2}{h^4}\delta_x^2\delta_y^2\right)\dfrac{u_{jl}^{n+1}-u_{jl}^n}{\tau}
+=\dfrac{a}{h^2}(\delta_x^2+\delta_y^2)\dfrac{u_{jl}^{n+1}-u_{jl}^n}{2}
+\end{equation}
+设$u(x,t)$为方程~\ref{eq:04_ew_q}~的解析解,设$u(x,t)$关于$t$三次连续可微,关于$x$,$y$连续四次可微,利用Taylor级数
+展开
+\begin{equation*}
+\begin{split}
+&\left(1+\dfrac{1}{4}\dfrac{\tau^2 a^2}{h^4}\delta_x^2\delta_y^2\right)\dfrac{u(x_j,y_l,t_{n+1})-
+u(x_j,y_l,t_n)}{\tau} \\[0.3\baselineskip]
+-& \dfrac{a}{h^2}(\delta_x^2+\delta_y^2)\dfrac{u(x_j,y_l,t_{n+1})+u(x_j,y_l,t_n)}{2} \\[0.3\baselineskip]
+=& O(\tau^2+h^2).
+\end{split}
+\end{equation*}
+因此P--R格式是具有二阶精度的.\par
+我们讨论P--R格式的稳定性,将式~\ref{eq:04_ew_pr_zl}~整理,有
+\begin{equation}\label{eq:04_ew_pr_wd}
+ \left(1-\dfrac{a\lambda}{2}\delta_x^2\right)\left(1-\dfrac{a\lambda}{2}\delta_y^2\right)u_{jl}^{n+1}
+ =\left(1+\dfrac{a\lambda}{2}\delta_x^2\right)\left(1+\dfrac{a\lambda}{2}\delta_y^2\right)u_{jl}^n
+\end{equation}
+其中,$\lambda=\tau/h^2$,求增长因子为
+\begin{equation*}
+G(\tau,k)=\cfrac{\left(1-2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1-2a\lambda\sin^2\dfrac{k_2h}{2}\right)}
+{\left(1+2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1+2a\lambda\sin^2\dfrac{k_2h}{2}\right)}
+\end{equation*}
+显然,对于任意的$\lambda$有$|G(\tau,k)\leq 1|$,所以P--R格式是稳定的.\par
+为了将二维的问题求解方法推广到高维,我们来推导Dougals格式,将式~\ref{eq:04_ew_pr_wd}~变形为
+\begin{equation}
+\left(1-\dfrac{a}{2}\lambda\delta_x^2\right)\left(1-\dfrac{a}{2}\lambda\delta_y^2\right)
+\dfrac{u_{jl}^{n+1}-u_{jl}^{n}}{\tau}=\dfrac{a}{h^2}(\delta_x^2+\delta_y^2)u_{jl}^n.
+\end{equation}
+将上式分解为
+\begin{equation}\label{eq:04_ew_dg_1}
+\left(1-\dfrac{a}{2}\lambda\delta_x^2\right)\dfrac{\u_{jl}^{n+\frac{1}{2}}-u_{jl}^n}{\tau}
+=\dfrac{a}{h^2}(\delta_x^2+\delta_y^2)u_{jl}^n
+\end{equation}
+及
+\begin{equation}
+\left(1-\dfrac{a}{2}\lambda\delta_y^2\right)\dfrac{u_{jl}^{n+1}-u_{jl}^{n}}{\tau}=
+\dfrac{u_{jl}^{n+\frac{1}{2}}-u_{jl}^n}{\tau}.
+\end{equation}
+将上式变为
+\begin{equation}\label{eq:04_ew_dg_2}
+\dfrac{u_{jl}^{n+1}-u_{jl}^{n+\frac{1}{2}}}{\dfrac{\tau}{2}}=\dfrac{a}{h^2}\delta_y^2(u_{jl}^{n+1}
+-u_{jl}^n).
+\end{equation}
+称格式~\ref{eq:04_ew_dg_1}~和格式~\ref{eq:04_ew_dg_2}~称为Douglas格式.
+\subsection{三维扩散方程}
+考虑三维扩散方程
+\begin{equation}
+\dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+
+\dfrac{\partial^2 u}{\partial y^2}+\dfrac{\partial^2 u}{\partial z^2}\right)
+\end{equation}
+相应地确定它的定解条件.
+考虑二维Peaceman-Rachford格式的推广,设$\Delta x=\Delta y=\Delta z$,~P--R格式可以写为
+\begin{equation}\label{eq:04_3d_pr}
+\begin{split}
+\left(1-\dfrac{a\lambda}{3}\delta_x^2\right)u_{jlm}^{n+\frac{1}{3}} &= 
+\left(1+\dfrac{d\lambda}{3}\delta_y^2+\dfrac{a\lambda}{3}\delta_z^2\right)u_{jlm}^n, \\
+\left(1-\dfrac{a\lambda}{3}\delta_y^2\right)u_{jlm}^{n+\frac{1}{3}} &= 
+\left(1+\dfrac{d\lambda}{3}\delta_x^2+\dfrac{a\lambda}{3}\delta_z^2\right)u_{jlm}^{n+\frac{1}{3}}, \\
+\left(1-\dfrac{a\lambda}{3}\delta_z^2\right)u_{jlm}^{n+\frac{1}{3}} &= 
+\left(1+\dfrac{d\lambda}{3}\delta_x^2+\dfrac{a\lambda}{3}\delta_y^2\right)u_{jlm}^{n+\frac{2}{3}},
+\end{split}
+\end{equation}
+此格式的截断误差为$O(\Delta t+3h^3)$,误差过大,不采用.\par
+将式~\ref{eq:04_3d_pr}~变为
+\begin{multline}
+\left(1-\dfrac{a\lambda}{3}\delta_x^2\right)\left(1-\dfrac{a\lambda}{3}\delta_y^2\right)\left(1-\dfrac{a\lambda}{3}\delta_z^2\right)
+u_{jlm}^{n+1}=\\
+\left(1+\dfrac{a\lambda}{3}\delta_x^2\right)
+\left(1+\dfrac{a\lambda}{3}\delta_y^2\right)
+\left(1+\dfrac{a\lambda}{3}\delta_z^2\right)
+u_{jlm}^n
+\end{multline}
+的截断误差为$O(\tau^2+3h^2)$.\par
+注意到,上式等价于
+\begin{multline}
+\left(1-\dfrac{a\lambda}{3}\delta_x^2\right)\left(1-\dfrac{a\lambda}{3}\delta_y^2\right)\left(1-\dfrac{a\lambda}{3}\delta_z^2\right)
+(u_{jlm}^{n+1}-u_{jlm}^n)=\\
+a\lambda(\delta_x^2+\delta_y^2+\delta_z^2)u_{jlm}^n+\dfrac{(a\lambda)^3}{4}\delta_x^2\delta_y^2\delta_z^2
+u_{jlm}^n
+\end{multline}
+忽略高阶项,有
+\begin{equation}
+\begin{cases}
+\left(1-\dfrac{a\lambda}{3}\delta_x^2\right)\Delta u^*=a\lambda(\delta_x^2+\delta_y^2+\delta_z^2)u_{jlm}^n \\[15pt]
+\left(1+\dfrac{a\lambda}{3}\delta_y^2\right)\Delta u^{**} = \Delta u^* \\[15pt]
+\left(1+\dfrac{a\lambda}{3}\delta_z^2\right)\Delta u = \Delta u^{**} \\[15pt]
+\Delta u = u_{jlm}^{n+1}-u_{jlm}^n
+\end{cases}
+\end{equation}
+为无条件稳定的二阶精度格式.
+\subsection{三维对流扩散反应方程}
 现在我们开始讨论在空间上建立和求解数学模型,根据运动控制方程,我们得到物质在空间上的分布为
 \begin{equation}
  \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}
