@@ -1,6 +1,4 @@
 \documentclass[a4paper,cs4size,adobefonts,fancyhdr]{ctexbook}[2005/11/25]
-
-
 \usepackage[
      left=2.7cm,
      right=2.7cm,
@@ -61,6 +59,26 @@
 \newcommand*{\me}{\ensuremath{\mathrm{e}}}    %自然对数的底
 \newcommand*{\mi}{\ensuremath{\mathrm{i}}}        %虚数单位
 %\newcommand*{\dif}{\ensuremath{\mathrm{d}}}        %微分算子
+
+\usepackage{listings} 
+\usepackage{xcolor}
+\lstset{numbers=none,
+  numberstyle=\scriptsize,
+%   frame=none,
+  backgroundcolor=\color{lightgray},
+  flexiblecolumns=false,
+  language=Python,
+  basicstyle=\ttfamily,
+  breaklines=true,
+  extendedchars=true,
+  escapechar=\%,
+  texcl=true,
+  showstringspaces=true,
+  tabsize=4,
+  aboveskip=1em
+  %xleftmargin=2em,xrightmargin=2em, aboveskip=1em 
+  }
+\renewcommand{\lstlistingname}{代码}%
 \begin{document}
 \setlength{\baselineskip}{22pt}
 \begin{titlepage}

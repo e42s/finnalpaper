@@ -415,7 +415,41 @@ x_i=y_i-u_ix_{i+1},\quad (i=J-1,J-2,\ldots,1)
 \end{cases}
 \end{equation}
 就解得了$X^{\mathrm{T}}$.
-\section{多维度方程}
+\section{多维方程}
+多维方程是一维问题的推广,但是在求解的过程中会遇到诸多的问题.一维的差分格式直接拓展到多维上会导致稳定性条件变得严苛.若
+采用隐式格式会无法使用追赶法从而导致求解困难.所以,在本节我们重点讨论多维方程差分格式的建立过程.
+\subsection{二维扩散方程}
+考虑二维上的扩散方程的初边值问题
+\begin{equation}
+\begin{cases}
+\dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}\right),& 0<x,y<1,\quad t>0, \\
+u(x,y,0)=u_0(x,y),& 0<x,y<1 \\
+u(0,y,t)=u(1,y,t)=u(x,0,t)=u(x,1,t)=0,& t>0
+\end{cases}
+\end{equation}
+其中,~$a$为常数.\par
+为了讨论差分格式,我们先将定义域
+\begin{equation*}
+D=\{(x,y,t)|0\leq x,y\leq 1,t\geq 0\}
+\end{equation*}
+划分网格
+\begin{equation}
+\begin{split}
+D_h=\{(x_j,y_l,t_n)|x_j=jh,j=0,1,\ldots,J,Jh=1 \\
+y_l=dh,l=0,1,\ldots,J;\quad t_n=n\tau,n\geq0\},
+\nonumber
+\end{split}
+\end{equation}
+其中,~$\tau$和$h$分别为时间步长和空间步长.我们考虑取$x$方向和$y$方向上的步长相等.引入记号
+\begin{equation*}
+\begin{split}
+\delta_x^2 u_{jl}^n =& u_{j+1,l}^n-2u_{jl}^n+u_{j-1,l}^n, \\
+\delta_y^2 u_{jl}^n =& u_{j,l+1}^n-2u_{jl}^n+u_{j,l-1}^n.
+\end{split}
+\end{equation*}
+
+
+
 现在我们开始讨论在空间上建立和求解数学模型,根据运动控制方程,我们得到物质在空间上的分布为
 \begin{equation}
  \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}
