@@ -1131,9 +1131,11 @@ FUNCTION {mastersthesis}
   format.btitle "[D]" *
   "title" output.check
   new.block
-  bbl.mthesis format.thesis.type output.nonnull
-  school "school" bibinfo.warn output
+ % bbl.mthesis format.thesis.type output.nonnull
+ % school "school" bibinfo.warn output
+ % address "address" bibinfo.check output
   address "address" bibinfo.check output
+  school "school" bibinfo.warn output
   format.date "year" output.check
   new.block
   format.note output

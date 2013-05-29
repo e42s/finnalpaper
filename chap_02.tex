@@ -16,7 +16,7 @@
 =-\nabla(\theta S_w C_w v_w)+\nabla[\theta S_wD_w\nabla v_w]+I+B_w
 \end{equation}
 式中，
-\begin{paralist}
+\begin{asparadesc}
 	\item[$\theta$]介质的孔隙度;
 	\item[$S_w$]含水饱和度;
 	\item[$C_w$]液相中微生物的浓度，\SI{}{mol/L^3};
@@ -24,8 +24,8 @@
 	\item[$D_w$]液相微生物的物理弥散系数，\SI{}{L^2/T};
 	\item[$I$]单位体积土壤中微生物在液相固相之间的传质速率，\SI{}{mol/(TL^3)}；
 	\item[$B_w$]微生物生长的生物反应速率，\SI{}{mol/(TL^3)}
-\end{paralist}
-式~\ref{equ:yexiangshouheng}~左侧表示微生物的累积，右侧第一项为对流项，第二项为水动力弥散项，第三项为相间传质项，第四项为生物反应项，以下对各项进行详细描述。
+\end{asparadesc}
+式~\eqref{equ:yexiangshouheng}~左侧表示微生物的累积，右侧第一项为对流项，第二项为水动力弥散项，第三项为相间传质项，第四项为生物反应项，以下对各项进行详细描述。
 \subsubsection{对流运动}
 体系流体内的压力梯度引起了对流运动。对于微生物来说，总流体速度包括孔隙流速和微生物向营养物富集运动的趋化速度。
 定义总流动速度如下：
@@ -134,7 +134,7 @@ Monod方程可简化为：
 	\item[$K_s$]为基质半饱和常数，\SI{}{mol/L^3}.
 \end{paralist}
 \section{对流扩散方程模型}
-考虑一个维度上的模型，得到方程~\ref{equ:canshuf}:
+考虑一个维度上的模型，得到方程~\eqref{equ:canshuf}:
 \begin{equation}\label{equ:canshuf}
 	R\dfrac{\partial C}{\partial t} = D\dfrac{\partial^2 C}{\partial x^2}-v\dfrac{\partial C}{\partial x}-\mu RC
 \end{equation}

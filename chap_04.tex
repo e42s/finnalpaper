@@ -22,11 +22,11 @@
 \end{equation}
 其截断误差也是$O(\tau+h^2)$.
 \subsection{加权隐式格式}
-将式~\ref{eq:04_cxsks_xq}~改写为
+将式~\eqref{eq:04_cxsks_xq}~改写为
 \begin{equation}\label{eq:04_cxsks_xq_gx}
  \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\dfrac{u_{j+1}^{n-1}-2u_{j}^{n-1}+u_{j-1}^{n-1}}{h^2}=0
 \end{equation}
-在式~\ref{eq:04_cxsks_xq}~乘以$\theta$,用$(1-\theta)$乘以~\ref{eq:04_cxsks_xq_gx},得到差分格式
+在式~\eqref{eq:04_cxsks_xq}~乘以$\theta$,用$(1-\theta)$乘以~\eqref{eq:04_cxsks_xq_gx},得到差分格式
 \begin{equation}\label{eq:04_cxsks_js}
  \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\left[\theta\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}
  +(1-\theta)\dfrac{u_{j+1}^{n-1}-2u_j^{n-1}+u_{j-1}^{n-1}}{h^2}\right]=0
@@ -36,14 +36,14 @@
  -a\lambda\theta_{j+1}^n+(1+2a\lambda\theta)u_j^n-a\lambda\theta u_{j-1}^n = \\
  a\lambda(1-\theta)u_{j+1}^{n-1}+[1-2a\lambda(1-\theta)]u_j^{n-1}+a\lambda(1-\theta)u_{j-1}^{n-1}
 \end{multline}
-其中,$\lambda=\tau/h^2$,我们求差分格式~\ref{eq:04_cxsks_js}~的截断误差,设$u(x,t)$是方程~\ref{eq:04_cxsks_o}~的
+其中,$\lambda=\tau/h^2$,我们求差分格式~\eqref{eq:04_cxsks_js}~的截断误差,设$u(x,t)$是方程~\eqref{eq:04_cxsks_o}~的
 充分光滑的解,在$(x_j,t_n)$处进行Taylor级数展开得
 \begin{equation*}
 E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{\partial t}\right]_j^n
 +O(\tau^2+h^2)
 \end{equation*}
 当$\theta\not=1/2$时,其截断误差为$O(\tau+h^2)$.当$\theta=1/2$时,其截断误差为$O(\tau^2+h^2)$.\par
-采用Fourier方法分析差分格式~\ref{eq:04_cxsks_js}~的稳定性,求得其增长因子为
+采用Fourier方法分析差分格式~\eqref{eq:04_cxsks_js}~的稳定性,求得其增长因子为
 \begin{equation}
  G(\tau,k)=\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}
 \end{equation}
@@ -71,7 +71,7 @@ E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{
 \begin{equation}
  2a\lambda(1-2\theta)\leq 1.
 \end{equation}
-这是~\ref{eq:04_cxsks_js}~的稳定性要求.
+这是~\eqref{eq:04_cxsks_js}~的稳定性要求.
 \subsection{三层隐式格式}
 考虑三层隐式差分格式,考虑
 \begin{equation}\label{eq:04_cxsks_scys}
@@ -82,7 +82,7 @@ E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{
 \begin{equation}
  (3+4a\lambda)u_j^{n+1}-2a\lambda(u_{j+1}^{n+1}+u_{j-1}^{n+1})=4u_j^n-4u_j^{j-1}
 \end{equation}
-其中,~$\lambda=\tau/h^2$,易证差分格式~\ref{eq:04_cxsks_scys}~以二阶的精度逼近原微分方程.\par
+其中,~$\lambda=\tau/h^2$,易证差分格式~\eqref{eq:04_cxsks_scys}~以二阶的精度逼近原微分方程.\par
 将其化为等价的二层差分方程组
 \begin{equation*}
 \begin{cases}
@@ -105,7 +105,7 @@ v_j^{n+1}=u_j^n
 \begin{equation*}
 \mu_{1,2}=\dfrac{2\pm\sqrt{1-8\alpha\sin^2\dfrac{kh}{2}}}{3+8\alpha\sin^2\dfrac{kh}{2}}.
 \end{equation*}
-若解为重根,显然有$|\mu_i|$,由此得出差分格式~\ref{eq:04_cxsks_scys}~是无条件稳定的.
+若解为重根,显然有$|\mu_i|$,由此得出差分格式~\eqref{eq:04_cxsks_scys}~是无条件稳定的.
 \subsection{初边值问题}
 我们考虑第一类边值问题,有
 \begin{equation}
@@ -129,7 +129,173 @@ u_J^n=\psi(t_n),\quad n\geq0
 \end{equation}
 得到边界点上的差分格式.\par
 由于本研究不涉及第三类贬值条件,这一方面的差分处理方法就不叙述了.
-
+\section{常系数对流方程}
+考虑简单的双曲型对流方程
+\begin{equation}\label{eq:04_dl_o}
+ \dfrac{\partial u}{\partial t}+a\dfrac{\partial u}{\partial x}=0
+\end{equation}
+我们来建立双曲型偏微分方程的求解差分格式.\par
+首先讨论方程~\eqref{eq:04_dl_o}~的特征线,考虑$u$在直线$x-at=c$上的方向的方向导数,有
+\begin{equation}
+\left.\dfrac{\dif u}{\dif t}\right|_l = \dfrac{\partial u}{\partial t}+\dfrac{\partial u}{\partial t}
+\dfrac{\partial x}{\partial t} = \dfrac{\partial u}{\partial t}+a\dfrac{\partial u}{\partial x}
+\end{equation}
+其中,由方程~\eqref{eq:04_dl_o}~知$u$沿$l$的值不变,这条直线即为方程的\emph{特征线}.\par
+\subsection{差分格式的推导}
+我们利用特征线方法来构造差分格式.
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.3,very thick]
+\begin{scope}[thin]
+\draw[-] (-0.5,0) -- (6.5,0) node[right]{第$n$层};
+\draw[-] (-0.5,1.5) -- (6.5,1.5) node[right]{第$n+1$层};
+ \foreach \l in {0,1.2,2.4,3.6,4.8,6.0} 
+ {
+   \draw (\l,-0.3) -- (\l,1.8);
+ }
+ \node[below] at (1.2,-0.3) {$m-2$};
+ \node[below] at (2.4,-0.3) {$m-1$};
+ \node[below] at (3.6,-0.35) {$m$};
+ \node[below] at (4.8,-0.3) {$m+1$};
+ \node[below] at (6.0,-0.3) {$m+2$};
+ \node[above left] at (1.2,0) {$A$};
+ \node[above left] at (2.4,0) {$B$};
+ \node[above left] at (3.6,0) {$C$};
+ \node[above left] at (4.8,0) {$D$};
+\end{scope}
+\draw[-] (3.0,0) node[below]{$Q$} -- (3.6,1.5) node[above left]{$P$};
+\node[above] at (3.6,1.8) {$m$,$n+1$};
+\end{tikzpicture}
+\caption{用特征线法构造差分格式\label{fig:tzx}}
+\end{figure}
+如图~\ref{fig:tzx}~所示,我们假定第$n$层的$u_m^n$值已知,现在求$P$点$(m,n+1)$的值$u_m^{n+1}$.过$P$作特征线
+与$n$时间层相交在$Q$点.我们假定$Q$在线段$BC$上,即$u(B)=u(C)$,采用下面的方法求$u(Q)$,即
+\begin{asparaenum}
+\item $u(B)$和$u(C)$线性插值,即
+\begin{equation}
+u(P)=u(Q)\approx u(B)\dfrac{\overline{CQ}}{h}+u(C)\dfrac{h-\overline{CQ}}{h}=u_{m-1}^n\dfrac{
+a\Delta t}{h}+u_m^n\dfrac{h-a\Delta t}{h}
+\end{equation}
+即
+\begin{equation}\label{eq:04_dl_yf}
+ u_m^{n+1}=(1-ar)u_m^n+aru_{m-1}^n
+\end{equation}
+其中,~$r=\Delta t/h$,此格式称为\emph{迎风格式},其截断误差为$O(\Delta t+h)$.
+\item $u(B)$和$u(D)$两点线性插值,即
+\begin{equation}
+\begin{split}
+u(P)&=u(Q)\approx\dfrac{1}{2}(1-ar)u(D)+\dfrac{1}{2}(1+ar)u(B) \\
+    &=\dfrac{1}{2}(1-ar)u_{m+1}^n+\dfrac{1}{2}(1+ar)u_{m-1}^n
+\end{split}
+\end{equation}
+即
+\begin{equation}\label{eq:04_dl_laxf}
+\begin{split}
+u_{m+1}^n =& \dfrac{1}{2}(1-ar)u_{m+1}^n+\dfrac{1}{2}(1+ar)u_{m-1}^n \\
+          =& \dfrac{1}{2}(u_{m-1}^n+u_{m+1}^n)-\dfrac{ar}{2}(u_{m+1}^n-u_{m-1}^n).
+\end{split}
+\end{equation}
+称为Lax-Friedrichs格式.
+\item $u(B)$,~$u(C)$和$u(D)$三点抛物线插值,即
+\begin{equation}
+\begin{split}
+u(P)&=u(Q)\approx u(C)-ar[u(C)-u(B)]-\dfrac{ar(1-ar)}{2}[u(B)-2u(C)+u(D)] \\
+    &=u(C)-\dfrac{ar}{2}(u(B)-u(D))+\dfrac{a^2 r^2}{2}[u(B)-2u(C)+u(D)] \\
+    &=u_m^n-\dfrac{ar}{2}(u_{m+1}^n-u_{m-1}^n)+\dfrac{a^2 r^2}{2}(u_{m+1}^n
+    -2u_m^n+u_{m-1}^n)
+\end{split}
+\end{equation}
+即
+\begin{equation}\label{eq:04_dl_laxw}
+u_m^{n+1}=u_m^n-\dfrac{ar}{2}(u_{m+1}^n-u_{m-1}^n)+\dfrac{a^2 r^2}{2}
+(u_{m+1}^n-2u_m^n+u_{m+1}^n)
+\end{equation}
+为Lax-Wendorff格式.
+\end{asparaenum}\par
+\subsection{精确度与稳定性分析}
+对于式~\eqref{eq:04_dl_yf},相应地,容易建立下面的差分格式,
+\begin{asparaitem}
+\item 左偏心格式
+\begin{equation}\label{eq:04_dl_lc}
+ u_m^{n+1}=(1-ar)u_m^n+aru_{m-1}^n
+\end{equation}
+\item 右偏心格式 
+  \begin{equation}\label{eq:04_dl_rc}
+  u_{m}^{n+1}=(1+ar)u_m^n-aru_{m+1}^n        
+  \end{equation}
+\item 中心差分格式
+  \begin{equation}\label{eq:04_dl_cc}
+   u_{m+1}^n=u_m^n-\dfrac{1}{2}ar(u_{m+1}^n-u_{m-1}^n)
+  \end{equation}
+\end{asparaitem}
+其中,左差分格式和右差分格式的截断误差为$O(\Delta t+h)$,中心差分格式为$O(\Delta t+h^2)$.\par
+我们利用von Neumann稳定性分析方法来分析它们的稳定性.令$u_m^n=v^n\me^{\mi\sigma x}=v^n\me^{\mi\sigma mh}$,分别
+代入式~\eqref{eq:04_dl_lc}---\eqref{eq:04_dl_cc}~中,增长因子有
+\begin{asparaitem}
+\item 左偏心格式
+\begin{equation}
+ G_1(\Delta t,\sigma)=ar\me^{-\mi\sigma h}+(1-ar)
+\end{equation}
+\item 右偏心格式
+\begin{equation}
+ G_2(\Delta t,\sigma)=(1+ar)-ar\me^{-\mi\sigma h}
+\end{equation}
+\item 中心差分格式
+\begin{equation}
+ G_3(\Delta t,\sigma)=1-\mi ar\sin\sigma h
+\end{equation}
+\end{asparaitem}\par
+由此,我们得到这样的结论
+\begin{asparaitem}
+\item 左偏心格式的稳定性条件为$a>0$,且$a\Delta t/h\leq 1$.
+\item 右偏心格式的稳定性条件为$a<0$,且$|a|\Delta t/h\leq 1$.
+\item 中心差分格式在任何情况下都是不稳定的.
+\end{asparaitem}\par
+对于Lax-Friedrichs格式,其截断误差为
+\begin{equation}
+\dfrac{\Delta t}{h^2}\dfrac{\partial^2u_m^n}{\partial t^2}-\dfrac{h^2}{2\Delta t}\dfrac{\partial^2
+u_m^n}{\partial^2 x}+O(h^2+\dfrac{\partial^4}{\Delta t})=O(\Delta t+\dfrac{h^2}{\Delta t}+h^2)
+\end{equation}
+在计算中,通常取$h/\Delta t$为常数,所以Lax-Friedrichs格式的精度为$O(\Delta t+h)$.令$u_m^n=v^n\me^{\mi\sigma x}=v^n\me^{\mi\sigma mh}$
+代入~\eqref{eq:04_dl_laxf},得增长因子为
+\begin{equation}
+G(\Delta t,\sigma)=\dfrac{1}{2}(\me^{\mi\sigma h}+\me^{-\mi\sigma h})-\dfrac{ar}{2}(\me^{\mi\sigma h}+\me^{-\mi\sigma h})
+=\cos\sigma h -\mi ar\sin\sigma h
+\end{equation}
+其中,~$r=\Delta t/h$,从而有
+\begin{equation}
+|G(\Delta t,\sigma)|^2=\cos^2 \sigma h + a^2r^2\sin^2\sigma h=1-(1-a^2 r^2)\sin^2\sigma h
+\end{equation}
+得稳定性条件为$|a|r\leq1$.
+再考虑Lax-Wendroff格式,在$(m,n)$点处的截断误差为
+\begin{equation}
+\begin{split}
+E_m^n &=\dfrac{\Delta t^2}{6}\left(\dfrac{\partial^3 u}{\partial t^3}\right)_m^n+
+	\dfrac{ah^2}{6}\left(\dfrac{\partial^3 u}{\partial x^3}\right)_m^n-
+	\dfrac{a^2\Delta t h^2}{24}+O(h^4+\Delta t^3) \\
+      &=\dfrac{\Delta t^2}{6}\left(\dfrac{\partial^3 u}{\partial t^3}\right)_m^n+
+	\dfrac{ah^2}{6}\left(\dfrac{\partial^3 u}{\partial x^3}\right)_m^n+
+	O(\Delta th^2+\Delta t^3+h^4) \\
+      &=\dfrac{\Delta t^2}{6}\left(\dfrac{\partial^3 u}{\partial t^3}\right)_m^n+
+	\dfrac{ah^2}{6}\left(\dfrac{\partial^3 u}{\partial x^3}\right)_m^n+
+	O(rh^3+\Delta t^3+h^4) \\
+      &=O(\Delta t^2+h^2)
+\end{split}
+\end{equation}
+我们看到,该格式是一个时间和空间二阶精度的格式.令$u_m^n=v^n\me^{\mi\sigma x}=v^n\me^{\mi\sigma mh}$,代入
+式~\eqref{eq:04_dl_laxw}~得
+\begin{equation}
+\begin{split}
+G(\Delta t,\sigma) &= 1-\dfrac{ar}{2}(\me^{\mi\sigma h}-\me^{-\mi\sigma h})+\dfrac{a^2r^2}{2}
+(\me^{\mi\sigma h}-2+\me^{-\mi\sigma h}) \\
+&= 1-2a^2 r^2 \sin^2\dfrac{\sigma h}{2}-\mi ar\sin\sigma h
+\end{split}
+\end{equation}
+即
+\begin{equation}
+|G(\Delta t,\sigma)|^2=1-4a^2 r^2(1-a^2r^2)\sin^4\dfrac{\sigma h}{2}
+\end{equation}
+得稳定性条件为$|a|r\leq 1$.
 \section{对流扩散方程}
 考虑一个简单的对流扩散方程
 \begin{equation}\label{equ:cf_dkfangc}
@@ -141,20 +307,20 @@ u_J^n=\psi(t_n),\quad n\geq0
 \end{equation}
 构成了\textbf{对流扩散方程}的初值问题，在我们的模型中，它是一个对流占优的扩散问题。\par
 \subsection{中心显式差分格式}
-将方程~\ref{equ:cf_dkfangc}~差分，有
+将方程~\eqref{equ:cf_dkfangc}~差分，有
 \begin{equation}\label{equ:cf_dkfangct}
 	\dfrac{u^{n+1}_j-u^{n}_{j}}{\tau}+a\dfrac{u^{n}_{j+1}-u^n_{j-1}}{2h}=\nu\dfrac{u^n_{j+1}-2u^n_j+u^n_{j-1}}{h^2}
 \end{equation}
 其截断误差为$O(\tau+h^2)$。\par
-下面来分析差分格式~\ref{equ:cf_dkfangct}~的稳定性，令
+下面来分析差分格式~\eqref{equ:cf_dkfangct}~的稳定性，令
 \begin{equation}
 	\lambda = a\dfrac{\tau}{h}，\quad\mu=\nu\dfrac{\tau}{h^2}
 \end{equation}
-则差分格式~\ref{equ:cf_dkfangct}~改写为
+则差分格式~\eqref{equ:cf_dkfangct}~改写为
 \begin{equation}\label{equ:cf_dkmmm}
 u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n_{j-1})
 \end{equation}\par
-式~\ref{equ:cf_dkmmm}~的增长因子为
+式~\eqref{equ:cf_dkmmm}~的增长因子为
 \begin{equation}
 	G(\tau,k)=1-2\mu(1-\cos kh)-i\lambda\sin kh
 \end{equation}
@@ -178,7 +344,7 @@ u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n
 \begin{equation}
 (2\lambda^2-8\mu^2)+4\mu-2\lambda^2 \geq 0,\quad 4\mu-2\lambda^2 \geq 0
 \end{equation}
-由此得到差分格式~\ref{equ:cf_dkfangct}~的稳定性限制为
+由此得到差分格式~\eqref{equ:cf_dkfangct}~的稳定性限制为
 \begin{equation}
 \tau \leq \dfrac{2\nu}{a^2}
 \end{equation}
@@ -187,7 +353,7 @@ u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n
 \end{equation}\par
 \subsection{迎风差分格式}
 根据中心显式差分格式的稳定性要求可知,当$\nu/a^2$比较小时,时间步长是比较小的.我们在一阶空间偏导数的离散中采用单边差商,
-令$a>0$,得到方程~\ref{equ:cf_dkfangc}~的迎风差分格式为
+令$a>0$,得到方程~\eqref{equ:cf_dkfangc}~的迎风差分格式为
 \begin{equation}\label{eq:cf_dkfangc_yf}
  \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_j^n-u_{j-1}^n}{h}=\mu\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^{n}}{h^2}
 \end{equation}
@@ -197,7 +363,7 @@ u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n
  \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_{j+1}^n-u_{j-1}^n}{2h} = \left(\mu+\dfrac{ah}{2}\right)
  \dfrac{u_{j+1}^{n}-2u_j^n+u_{j-1}^n}{h^2}
 \end{equation}
-令$\bar{\mu}=\mu+\dfrac{ah}{2}$,可以得到式~\ref{eq:cf_dkfangc_yf}~的稳定性条件为
+令$\bar{\mu}=\mu+\dfrac{ah}{2}$,可以得到式~\eqref{eq:cf_dkfangc_yf}~的稳定性条件为
 \begin{equation*}
 \begin{split}
   \tau\leq&\dfrac{2}{a^2}\bar{\mu} \\[0.7em]
@@ -228,7 +394,7 @@ u^{n+1}_j=u^n_j-\frac{1}{2}\lambda(u^n_{j+1}-u^n_{j-1})+\mu(u^n_{j+1}-2u^n_j+u^n
  -2u_j^{n+1}+u_{j-1}^{n+1}}{h^2}
 \end{equation}
 此格式是无条件稳定的.\par
-现在考虑隐式差分格式的解法,将式~\ref{eq:04_yfcf_ys}~化为
+现在考虑隐式差分格式的解法,将式~\eqref{eq:04_yfcf_ys}~化为
 \begin{equation*}
 -\left(\dfrac{a}{2h}+\dfrac{\nu\sigma}{h^2}\right)u_{j-1}^{n+1}+\left(\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}\right)u_{j+1}^{n+1}
 +\left(\dfrac{1}{2}+\dfrac{2\sigma}{h^2}\right)u_j^{n+1}=\dfrac{1}{2}u_j^n
@@ -248,7 +414,7 @@ C_j &= \dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}  &  \qquad & D_j = \dfrac{1}{2}   \\
 \begin{equation}\label{eq:04_yfcf_ys_bj}
  u_0^{n+1}=0,\quad u_J^{n+1}=0
 \end{equation}
-为边界条件,方程~\ref{eq:04_yfcf_ys_b}~和方程~\ref{eq:04_yfcf_ys_bj}~构成系数为三对角矩阵的方程组,我们可以利用
+为边界条件,方程~\eqref{eq:04_yfcf_ys_b}~和方程~\eqref{eq:04_yfcf_ys_bj}~构成系数为三对角矩阵的方程组,我们可以利用
 追赶法求解这一方程组.\par
 我们给出三对角矩阵存在Crout分解的充分条件,有
 \begin{Theorem}[Crout分解的充分条件]
@@ -272,7 +438,7 @@ A=\begin{bmatrix}
 \end{split}
 \end{equation*}
 \end{Theorem}\par
-方程~\ref{eq:04_yfcf_ys_b}~和方程~\ref{eq:04_yfcf_ys_bj}~的追赶法
+方程~\eqref{eq:04_yfcf_ys_b}~和方程~\eqref{eq:04_yfcf_ys_bj}~的追赶法
 求解充分条件为
 \begin{equation}
 \begin{cases}
@@ -309,7 +475,7 @@ D_{J-2} \\
 D_{J-1} \\
 \end{bmatrix}
 \end{equation}
-对式~\ref{eq:04_yfcf_jgmt}~中的矩阵系数$A$进行Court分解,得
+对式~\eqref{eq:04_yfcf_jgmt}~中的矩阵系数$A$进行Court分解,得
 \begin{multline}
 \begin{bmatrix}
    B_1 & C_1 \\
@@ -457,21 +623,21 @@ y_l=dh,l=0,1,\ldots,J;\quad t_n=n\tau,n\geq0\},
 \end{cases}
 \end{equation}\par
 可以看到,计算$u_{jl}^{n+1}$由两步组成,在每一个方向上是隐式差分的.所以多次利用追赶法来求解.\par
-我们来分析P--R格式的精确度.将式~\ref{eq:04_ew_pr}~两式相加,得
+我们来分析P--R格式的精确度.将式~\eqref{eq:04_ew_pr}~两式相加,得
 \begin{equation}\label{eq:04_ew_pr_plus}
 \dfrac{u_{jl}^{n+1}-u_{jl}^n}{\dfrac{\tau}{2}}=\dfrac{2a}{h^2}\delta_x^2u_{jl}^{n+\tfrac{1}{2}}
 +\dfrac{a}{h^2}\delta_y^2(u_{jl}^{n+1}+u_{jl}^n).
 \end{equation}
-再将式~\ref{eq:04_ew_pr}~两式相减,有
+再将式~\eqref{eq:04_ew_pr}~两式相减,有
 \begin{equation}
 4u_{jl}^{n+\frac{1}{2}}=2(u_{jl}^{n+1}+u_{jl}^n)-\dfrac{\tau a}{h^2}\delta_y^2(u_{jl}^{n+1}+u_{jl}^n)
 \end{equation}
-代入式~\ref{eq:04_ew_pr_plus}~中,得
+代入式~\eqref{eq:04_ew_pr_plus}~中,得
 \begin{equation}\label{eq:04_ew_pr_zl}
 \left(1+\dfrac{1}{4}\dfrac{\tau^2 a^2}{h^4}\delta_x^2\delta_y^2\right)\dfrac{u_{jl}^{n+1}-u_{jl}^n}{\tau}
 =\dfrac{a}{h^2}(\delta_x^2+\delta_y^2)\dfrac{u_{jl}^{n+1}-u_{jl}^n}{2}
 \end{equation}
-设$u(x,t)$为方程~\ref{eq:04_ew_q}~的解析解,设$u(x,t)$关于$t$三次连续可微,关于$x$,$y$连续四次可微,利用Taylor级数
+设$u(x,t)$为方程~\eqref{eq:04_ew_q}~的解析解,设$u(x,t)$关于$t$三次连续可微,关于$x$,$y$连续四次可微,利用Taylor级数
 展开
 \begin{equation*}
 \begin{split}
@@ -482,7 +648,7 @@ u(x_j,y_l,t_n)}{\tau} \\[0.3\baselineskip]
 \end{split}
 \end{equation*}
 因此P--R格式是具有二阶精度的.\par
-我们讨论P--R格式的稳定性,将式~\ref{eq:04_ew_pr_zl}~整理,有
+我们讨论P--R格式的稳定性,将式~\eqref{eq:04_ew_pr_zl}~整理,有
 \begin{equation}\label{eq:04_ew_pr_wd}
  \left(1-\dfrac{a\lambda}{2}\delta_x^2\right)\left(1-\dfrac{a\lambda}{2}\delta_y^2\right)u_{jl}^{n+1}
  =\left(1+\dfrac{a\lambda}{2}\delta_x^2\right)\left(1+\dfrac{a\lambda}{2}\delta_y^2\right)u_{jl}^n
@@ -493,7 +659,7 @@ G(\tau,k)=\cfrac{\left(1-2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1-2a\lambda\
 {\left(1+2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1+2a\lambda\sin^2\dfrac{k_2h}{2}\right)}
 \end{equation*}
 显然,对于任意的$\lambda$有$|G(\tau,k)\leq 1|$,所以P--R格式是稳定的.\par
-为了将二维的问题求解方法推广到高维,我们来推导Dougals格式,将式~\ref{eq:04_ew_pr_wd}~变形为
+为了将二维的问题求解方法推广到高维,我们来推导Dougals格式,将式~\eqref{eq:04_ew_pr_wd}~变形为
 \begin{equation}
 \left(1-\dfrac{a}{2}\lambda\delta_x^2\right)\left(1-\dfrac{a}{2}\lambda\delta_y^2\right)
 \dfrac{u_{jl}^{n+1}-u_{jl}^{n}}{\tau}=\dfrac{a}{h^2}(\delta_x^2+\delta_y^2)u_{jl}^n.
@@ -513,7 +679,7 @@ G(\tau,k)=\cfrac{\left(1-2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1-2a\lambda\
 \dfrac{u_{jl}^{n+1}-u_{jl}^{n+\frac{1}{2}}}{\dfrac{\tau}{2}}=\dfrac{a}{h^2}\delta_y^2(u_{jl}^{n+1}
 -u_{jl}^n).
 \end{equation}
-称格式~\ref{eq:04_ew_dg_1}~和格式~\ref{eq:04_ew_dg_2}~称为Douglas格式.
+称格式~\eqref{eq:04_ew_dg_1}~和格式~\eqref{eq:04_ew_dg_2}~称为Douglas格式.
 \subsection{三维扩散方程}
 考虑三维扩散方程
 \begin{equation}
@@ -533,7 +699,7 @@ G(\tau,k)=\cfrac{\left(1-2a\lambda\sin^2\dfrac{k_1h}{2}\right)\left(1-2a\lambda\
 \end{split}
 \end{equation}
 此格式的截断误差为$O(\Delta t+3h^3)$,误差过大,不采用.\par
-将式~\ref{eq:04_3d_pr}~变为
+将式~\eqref{eq:04_3d_pr}~变为
 \begin{multline}
 \left(1-\dfrac{a\lambda}{3}\delta_x^2\right)\left(1-\dfrac{a\lambda}{3}\delta_y^2\right)\left(1-\dfrac{a\lambda}{3}\delta_z^2\right)
 u_{jlm}^{n+1}=\\
@@ -562,8 +728,92 @@ u_{jlm}^n
 为无条件稳定的二阶精度格式.
 \subsection{三维对流扩散反应方程}
 现在我们开始讨论在空间上建立和求解数学模型,根据运动控制方程,我们得到物质在空间上的分布为
+% \begin{equation}
+%  \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}
+%  +\dfrac{\partial^2 u}{\partial z^2}\right)-b\left(\dfrac{\partial u}{\partial x}+\dfrac{\partial u}{\partial y}
+%  +\dfrac{\partial u}{\partial z}\right)+cu+d
+% \end{equation}
+\begin{equation}\label{eq:04_3d_a}
+R_d\dfrac{\partial C}{\partial t}+v_i\dfrac{\partial C}{\partial x_i}=\dfrac{\partial}{\partial x_i}(D_{ij}\dfrac{\partial C}
+{\partial x_j})-\mu C+\lambda,\quad (i,j=1,2,3)
+\end{equation}\par
+我们考虑对上式进行变换,将直角坐标系变换为正交曲线坐标系,以溶质位移作为
+主值方向,式~\eqref{eq:04_3d_a}变为
 \begin{equation}
- \dfrac{\partial u}{\partial t}=a\left(\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}
- +\dfrac{\partial^2 u}{\partial z^2}\right)-b\left(\dfrac{\partial u}{\partial x}+\dfrac{\partial u}{\partial y}
- +\dfrac{\partial u}{\partial z}\right)+cu+d
+R_d\dfrac{\partial C}{\partial t}+u\dfrac{\partial C}
+{\partial S}=\dfrac{\partial}{\partial S}(D_L\dfrac{\partial C}{\partial S})
++\dfrac{\partial}{\partial R}(D_R\dfrac{\partial C}{\partial R})
++\dfrac{\partial}{\partial T}(D_T\dfrac{\partial C}{\partial T})-\mu C+\lambda
 \end{equation}
+其中,~$S$为流线方向,~$R$,$T$为与$S$相交的方向.~$D_L$,$D_R$和$D_T$为三个方向的系数.\par
+我们令$D_L$,~$D_R$和$D_T$为常数,上式变为
+\begin{equation}
+R_d\dfrac{\partial C}{\partial t}+u\dfrac{\partial C}
+{\partial S}=D_L\dfrac{\partial^2 C}{\partial S^2}+D_R\dfrac{\partial^2 C}{\partial R^2}+
+D_T\dfrac{\partial^2 C}{\partial T^2}-\mu C+\lambda
+\end{equation}
+采用\emph{算子分裂法},得
+\begin{align}
+&\dfrac{1}{3}R_d\dfrac{\partial C}{\partial t}=-\mu C+\lambda , & n\Delta t&\leq t\leq(n+\dfrac{1}{3})\Delta t \label{eq:04_3d_p1}\\
+&\dfrac{1}{3}R_d\dfrac{\partial C}{\partial t}+ u\dfrac{\partial C}{\partial S}=D_L\dfrac{\partial^2 C}{\partial S^2}, & (n+\dfrac{1}{3})\Delta t&\leq t\leq (n+\dfrac{2}{3})\Delta t \label{eq:04_3d_p2}\\
+&\dfrac{1}{3}R_d\dfrac{\partial C}{\partial t}=D_R\dfrac{\partial^2 C}{\partial R^2}+D_T\dfrac{\partial^2 C}{\partial T^2},& (n+\dfrac{2}{3})\Delta t&\leq t\leq(n+1)\Delta t \label{eq:04_3d_p3}
+\end{align}
+我们采用常数变易法来求解式~\eqref{eq:04_3d_p1},该方程为线性一阶常微分方程,初始条件为$C^{n+1/3}|_{t=t_n}=C^n$.\par
+应用常数变易法求得~\eqref{eq:04_3d_p1}的解为
+\begin{equation}
+\begin{cases}
+C_{i,j,k}^{n+1/3}=(C_{i,j,k}^n-\dfrac{\lambda}{\mu})\exp(-\mu\Delta t/Rd)+\dfrac{\lambda}{\mu},& \quad (\mu\not=0) \\[0.8em]
+C_{i,j,k}^{n+1/3}=C_{i,j,k}^n+\dfrac{\lambda\Delta t}{Rd},&\quad (\mu=0)
+\end{cases}
+\end{equation}\par
+我们采用匹配伪弥散系数法来求解~\eqref{eq:04_3d_p2}~,以避免数值弥散和震荡.\par
+与~\eqref{eq:04_3d_p2}~式对应的纯对流方程为
+\begin{equation}\label{eq:04_3d_p2c}
+\dfrac{1}{3} R_d\dfrac{\partial C}{\partial t}+u\dfrac{\partial C}{\partial S}=0,\quad (n+\dfrac{1}{3})\Delta t\leq t\leq (n+\dfrac{2}{3})\Delta t
+\end{equation}
+采用差分法,得
+\begin{align}
+\dfrac{\partial C}{\partial t} &= 3\theta\dfrac{C_{i,j,k}^{n+2/3}-C_{i,j,k}^{n+1/3}}{\Delta t}+3(1-\theta)\dfrac{C_{i,j,k}^{n+2/3}-C_{i,j,k}^{n+1/3}}{\Delta t} \label{eq:04_3d_p2_cf1}\\[0.6em]
+\dfrac{\partial C}{\partial S} &= \left[\dfrac{C_{i,j,k}^{n+2/3}-C_{i,j,k}^{n+1/3}}{2}-\dfrac{C_{i,j,k}^{n+2/3}-C_{i,j,k}^{n+1/3}}{2}\right] / \Delta S_i \label{eq:04_3d_p2_cf2}
+\end{align}
+将式~\eqref{eq:04_3d_p2_cf1}~和式~\eqref{eq:04_3d_p2_cf2}~代入式~\eqref{eq:04_3d_p2c}~,整理得
+\begin{equation}\label{eq:04_3d_p2zl}
+C_{i+1,j,k}^{n+2/3}=K_1C_{i,j,k}^{n+1/3}+K_2C_{i,j,k}^{n+2/3}+K_3C_{i+1,j,k}^{n+1/3}
+\end{equation}
+式中,
+\begin{equation*}
+K_1=\dfrac{Cr+2\theta}{2+Cr-2\theta},\quad K_2=\dfrac{Cr-2\theta}{2+Cr-2\theta},\quad K_3=\dfrac{2-Cr-2\theta}{2+Cr-2\theta}
+\end{equation*}
+其中,~$Cr=u\Delta t/(R_d\Delta S_i)$.对上式进行Taylor级数展开到二阶,得到一个对流弥散方程.其弥散
+系数来自二阶阶段误差,其表达式为
+\begin{equation*}
+D_N=u\Delta S_i(0.5-\theta)
+\end{equation*}
+令$D_L=D_N$,得$\theta=0.5-(1/Pe)$,其中$Pe=u\Delta S_i/D_L$.\par
+考虑式~\eqref{eq:04_3d_p2zl}~的稳定性,要求满足
+\begin{align}
+2 & \leq Pe \leq \infty\\
+1-\dfrac{2}{Pe}&\leq Cr\leq 1+\dfrac{2}{Pe}
+\end{align}
+我们看到式~\eqref{eq:04_3d_p2zl}~是无条件稳定的,具有二阶的精度.\par
+再利用交替方向差分法来求解~\eqref{eq:04_3d_p3},其交替方向差分格式为
+\begin{align}
+R_d\dfrac{C_{i,j,k}^{n+5/6}-C_{i,j,k}^{n+2/3}}{\Delta t} &=
+D_R\delta_R^2 C_{i,j,k}^{n+5/6}+D_{\tau}\delta^2_{\tau}C_{i,j,k}^{n+2/3} \label{eq:04_3d_p3adi1}\\
+R_d\dfrac{C_{i,j,k}^{n+1}-C_{i,j,k}^{n+5/6}}{\Delta t}&=D_R\delta_R^2 C_{i,j,k}^{n+5/6}+D_{\tau}\delta_{\tau}^2+C_{i,j,k}^{n+1} \label{eq:04_3d_p3adi2} 
+\end{align}
+其中,
+\begin{equation*}
+\begin{split}
+\delta_R^2 C_{i,j,k} =& [\dfrac{C_{i,j-1,k}}{(R_{j+1}-R_{j-1})(R_j-R_{j-1})}
+-\dfrac{C_{i,j,k}}{(R_{j+1}-R_j)(R_j-R_{j-1})} \\
+&+\dfrac{C_{i,j+1}}{(R_{j+1,k}-R_{j-1})(R_{j+1}-R_j)}] \\
+\delta_T^2 C_{i,j,k} =& [\dfrac{C_{i,j,k-1}}{(T_{k+1}-T_{k-1})(T_k-T_{k-1})}-
+\dfrac{C_{i,j,k}}{(T_{k+1}-T_k)(T_k-T_{k-1})} \\
+&+\dfrac{C_{i,j,k+1}}{(T_{k+1}-T_{k-1})(T_{k+1}-T_k)}]
+\end{split}
+\end{equation*}
+方程~\eqref{eq:04_3d_p3adi1}~和方程~\eqref{eq:04_3d_p3adi2}~为
+三对角线性方程组,用追赶法求解.\par
+这样,按时间顺序求解~\eqref{eq:04_3d_p1}~,~\eqref{eq:04_3d_p2}~,~\eqref{eq:04_3d_p3}~,
+就可以求得$n+1$各点的浓度.

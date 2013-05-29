@@ -6,6 +6,9 @@
      bottom=2.6cm]{geometry}
 %-------------------------------------------------------------------------
 \usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{ref/GBT7714-2005NLang-UTF8}
+% \usepackage{hypernat} 
 \pagestyle{fancy}
 
 \fancyhf{}
@@ -40,6 +43,7 @@
 \usepackage{yhmath}
 \usepackage[normalem]{ulem}
 \usepackage{paralist}
+\usepackage{floatrow}
 %\usepackage{mathptmx}
 
 %上标定义-----------------------------------------------------------------------------
@@ -102,5 +106,9 @@
   \input{simulink.tex}
   \input{conclusion.tex}
 \backmatter
+  \nocite{*}
+  \clearpage
+  \addcontentsline{toc}{chapter}{参考文献}
+  \bibliography{ref/ref}
   \input{thanks.tex}
 \end{document}
