@@ -1,8 +1,8 @@
 \chapter{建立模型}
-本章通过对地下水环境微生物迁移理论的推导，建立微生物迁移过程的基本模型方程。对迁移过程中的物理、数学基础作描述。
+本章通过对地下水环境微生物迁移理论的推导,建立微生物迁移过程的基本模型方程.对迁移过程中的物理、数学基础作描述.
 \section{迁移过程的控制方程}
 \subsection{基本假设}
-为了建立微生物在饱和地下环境中迁移过程的数学模型，在对微生物迁移过程研究中，作如下基本假定：
+为了建立微生物在饱和地下环境中迁移过程的数学模型,在对微生物迁移过程研究中,作如下基本假定：
 \begin{asparaenum}[(1)]
 \item 土壤是一个均质体； 
 \item 水流是稳定的； 
@@ -10,141 +10,140 @@
 \item 微生物细胞在液相中均匀悬浮； 
 \end{asparaenum}\par
 \subsection{组分质量守恒方程}
-我们看到液相微生物的质量守恒方程，表示为：
+我们看到液相微生物的质量守恒方程,表示为：
 \begin{equation}\label{equ:yexiangshouheng}
 \dfrac{\partial(\theta S_w C_w)}{\partial t}
 =-\nabla(\theta S_w C_w v_w)+\nabla[\theta S_wD_w\nabla v_w]+I+B_w
 \end{equation}
-式中，
+式中,
 \begin{asparadesc}
 	\item[$\theta$]介质的孔隙度;
 	\item[$S_w$]含水饱和度;
-	\item[$C_w$]液相中微生物的浓度，\SI{}{mol/L^3};
-	\item[$V_w$]液相的总流动速度，\SI{}{L/T};
-	\item[$D_w$]液相微生物的物理弥散系数，\SI{}{L^2/T};
-	\item[$I$]单位体积土壤中微生物在液相固相之间的传质速率，\SI{}{mol/(TL^3)}；
-	\item[$B_w$]微生物生长的生物反应速率，\SI{}{mol/(TL^3)}
+	\item[$C_w$]液相中微生物的浓度,\SI{}{mol/L^3};
+	\item[$V_w$]液相的总流动速度,\SI{}{L/T};
+	\item[$D_w$]液相微生物的物理弥散系数,\SI{}{L^2/T};
+	\item[$I$]单位体积土壤中微生物在液相固相之间的传质速率,\SI{}{mol/(TL^3)}；
+	\item[$B_w$]微生物生长的生物反应速率,\SI{}{mol/(TL^3)}
 \end{asparadesc}
-式~\eqref{equ:yexiangshouheng}~左侧表示微生物的累积，右侧第一项为对流项，第二项为水动力弥散项，第三项为相间传质项，第四项为生物反应项，以下对各项进行详细描述。
+式~\eqref{equ:yexiangshouheng}~左侧表示微生物的累积,右侧第一项为对流项,第二项为水动力弥散项,第三项为相间传质项,第四项为生物反应项,以下对各项进行详细描述.
 \subsubsection{对流运动}
-体系流体内的压力梯度引起了对流运动。对于微生物来说，总流体速度包括孔隙流速和微生物向营养物富集运动的趋化速度。
+体系流体内的压力梯度引起了对流运动.对于微生物来说,总流体速度包括孔隙流速和微生物向营养物富集运动的趋化速度.
 定义总流动速度如下：
 \begin{equation}
 V_w=v+v_c
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$V$]流动项孔隙流速，\SI{}{L/T};
-	\item[$V_c$]微生物向营养物富集运动的趋化速度，\SI{}{L/T};
+	\item[$V$]流动项孔隙流速,\SI{}{L/T};
+	\item[$V_c$]微生物向营养物富集运动的趋化速度,\SI{}{L/T};
 \end{paralist}
 \begin{equation}
 v=\dfrac{L}{t_{0.5}}
 \end{equation}                        
-式中，L为土柱的有效长度，\SI{}{m}。\par
-在三维空间中，微生物能探测到营养物富集的环境，检测到物质梯度，在压力梯度作用下，产生流动，可以称为趋化性。
-假定微生物趋化迁移速度与基质浓度成指数关系，有：
+式中,L为土柱的有效长度,\SI{}{m}.\par
+在三维空间中,微生物能探测到营养物富集的环境,检测到物质梯度,在压力梯度作用下,产生流动,可以称为趋化性.
+假定微生物趋化迁移速度与基质浓度成指数关系,有：
 \begin{equation}
 v_c=K_c\nabla(\ln C_f)
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$K_c$]为趋化系数，\SI{}{mol/(TL^3)};
-	\item[$C_f$]为基质浓度，\SI{}{mol/L^3};
+	\item[$K_c$]为趋化系数,\SI{}{mol/(TL^3)};
+	\item[$C_f$]为基质浓度,\SI{}{mol/L^3};
 \end{paralist}
-微生物趋化运动往往很小，可以忽略。在静态的条件下，趋化作用比较明显。
+微生物趋化运动往往很小,可以忽略.在静态的条件下,趋化作用比较明显.
 \subsubsection{水动力弥散}
-水动力弥散现象包括分子扩散和机械弥散。 对于污染物来说分子扩散是由于热运动而引起的混合和分散作用。对于微生物来说，其尺寸通常处于~\SI{}{\micro m}~级，像胶体分子一样，也遵循布朗运动，每一个颗动的轨迹是无规律的，微生物的这种混乱的、随机的运动被称为泳动。微生物由浓度高的区域向浓度低的区域泳动的量将多于由浓度低的区域向浓度高的区域运动的量，于是便形成了宏观上的分子扩散现象。\par
-机械弥散作用是由于土壤孔隙中微观流速的变化而引起的，有这样几个方面的原因：
+水动力弥散现象包括分子扩散和机械弥散. 对于污染物来说分子扩散是由于热运动而引起的混合和分散作用.对于微生物来说,其尺寸通常处于~\SI{}{\micro m}~级,像胶体分子一样,也遵循布朗运动,每一个颗动的轨迹是无规律的,微生物的这种混乱的、随机的运动被称为泳动.微生物由浓度高的区域向浓度低的区域泳动的量将多于由浓度低的区域向浓度高的区域运动的量,于是便形成了宏观上的分子扩散现象.\par
+机械弥散作用是由于土壤孔隙中微观流速的变化而引起的,有这样几个方面的原因：
 \begin{itemize}\setlength{\itemsep}{0em}
 \item 孔隙中心与边缘流速不同;
-\item 孔隙直径不同，其流速不同;
+\item 孔隙直径不同,其流速不同;
 \item 孔隙的弯曲程度不同;
-\item 内部孔隙水流基本上不流动。
+\item 内部孔隙水流基本上不流动.
 \end{itemize}\par
 Fick定律描述了微生物在水相中的扩散现象：
 \begin{equation}
 J=-D\dfrac{\partial c}{\partial x}
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$D$]为水相中微生物的分子扩散系数，\SI{}{L^2/T}。
+	\item[$D$]为水相中微生物的分子扩散系数,\SI{}{L^2/T}.
 \end{paralist}
-穿透曲线是指将土样装入土柱中，严格控制容重，用示踪剂连续恒定注入土壤中，然后根据溶质在土壤中运移时，通过某截面的相对浓度$[C(t)-C_0]/(C_1-C_0)$与时间或体积的关系曲线，它是反映溶质在土壤中运移的基本曲线。\par
+穿透曲线是指将土样装入土柱中,严格控制容重,用示踪剂连续恒定注入土壤中,然后根据溶质在土壤中运移时,通过某截面的相对浓度$[C(t)-C_0]/(C_1-C_0)$与时间或体积的关系曲线,它是反映溶质在土壤中运移的基本曲线.\par
 根据求解饱和土壤纵向弥散系数近似解的“三点公式”：
 \begin{equation}
 D=\dfrac{v^2}{8t_{0.5}}(t_{0.84}-t_{0.16})^2
 \end{equation}\par
-在土柱入口连续恒定地注入示踪剂氯离子浓度为~\SI{1500}{mg/L}，出口取样测定氯离子的浓度。以出口处氯离子浓度C为Y轴，相应时间为X轴绘制穿透曲线。作出$C/C_0$\~$t$关系曲线图，根据穿透曲线读出相应于$C/C_0$=0.84、0.5、0.16 的三个时间值，同时代入实测的$v$值，便得到溶质在土壤中的弥散系数的近似值$D$。
+在土柱入口连续恒定地注入示踪剂氯离子浓度为~\SI{1500}{mg/L},出口取样测定氯离子的浓度.以出口处氯离子浓度C为Y轴,相应时间为X轴绘制穿透曲线.作出$C/C_0$\~$t$关系曲线图,根据穿透曲线读出相应于$C/C_0$=0.84、0.5、0.16 的三个时间值,同时代入实测的$v$值,便得到溶质在土壤中的弥散系数的近似值$D$.
 \subsubsection{相间传质}
-对微生物来说，相间传质主要指的是土壤对微生物的吸附和过滤作用。\par
-相对地说，土壤颗粒对微生物的吸附是影响迁移最主要的过程，影响迁移的所有因素几乎都是通过影响吸附来作用的。土壤对大肠杆菌的吸附研究采用静态批量平衡吸附实验。\par
-巨大芽孢杆菌吸附特性的研究，采用吸附等温线模型来描述细菌吸附过程。\par
-过滤是当细菌流经土壤中某一空隙时，由于菌体太大而不能穿过空隙产生的滞留现象，是微生物在土壤中的不可逆吸附作用，采用一级动力学模型来表示滞留过程。\par
-根据菌液平衡浓度的测定结果和质量衡算来确定吸附类型。等温吸附可分为线性平衡吸附、Freundlich平衡吸附、Langmiur平衡吸附、Temkin平衡吸附类型。
+对微生物来说,相间传质主要指的是土壤对微生物的吸附和过滤作用.\par
+相对地说,土壤颗粒对微生物的吸附是影响迁移最主要的过程,影响迁移的所有因素几乎都是通过影响吸附来作用的.土壤对大肠杆菌的吸附研究采用静态批量平衡吸附实验.\par
+巨大芽孢杆菌吸附特性的研究,采用吸附等温线模型来描述细菌吸附过程.\par
+过滤是当细菌流经土壤中某一空隙时,由于菌体太大而不能穿过空隙产生的滞留现象,是微生物在土壤中的不可逆吸附作用,采用一级动力学模型来表示滞留过程.\par
+根据菌液平衡浓度的测定结果和质量衡算来确定吸附类型.等温吸附可分为线性平衡吸附、Freundlich平衡吸附、Langmiur平衡吸附、Temkin平衡吸附类型.
 线性平衡吸附的形式如下：
 \begin{equation}
 S=KC
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$S$]为微生物的固相浓度，\SI{cfu/gsoil};
-	\item[$K$]为微生物的吸附分配系数，\SI{}{mL/g};
-	\item[$C$]为微生物的液相浓度，\SI{cfu/mL};
+	\item[$S$]为微生物的固相浓度,\SI{cfu/gsoil};
+	\item[$K$]为微生物的吸附分配系数,\SI{}{mL/g};
+	\item[$C$]为微生物的液相浓度,\SI{cfu/mL};
 \end{paralist}
 Freundlich等温吸附方程形式如下：
 \begin{equation}
 S=KC^{1/n}
 \end{equation}
-式中，K,n为常数。\par
+式中,K,n为常数.\par
 Langmiur平衡吸附的表达式为：
 \begin{equation}
 S=\dfrac{KS_{max}C}{1+KC}
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$K$]为常数，\SI{}{mL/g};
-	\item[$S_{max}$]为最大吸附容量，\SI{cfu/g};
+	\item[$K$]为常数,\SI{}{mL/g};
+	\item[$S_{max}$]为最大吸附容量,\SI{cfu/g};
 \end{paralist}
-线性变换，Langmiur等温吸附方程可转化为如下形式：
+线性变换,Langmiur等温吸附方程可转化为如下形式：
 \begin{equation}
 \dfrac{C}{S}=\dfrac{1}{KS_{max}}+\dfrac{C}{S_{max}}
 \end{equation}
-通过$C/S$与$C$作图，由直线关系可以确定吸附参数$S_{max}$和$K$。\par
-采用吸附动力学模型，非饱和土壤中等温过程可逆吸附形式可表示为：
+通过$C/S$与$C$作图,由直线关系可以确定吸附参数$S_{max}$和$K$.\par
+采用吸附动力学模型,非饱和土壤中等温过程可逆吸附形式可表示为：
 \begin{equation}
 \rho\dfrac{\partial S}{\partial t}=S_wk_{att}C-k_{det}\rho S
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$K_{att}$]可逆吸附常数，\SI{}{s^{-1}};
-	\item[$K_{det}$]可逆解析常数，\SI{}{s^{-1}};
-	\item[$S_w$]土壤体积含水率，即饱和度。
+	\item[$K_{att}$]可逆吸附常数,\SI{}{s^{-1}};
+	\item[$K_{det}$]可逆解析常数,\SI{}{s^{-1}};
+	\item[$S_w$]土壤体积含水率,即饱和度.
 \end{paralist}
 \subsubsection{微生物生长项}
-Monod动力学模型能够很好地模拟微生物的生长过程，而微生物的生长与污染物的降解有着一定的联系。我们假定溶解氧足够，
+Monod动力学模型能够很好地模拟微生物的生长过程,而微生物的生长与污染物的降解有着一定的联系.我们假定溶解氧足够,
 Monod方程可简化为：
 \begin{equation}
 \sigma = \dfrac{\sigma_{max}C_f}{K_s+C_f}
 \end{equation}
-式中，
+式中,
 \begin{paralist}
-	\item[$\sigma$]为微生物的比增长速率，\SI{}{T^{-1}};
-	\item[$\sigma_{max}$]微生物的最大比增长速率，\SI{}{T^{-1}};
-	\item[$C_f$]基质浓度，\SI{}{mol/L^3}；
-	\item[$K_s$]为基质半饱和常数，\SI{}{mol/L^3}.
+	\item[$\sigma$]为微生物的比增长速率,\SI{}{T^{-1}};
+	\item[$\sigma_{max}$]微生物的最大比增长速率,\SI{}{T^{-1}};
+	\item[$C_f$]基质浓度,\SI{}{mol/L^3}；
+	\item[$K_s$]为基质半饱和常数,\SI{}{mol/L^3}.
 \end{paralist}
 \section{对流扩散方程模型}
-考虑一个维度上的模型，得到方程~\eqref{equ:canshuf}:
+考虑一个维度上的模型,得到方程~\eqref{equ:canshuf}:
 \begin{equation}\label{equ:canshuf}
 	R\dfrac{\partial C}{\partial t} = D\dfrac{\partial^2 C}{\partial x^2}-v\dfrac{\partial C}{\partial x}-\mu RC
 \end{equation}
-其中，$C$的单位为\SI{}{col/ml}。\par
+其中,~$C$的单位为\SI{}{col/ml}.\par
 
 \section{模型的参数计算}
-参考文献与相关实验结果，我们看到各类微生物的运移参数如表~\ref{tab:dachangganjun}、表~\ref{tab:ibv}。
-\begin{table}[!ht]
-\caption{\label{tab:dachangganjun}大肠杆菌运移参数}
-\centering
+参考文献与相关实验结果,我们看到各类微生物的运移参数如表~\ref{tab:dachangganjun}、表~\ref{tab:ibv}.
+\begin{table}
+\caption{大肠杆菌运移参数\label{tab:dachangganjun}}
 \begin{tabularx}{14cm}{XXXXX}
 \toprule
 初始浓度 & $v$(\SI{}{cm/min}) & $D$(\SI{}{cm^2/min}) & $\mu$(\SI{}{min^{-1}}) & $R$\\
@@ -162,9 +161,9 @@ $10^8$	&	0.309	&	0.315	&	0.0106	&	1.00 \\
 \end{tabularx}
 \end{table}
 \par
-\begin{table}[!ht]
-\caption{\label{tab:ibv}IBV、MS2病毒运移参数}
+\begin{table}
 \centering
+\caption{\label{tab:ibv}IBV、MS2病毒运移参数}
 \begin{tabularx}{14cm}{XXXXX}
 \toprule
 病毒类别 & $v$(cm/s) & $D$(\SI{}{cm^2/h}) & $\mu$(\SI{}{h^{-1}}) & $R$\\
@@ -179,10 +178,9 @@ MS2		& 1.60	& 0.10	&	0.09	&	0.98	\\
 \begin{equation}
 	\dfrac{\partial C}{\partial t}= \alpha\dfrac{\partial^2 C}{\partial x^2}-\beta\dfrac{\partial C}{\partial x}-\gamma C + \delta
 \end{equation}
-所表现的模型测得的，其中$C$的单位为\SI{}{mg/m^3}。\par
-\begin{table}[t]
-\caption{\label{tab:ne}细菌运移参数}
-\centering
+所表现的模型测得的,其中$C$的单位为\SI{}{mg/m^3}.\par
+\begin{table}
+\caption{细菌运移参数\label{tab:ne}}
 \begin{tabularx}{14cm}{XXXXX}
 \toprule
 菌名 & $\alpha$(\SI{}{m^2/s}) & $\beta$(\SI{}{m/s}) & $\gamma$(\SI{}{s^{-1}}) & $\delta$(\SI{}{T^{-1}})\\
@@ -195,5 +193,8 @@ MS2		& 1.60	& 0.10	&	0.09	&	0.98	\\
 微球菌		&	\num{3.66e-6}&	\num{0.0006}	&	\num{2.238e-3}	&	\num{1.343e6}	\\
 \bottomrule
 \end{tabularx}
-\end{table}\par
-得到了数学模型的参数，就可以对数学模型进行求解了。
+\end{table}
+得到了数学模型的参数,就可以对数学模型进行求解了.
+\section{本章小结}
+本章主要对微生物在土壤中的运移因素进行分析,利用质量守恒定律建立了微生物迁移控制方程,并分别在空间和直线上进行了表达.
+为了研究的方便,根据文献报道的数据,整理了供研究使用的模型的各项参数.

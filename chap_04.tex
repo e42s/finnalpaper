@@ -128,7 +128,7 @@ u_J^n=\psi(t_n),\quad n\geq0
  u_j^0=g(x_j)=g_j
 \end{equation}
 得到边界点上的差分格式.\par
-由于本研究不涉及第三类贬值条件,这一方面的差分处理方法就不叙述了.
+由于本研究不涉及第三类边值条件,这一方面的差分处理方法就不叙述了.
 \section{常系数对流方程}
 考虑简单的双曲型对流方程
 \begin{equation}\label{eq:04_dl_o}
@@ -305,7 +305,7 @@ G(\Delta t,\sigma) &= 1-\dfrac{ar}{2}(\me^{\mi\sigma h}-\me^{-\mi\sigma h})+\dfr
 \begin{equation}
 	u(x,0)=g(x)
 \end{equation}
-构成了\textbf{对流扩散方程}的初值问题，在我们的模型中，它是一个对流占优的扩散问题。\par
+构成了\emph{对流扩散方程}的初值问题，在我们的模型中，它是一个对流占优的扩散问题。\par
 \subsection{中心显式差分格式}
 将方程~\eqref{equ:cf_dkfangc}~差分，有
 \begin{equation}\label{equ:cf_dkfangct}
@@ -817,3 +817,7 @@ R_d\dfrac{C_{i,j,k}^{n+1}-C_{i,j,k}^{n+5/6}}{\Delta t}&=D_R\delta_R^2 C_{i,j,k}^
 三对角线性方程组,用追赶法求解.\par
 这样,按时间顺序求解~\eqref{eq:04_3d_p1}~,~\eqref{eq:04_3d_p2}~,~\eqref{eq:04_3d_p3}~,
 就可以求得$n+1$各点的浓度.
+\section{本章小结}
+本章主要讨论了对各类偏微分方程的数值求解法.首先,对常系数扩散方程、对流方程和对流扩散方程进行差分分解,讨论了常用的差分格式并
+证明了它们的稳定性和准确度.然后,采用了算子分裂法对求解时间进行分裂,将三维的对流扩散反应方程进行分解得到了分数步的差分格式,
+将对流扩散反应方程分解成对流方程、扩散方程和反应方程,分别对它们进行求解.

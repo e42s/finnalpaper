@@ -6,8 +6,8 @@
      bottom=2.6cm]{geometry}
 %-------------------------------------------------------------------------
 \usepackage{fancyhdr}
-\usepackage[numbers,sort&compress]{natbib}
-\bibliographystyle{ref/GBT7714-2005NLang-UTF8}
+\usepackage[numbers,sort&compress]{natbib}   % bibtex 自然序号
+
 % \usepackage{hypernat} 
 \pagestyle{fancy}
 
@@ -16,7 +16,7 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 %-------------------------------------------------------------------------
 \CTEXsetup[format+={\zihao{-3}},name={第,节}]{section}
 \CTEXsetup[format+={\zihao{-4}}]{subsection}
@@ -28,10 +28,10 @@
 %-------------------------------------------------------------------------
 \usepackage{mdwlist}
 \usepackage{sistyle}
+\usepackage{graphicx}
 
-\usepackage{longtable}
-\usepackage{booktabs}
 \usepackage{tabularx}
+% \usepackage{longtable}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -44,11 +44,15 @@
 \usepackage[normalem]{ulem}
 \usepackage{paralist}
 \usepackage{floatrow}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{caption}
 %\usepackage{mathptmx}
-
+\floatsetup[table]{capposition=top}  % floatrow宏包将表格的标题置于表格下方,这条命令把这样的设置更改.
 %上标定义-----------------------------------------------------------------------------
 \makeatletter
-\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+% \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \newcommand{\dif}{\mathrm{d}}
 \makeatother
@@ -83,16 +87,32 @@
   %xleftmargin=2em,xrightmargin=2em, aboveskip=1em 
   }
 \renewcommand{\lstlistingname}{代码}%
+%出版物自定义
+\newcounter{pubctr} %自定义新计数器
+\newenvironment{publist}{%%%%%定义新环境
+\begin{list}{[\arabic{pubctr}]} %%标签格式
+    {
+     \usecounter{pubctr}
+     \setlength{\leftmargin}{2.5em}     % 左边界 \leftmargin =\itemindent + \labelwidth + \labelsep
+     \setlength{\itemindent}{0em}     % 标号缩进量
+     \setlength{\labelsep}{1em}       % 标号和列表项之间的距离,默认0.5em
+     \setlength{\rightmargin}{0em}    % 右边界
+     \setlength{\topsep}{0ex}         % 列表到上下文的垂直距离
+     \setlength{\parsep}{0ex}         % 段落间距
+     \setlength{\itemsep}{0ex}        % 标签间距
+     \setlength{\listparindent}{0pt} % 段落缩进量
+    }}
+{\end{list}}
 \begin{document}
 \setlength{\baselineskip}{22pt}
 \begin{titlepage}
   \input{cxsm.tex}
   \newpage
+  \input{rws.tex}
   \end{titlepage}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 \frontmatter
   \pagenumbering{Roman}
-%   \input{rws.tex}
   \input{zy.tex}
   \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{perface.tex}
@@ -109,6 +129,7 @@
   \nocite{*}
   \clearpage
   \addcontentsline{toc}{chapter}{参考文献}
+  \bibliographystyle{ref/GBT7714-2005NLang-HIT}
   \bibliography{ref/ref}
-  \input{thanks.tex}
+   \input{thanks.tex}
 \end{document}
