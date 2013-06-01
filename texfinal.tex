@@ -47,7 +47,7 @@
 \usepackage{subfig}
 \usepackage{longtable}
 \usepackage{booktabs}
-\usepackage{caption}
+\usepackage[labelsep=quad]{caption}
 %\usepackage{mathptmx}
 \floatsetup[table]{capposition=top}  % floatrow宏包将表格的标题置于表格下方,这条命令把这样的设置更改.
 %上标定义-----------------------------------------------------------------------------
@@ -105,9 +105,11 @@
 {\end{list}}
 \begin{document}
 \setlength{\baselineskip}{22pt}
+\input{front.tex}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 \begin{titlepage}
   \input{cxsm.tex}
-  \newpage
+  \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{rws.tex}
   \end{titlepage}
 \clearpage{\pagestyle{empty}\cleardoublepage}
