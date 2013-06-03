@@ -1,0 +1,526 @@
+\chapter{绪论}
+\section{问题的背景}
+在环境工程学科中有这样的一个问题,即需要对受污染的土壤进行修复,其中较好的方式是原位修复.所谓原位修复,
+指的是在土壤中注入分离得到的或基因工程合成的细菌或营养物质,令其运动到受污染的区域,分解有毒物质,达到治理目的.
+这样,我们需要对土壤中微生物的运动规律进行研究.\par
+早在20世纪40年代初,国内外学者已开始对土壤中微生物吸附和运移进行研究.早期的研究工作主要集中在垃圾处理、传染病、污水灌溉、
+纯化受微生物和有机物污染的水等方面.现已扩展到原位生物修复、提高石油开采量、放射性物质和有机污染物的携带运移、提高冶炼率、核废料处理
+和根系层内病害的生物防治及养分的转化等方面.\par
+微生物在土壤中的运移过程看似简单,实际很复杂.其运移机理包括生长、吸附、解吸、沉积（过滤、布朗扩散、截流、沉降）、腐解、钝化、滞留等过程,
+为了确定微生物的运移速率、时间、分布范围,最大限度提高细菌降解的作用,减少再污染,对微生物在土壤中运移及其影响因素建立数学模型,进行定量
+研究,是很有必要的.\par
+有两个方面对微生物在土壤中的运动产生影响,第一是土壤地下水环境的影响,第二是是微生物自身的因素\upcite{张瑞玲2007}.
+\section{影响微生物运动的因素}
+微生物在土壤多孔介质中的迁移受到各种非生物和生物因素的影响.这些因素可概括为两个主要方面——水文地质因素和微生物因素.
+其中水文地质因素包括多孔介质结构、有机质的含量、氧化膜以及地下水水流的速度、溶液化学成分、溶液pH、离子强度等;
+细胞的生理状态、细胞的生长与衰亡、细胞的趋磁性、细胞的吸附过程、过滤效应,属于微生物因素\upcite{高琼2011}.
+\subsection{水文地质因素}
+微生物生活的环境总是存在稳定或不稳定的水相.田间观察表明,水的流量和流速会影响微生物的迁移范围,在土柱实验中也观察到随着土柱水流速度的增加,细菌流出量也增加.
+总的来说,水的高流速能减少作用时间,使微生物吸附的可能性降低.\par
+另外,土壤中颗粒的大小和孔径的大小也是影响微生物迁移的重要因子,影响微生物细胞在液相中的过滤作用.
+\subsection{微生物因素}
+\subsubsection{吸附作用}
+吸附发生在微生物细胞和颗粒表面接触时.要对微生物细胞表面和多孔介质表面之间的各种相互化学作用加以考虑.
+吸附是物理化学过程,可以分为可逆与不可逆过程.主要有静电、疏水作用和范德华力.一般来说,细胞和颗粒表面的静电作用是排斥的,
+因为细胞和颗粒表面都是带负电荷的.而土壤矿物质表面的负电荷是与一些有机质中含有的大量羟基官能团等有关的.疏水作用和范德华力趋于相互吸引.
+疏水作用指水环境中非极性基团的聚合趋势.疏水作用对微生物迁移的影响作用依赖于细胞表面的疏水性以及基质表面特性和孔隙溶液特性.\par
+范德华力通常导致中性分子间的相互作用.这些中性分子有着动态的电荷分布.当两个分子相互靠近时,这种电荷分布对两个分子之间的作用起到促进作用,
+范德华力增加到最大值,随后减小直至成为斥力.当引力超过斥力时,就发生初始的吸附.初始吸附后,细胞能够不可逆地吸附到颗粒表面.
+不可逆吸附过程的发生是细胞表面结构和固体表面相互作用的结果,或者说是产生的胞外多糖把微生物细胞黏附到表面造成的.
+\subsubsection{生理状态}
+微生物的大小和形状会影响其在土壤中的吸附效果,影响它们的迁移潜力.细菌所处的生理状态会对它们的形状大小产生影响,从而对迁移也产生影响.
+当微生物所需的营养物不受限制时,即微生物细胞处于正常的生理状态时,会产生包裹在细胞外表面的多聚物,
+多聚物会增加细胞的有效直径并促进吸附在固体表面.当微生物处于饥饿条件下,细胞会缩小并脱去夹膜层,增加了它们的迁移潜力.
+\subsubsection{运动性和趋化性}
+鞭毛是微生物的运动器官,鞭毛的运动能够引起菌体的运动.关于鞭毛的有无对于微生物迁移的影响结果并不一致.
+生物趋化性是细菌对不同化学物浓度所产生的吸引聚集或避离排斥的反应运动.有研究报道认为趋化性对细菌在土层中迁移起很重要的作用.
+\section{基本数学理论}
+在这一部分,我们简要地介绍在本研究中所用到的数学工具与方法,其中重要的定理和结论,我们还会对它们的推导过程进行简要的介绍.
+\subsection{线性二阶偏微分方程理论}
+偏微分方程指的是含有未知函数$u(x_1,x_2,\ldots,x_n,t)$的偏导数的方程\upcite{SHUXUEWULI}.通常采用$t$表示时间变量,~$u(x_1,x_2,\ldots,x_n,t)$
+表示空间变量.考虑$\vec{x}=(x_1,x_2,\ldots,x_n,t)\in \mathbb{R}$,当$n=2,3$时,可以记为$\vec{x}=(x,y)$或$\vec{x}=
+(x,y,z)$.我们记Laplace算子为
+\begin{equation*}
+ \Delta = \dfrac{\partial^2}{\partial x_1^2}+\dfrac{\partial^2}{\partial x_2^2}+\cdots +  \dfrac{\partial^2}{\partial x_n^2}
+\end{equation*}
+记
+\begin{equation*}
+ \nabla = \vec{e_1}\dfrac{\partial}{\partial x_1}+\vec{e_2}\dfrac{\partial}{\partial x_2}
+	  +\cdots + \vec{e_n}\dfrac{\partial}{\partial x_n}
+\end{equation*}
+其中,~$\vec{e_i}(i=1,2,\cdots,n)$是坐标轴上的单位向量,~$\Delta=\nabla\cdot\nabla$.\par
+下面,我们来介绍二阶方程,设$u=u(x_1,x_2,\cdots,x_n)$,有
+\begin{equation}\label{eq:01_ejt_1}
+ \sum_{i,j=1}^{n}a_{ij}\dfrac{\partial^2 u}{\partial x_i \partial x_j}
+ +\sum_{i=1}^{n} b_i\dfrac{\partial u}{\partial x_i} + cu=f
+\end{equation}
+称为\emph{二阶拟线性方程}.\par
+在方程~\eqref{eq:01_ejt_1}~中,我们假设$a_{ij}=a_{ji}$.这样矩阵$A=[a_{ij}]$是一个$n\times n$的矩阵.
+若在点$(x_1,x_2,\cdots,x_n)$上,$A$是正定的或负定的,那么方程~\eqref{eq:01_ejt_1}~为\emph{椭圆形方程}.
+如果$A$的特征值至少有一个为零,则称为\emph{拋物型方程}.如果$A$的特征值都不是零,且有$n-1$个是
+同号,则称为\emph{双曲型方程}.\par
+下面我们重点讨论两个自变量的二阶方程.设$u=u(x,y)$,记$p=\left(u,\dfrac{\partial u}{\partial x},
+\dfrac{\partial u}{\partial y}\right)$,二阶拟线性方程写为
+\begin{equation}\label{eq:01_ejt_2}
+ a(x,y,p)\dfrac{\partial^2 u}{\partial x^2}+2b(x,y,p)\dfrac{\partial^2 u}{\partial x\partial y}
+ +c(x,y,p)\dfrac{\partial^2 u}{\partial y^2}+f(x,y,p)=0
+\end{equation}
+其中,~$a,b,c,f$均为自变量的连续函数.\par
+如果方程~\eqref{eq:01_ejt_2}~中,~$a,b,c$与$p$无关,且
+\begin{equation}
+ f(x,y,p)=d(x,y)\dfrac{\partial u}{\partial x}+e(x,y)\dfrac{\partial u}{\partial y}
+	  r(x,y)u+s(x,y)
+\end{equation}
+则方程~\eqref{eq:01_ejt_2}~为二阶线性方程.\par
+对于方程~\eqref{eq:01_ejt_2}~中的系数$a,b,c$,若对于固定的$(x,y,u)$有$ac-b^2>0$,则方程为椭圆型的.若$ac-b^2=0$,则
+方程为抛物型的.若$ac-b^2<0$,则方程为双曲型的.\par
+$x$--$y$平面上的曲线$x=\phi_1(s),y=\phi_2(s)$($s$是参数).若
+\begin{equation}
+ a[\phi_2'(s)]^2-2b\phi_2'(s)\phi_1'(s)+c[\phi_1'(s)]^2=0
+\end{equation}
+则称此曲线为方程~\eqref{eq:01_ejt_2}~的特征曲线,而方程~\eqref{eq:01_ejt_2}~称为特征方程,~$x$--$y$平面上的向量$(\beta_1,\beta_2)$
+,若满足
+\begin{equation}
+ \alpha\beta_2^2-2b\beta_1\beta_2+c\beta_1^2=0
+\end{equation}
+则称为方程~\eqref{eq:01_ejt_2}~在点$(x,y)$处的特征方向.\par
+显然,特征方向是特征曲线在点$(x,y)$点处的切线方向.若特征曲线的方程可以写成$y=y(x)$的形式,则$y(x)$满足
+\begin{equation}
+ \dfrac{\dif y}{\dif x}=\dfrac{b\pm\sqrt{b^2-ac}}{a}
+\end{equation}\par
+可以看到,对于双曲型方程,在$x$--$y$平面上有两簇特征曲线,而拋物型方程在$x$--$y$平面上只有一簇曲线.椭圆形方程则
+没有实的特征曲线.\par
+接下来介绍一下定解问题,我们考虑一个典型的椭圆型方程的边值问题,设$u=u(x,y)$,有
+\begin{equation}
+ \begin{cases}
+  -\left[\dfrac{\partial}{\partial x}\left(k\dfrac{\partial u}{\partial x}\right)+
+  \dfrac{\partial}{\partial y}\left(k\dfrac{\partial u}{\partial y}\right)\right]=F(x,y)
+  ,&	\quad x,y \in \Omega \\[1em]
+  u=g(x,y)	& \quad	x,y\in \partial \Omega
+ \end{cases}
+\end{equation}
+其中,~$\Omega\subseteq\mathbb{R}^2$,~$k>0,k,F,g$均为$x,y$的函数,我们看到,这类边界条件称为\emph{第一类边界条件}.\par
+相应地我们看到
+\begin{equation}
+ k\dfrac{\partial u}{\partial \vec{n}}=g(x,y),\quad x,y\in\partial\Omega
+\end{equation}
+称为\emph{第二类边界条件},以及
+\begin{equation}
+ k\dfrac{\partial u}{\partial \vec{n}}+\partial u=g(x,y),\quad x,y\in\partial\Omega
+\end{equation}
+为\emph{第三类边界条件}.
+\subsection{Fourier变换}
+我们将Fourier变换用于偏微分方程的分析.有Fourier积分公式\upcite{同济大学.计算数学教研室2009},设$\int_{-\infty}^{+\infty}\left|v(x)\right|^2\dif x<\infty$,
+有
+\begin{equation}\label{eq:01_f}
+ v(x)=\dfrac{1}{2\pi}\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} v(\xi)\exp(-\mi\lambda(\xi-x))
+ \dif\xi\dif\lambda
+\end{equation}
+其中,~$i=\sqrt{-1}$为虚数单位.下面我们来推导这个公式.\par
+设$v(x)$在$[-L,L]$可以展开成Fourier级数,
+\begin{equation}\label{eq:01_f_js}
+ v(x)=\dfrac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\dfrac{n\pi x}{L}+
+ b_n\sin\dfrac{n\pi x}{L}+b_n\sin\dfrac{n\pi x}{L}\right)
+\end{equation}
+其中,~Fourier系数为
+\begin{align}
+ a_n &=\dfrac{1}{L}\int_{-L}^{L} v(\xi)\cos\dfrac{n\pi\xi}{L}\dif \xi,\quad n=0,1,\cdots \label{eq:01_f_x1}\\
+ b_n &=\dfrac{1}{L}\int_{-L}^{L} v(\xi)\sin\dfrac{n\pi\xi}{L}\dif \xi,\quad n=1,2,\cdots \label{eq:01_f_x2}
+\end{align}
+将式~\eqref{eq:01_f_x1}~和式~\eqref{eq:01_f_x2}~代入~\eqref{eq:01_f_js}~中,得
+\begin{equation}\label{eq:01_f_jsd}
+ v(x)=\dfrac{1}{2L}\int_{-L}^{L} v(\xi)\dif \xi + \dfrac{1}{L}\sum_{n=1}^{\infty}
+      \int_{-L}^{L} v(\xi)\cos\dfrac{n\pi}{L}(\xi-x)\dif\xi
+\end{equation}
+设$v(x)$在$(-\infty,+\infty)$绝对可积,令$L\to\infty$,则式~\eqref{eq:01_f_jsd}~第一项趋于零,
+记$\mu_n=n\pi/L$,有
+\begin{equation}
+ \Delta\mu_n = \mu_{n+1}-\mu_n =\dfrac{\pi}{L},\quad \mu_n=n\Delta\mu_n
+\end{equation}
+则当$L\rightarrow\infty$时,式~\eqref{eq:01_f_jsd}~为
+\begin{equation*}
+ v(x)=\lim_{L\to\infty}\sum_{n=1}^{\infty}\left[\dfrac{1}{\pi}\int_{-L}^{L}
+      v(\xi)\cos\mu_n(\xi-x)\dif\xi\right]\Delta\mu_n
+\end{equation*}
+和式成为区间$[0,+\infty)$的积分式,即
+\begin{equation}\label{eq:01_f_jfs}
+ v(x)=\int_0^{\infty}\left[\dfrac{1}{\pi}\int_{-\infty}^{+\infty} v(\xi)\cos\mu_n(\xi-x)\right]\dif\xi
+\end{equation}
+将三角函数改写为指数函数(欧拉定理),有
+\begin{equation*}
+ \cos\mu(\xi-x)=\dfrac{1}{2}\left[\exp(\mi\mu(\xi-x))+\exp(-\mi\mu(\xi-x))\right]
+\end{equation*}
+代入式~\eqref{eq:01_f_jfs}~,在第一项中令$\lambda=-\mu$,即
+\begin{equation*}
+ \int_{\infty}^{0}\left[\dfrac{1}{2\pi}\int_{-\infty}^{+\infty} v(\xi)\exp(-\mi\lambda\xi)\dif\xi\right]\dif\lambda
+\end{equation*}
+再与第二项相加,得式~\eqref{eq:01_f}~,即\emph{Fourier积分公式}.\par
+将式~\eqref{eq:01_f}~写为
+\begin{equation*}
+ v(x)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\left[\dfrac{1}{\sqrt{2\pi}}
+ v(\xi)\me^{-\mi\lambda\xi}\dif\xi\right]\me^{\mi\lambda x}\dif\lambda
+\end{equation*}
+将积分变量$\xi$换为$x$,令
+\begin{equation}\label{eq:01_f_bh1}
+ \hat{v}(\lambda)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}v(x)\me^{-\mi\lambda x}\dif x
+\end{equation}
+有
+\begin{equation}\label{eq:01_f_bh2}
+ v(x)=\dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\hat{v}(\lambda)\me^{-\mi\lambda x}\dif\lambda
+\end{equation}
+则式~\eqref{eq:01_f_bh1}~的$\hat{v}(\lambda)$称为$v(x)$的\emph{Fourier变换},而式~\eqref{eq:01_f_bh2}~的$v(x)$
+称为$\hat{v}(\lambda)$的\emph{Fourier逆变换}.\par
+类似三角级数的性质,可以证明
+\begin{equation}
+ \int_{-\infty}^{+\infty}|v(x)|^2\dif x=\int_{-\infty}^{+\infty}|\hat{v}(\lambda)|^2\dif\lambda
+\end{equation}
+称为Parseval关系式,同时还有
+\begin{equation}
+ v=0\quad\Leftrightarrow\quad \hat{v}=0
+\end{equation}
+\subsection{Laplace变换}
+Laplace变换\upcite{Hernandez-Martinez2013}用于解初值问题.即已知某物理量在$t=0$时的值$f(0)$,求解在初始时刻之后的变化$f(t)$.我们考虑
+\begin{equation}
+ f(t)=0,\quad (t<0)
+\end{equation}
+为了获得较为宽泛的变换条件,构造$g(t)$,
+\begin{equation}
+ g(t)=\me^{-\sigma t}f(t)
+\end{equation}\par
+这里的$\me^{-\sigma t}$为收敛因子,保证$g(t)$在$(-\infty,+\infty)$上绝对可积,于是可以对$g(t)$进行Fourier
+变换
+\begin{equation*}
+G(\omega)=\dfrac{1}{2\pi}\int_{-\infty}^{+\infty} g(t)\me^{-\omega t}\dif t=
+\dfrac{1}{2\pi}\int_{0}^{\infty}f(t)\me^{-(\sigma+\mi\omega)t}\dif t
+\end{equation*}
+将$\sigma+\mi\omega$记为$s$,并将$G(\omega)$改为$\bar{f}(s)/2\pi$,则
+\begin{equation}\label{eq:01_l_b}
+ \hat{f}(s)=\int_{0}^{\infty}f(t)\me^{-st}\dif t
+\end{equation}
+其中,~$\bar{f}(s)$称为$f(t)$的Laplace变换函数,式~\eqref{eq:01_l_b}~称为Laplace变换.\par
+$G(\omega)$的Fourier逆变换\upcite{Henda2002}为
+\begin{equation*}
+ g(t)=\int_{-\infty}^{+\infty}G(\omega)\me^{\mi\omega t}\dif\omega
+     =\dfrac{1}{2\pi}\int_{-\infty}^{+\infty}\bar{f}(\sigma+\mi\omega)\me^{\mi\omega t}\dif\omega
+\end{equation*}
+即
+\begin{equation}
+f(t)=\dfrac{1}{2\pi}\int_{-\infty}^{+\infty}\bar{f}(\sigma+\mi\omega)\me^{\sigma+\mi\omega}\dif\omega
+\end{equation}
+由于$\sigma+\mi\omega=s$,有$\dif\omega=\dfrac{1}{\mi}\dif p$,即
+\begin{equation}
+ f(t)=\dfrac{1}{2\pi\mi}\int_{\sigma-\mi\infty}^{\sigma+\mi\infty}\bar{f}(s)\me^{\mi s}\dif s
+\end{equation}
+$\bar{f}(s)$称为像函数,而$f(t)$称为原函数,它们之间的关系可以写为
+\begin{align}
+ \bar{f}(p)&=L[f(t)]  \\
+ f(t)&=L^{-1}[\bar{f}(s)]
+\end{align}\par
+下面来介绍Laplace变换的反演,我们推广约当定理\upcite{Ciotti2011},
+\begin{Theorem}[推广的约当定理]
+ 设$c_r$是以$p=0$为圆心,以$r$为半径的圆周在直线$\mathrm{Re}\ p=a(a>0)$左侧的圆弧.若当$|p|\to\infty$时,
+ $\bar{f}(p)$在$\dfrac{\pi}{2}-\delta\leq \mathrm{Arg}\ p\leq\dfrac{3}{2}\pi+\delta$中一致趋向于零,则
+ \begin{equation}\label{eq:01_l_yd}
+  \lim_{r\to\infty}\int_{C_R}\bar{f}(s)\me^{st}\dif s=0,\quad (t>0).
+ \end{equation}
+\end{Theorem}\par
+我们来证明上面的定理,如图~\ref{fig:01_l_f}~,有
+\begin{equation*}
+ \int_{C_R}\bar{f}(p)\me^{st}\dif p=\int_{\wideparen{AB}}\bar{f}(s)\me^{st}\dif t+
+				    \int_{\wideparen{BCD}}\bar{f}(s)\me^{st}\dif p 
+				    +\int_{\wideparen{DE}}\bar{f}(s)\me^{st}\dif p.
+\end{equation*}\par
+
+对于右端第二个积分,做代数变换令$s=\mi z$,由约当定理得
+\begin{equation*}
+ \lim_{R\to\infty}\int_{\wideparen{BCD}}\bar{f}(s)\me^{st}\dif p
+ = \lim_{R\to\infty}\mi\int_{C'_R}\bar{f}(\mi z)\me^{\mi t z}\dif z=0
+\end{equation*}\par
+现在来估计$\wideparen{AB}$上的积分值,任意给出$\varepsilon>0$,取$R$足够大,使得$|\bar{f}(s)|<\varepsilon$,
+则
+\begin{equation*}
+ \begin{aligned}
+ \left|\int_{\wideparen{AB}}\bar{f}(s)\me^{st}\dif p \right| &\leq \int_{\wideparen{AB}}
+      \left|\exp(tR(\cos\theta+\mi\sin\theta)\right|\left|\mathrm{R}\me^{\mi\theta}\mi\dif\theta\right|
+  \\    &=\int_{\wideparen{AB}}\left|\bar{f}(s)\right|\me^{tR\cos\theta}R\dif\theta <\varepsilon\me^{at}R\alpha
+\end{aligned}
+\end{equation*}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=2,very thick]
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+\tikzstyle arrowstyle=[scale=1]
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+\tikzstyle reverse directed=[postaction={decorate,decoration={markings,
+    mark=at position .65 with {\arrowreversed[arrowstyle]{stealth};}}}]
+ \begin{scope}[thin]
+  \draw[->] (-1.5,0) -- (1.5,0) node[right] {$\sigma$}  coordinate (x axis);
+  \draw[->] (0,-1.5) -- (0,1.5) node[above] {$\omega$} coordinate (y axis);
+  \draw[dashed] (0.6,-1.5) -- (0.6,1.5);
+  \draw (0,0) -- (60:1.2);
+  \draw (60:0.25) arc (60:90:0.25);
+ \end{scope}
+ \draw[directed] (60:1.2) arc (60:300:1.2);
+ \draw[directed] (300:1.2) -- (60:1.2);
+ \node[right] at (60:1.2) {$A$};
+ \node[right] at (300:1.2) {$E$};
+ \node[right] at (0.6,1.4) {$a+\mi\infty$};
+ \node[right] at (0.6,-1.4) {$a-\mi\infty$};
+ \node[above right] at (0,1.2) {$B$};
+ \node[below right] at (0,-1.2) {$D$};
+ \node[above left] at (-1.2,0) {$C_R$};
+ \node[below left] at (0,0) {$O$};
+ \node[below right] at (0.6,0) {$a$};
+ \node[below left] at (240:1.2) {$C$};
+ \node at (-1.2,1.2) {$s$平面};
+ \node at (75:0.35) {$\alpha$};
+ \node[left] at (60:0.8) {$R$};
+\end{tikzpicture}
+\caption{推广约当定理证明\label{fig:01_l_f}}
+\end{figure}
+其中,~$\alpha$为常数.在$\wideparen{AB}$上,
+~$R\cos\theta\leq0$.
+而当$R\to\infty$时,$\alpha\to0$,但由于$R\alpha\sim
+R\sin\alpha=a$,有
+\begin{equation*}
+\lim_{R\to\infty}\int_{\wideparen{AB}}\bar{f}(s)\me^{st}\dif s=0
+\end{equation*}
+同理
+\begin{equation*}
+\lim_{R\to\infty}\int_{\wideparen{DE}}\bar{f}(s)\me^{st}\dif s=0
+\end{equation*}
+证明了~\eqref{eq:01_l_yd}.\par
+现在考虑回路积分
+\begin{equation*}
+\oint_l\bar{f}(s)\me^{st}\dif s=\int_E^A\bar{f}(s)\me^{st}\dif p+\int_{C_R}\bar{f}(s)\me^{st}\dif p
+\end{equation*}
+于$R\to\infty$时,从而
+\begin{equation*}
+ \dfrac{1}{2\pi\mi}\int_{a-\mi\infty}^{a+\mi\infty}\bar{f}(s)\me^{st}\dif s=
+ \sum\mathrm{Res}[\bar{f}(s)\me^{st}]
+\end{equation*}
+即
+\begin{equation}
+ f(t)=\sum\mathrm{Res}[\bar{f}(s)\me^{st}]
+\end{equation}
+\section{数值计算方法}
+在这一节中我们介绍在研究中用到的数值计算方法.许多情况下问题是很难得到解析解的,得到数值解是解出这一问题的唯一途径.
+所以,快速地、高精度地求得数值解是非常重要而且必要的.下面,我们给出两个重要的求解常微分方程的数值计算方法.
+\subsection{欧拉折线法}
+欧拉折线法\upcite{2004}是求解常微分方程的初值问题的一种比较简单有效的方法,考虑一个一阶常微分方程的初值问题,可以写为
+\begin{equation}\label{eq:01_ola_or}
+ \begin{cases}
+  y'=f(x,y)	&	x\in[a,b]	\\
+  y(a)=y_0
+ \end{cases}
+\end{equation}
+将方程~\eqref{eq:01_ola_or}~中的导数项$y'$用差商逼近,在节点$x_n$处,可以写为
+\begin{equation}
+ y'(x_n)=f(x_n,y(x_n))
+\end{equation}
+由于
+\begin{equation*}
+ y'(x_n)\approx\dfrac{y(x_{n+1})-y(x_n)}{h}
+\end{equation*}
+故
+\begin{equation}
+ y(x_{n+1})=y_n+hf(x_n,y(x_n)).
+\end{equation}
+因为真解$y(x)$是未知的,所以将$y(x_i)$的近似值$y_i(i=n,n+1)$代入上式,得到欧拉公式
+\begin{equation}
+ y_{n+1}=y_n+hf(x_n,y_n).
+\end{equation}
+\subsection{龙格库塔公式}
+一般的显式龙格库塔公式\upcite{2006}的形式为
+\begin{equation}\label{eq:01_lg_1}
+\begin{cases}
+ y_{n+1}=y_n+\sum_{i=1}^r\omega_i k_i\\
+ k_1 = hf(x_n,y_n) \\
+ k_i=hf\left(x_n+\alpha_i h_i y_n + \sum_{j=1}^{i-1}\beta_{ij}k_j\right), & i=2,3,\ldots,r
+\end{cases}
+\end{equation}\par
+下面,我们来介绍二段龙格库塔公式的推导过程.已知龙格库塔公式的一般形式为方程~\eqref{eq:01_lg_1},得到二段龙格库塔公式
+的格式为
+\begin{equation}\label{eq:01_lg_er}
+ \begin{cases}
+  y_{n+1}=y_n+\omega_1 k_1+\omega_2 k_2 \\
+  k_1 = hf(x_n,y_n) \\
+  k_2 = hf(x_n,\alpha_2 h,y_n,\beta_{21}k_1)
+ \end{cases}
+\end{equation}
+由式~\eqref{eq:01_lg_er}~得
+\begin{equation}\label{eq:01_lg_n}
+ y_{n+1}=y_n+\omega_1hf(x_n,y_n)+\omega_2hf(x_n+\alpha_2 h,y_n+\beta_{21}hf(x_n,y_n))
+\end{equation}
+记$f(x_n,y_n)=f_n$,利用Taylor展开得
+\begin{equation}
+ f(x_n+\alpha_2 h+\beta_{21}hf_n)=f_n+a_2 h f_x + \beta_{21} hf_yf_n + O(h^2)
+\end{equation}
+其中,~$f_x$和$f_y$分别表示$\partial f/\partial x$和$\partial f/\partial y$在$(x_n,y_n)$处的值.\par
+假设$y_n=y(x_n)$,并将上式代入式~\eqref{eq:01_lg_n}~,化简得
+\begin{equation}\label{eq:01_lg_b}
+ \begin{split}
+  y_{n+1} &= y(x_n)+\omega_1 hf_n+\omega_2(hf_n+h^2(\alpha_2 f_x+\beta_{21}f_xf_n))+O(h^3) \\
+          &= y(x_n)+(\omega_1 f_n +\omega_2 f_n)h+\omega_2(\alpha_2 f_x+\beta_{21}f_yf_n)h^2+O(h^3) 
+ \end{split}
+\end{equation}
+将$y(x_{n+1})$在点$x=x_n$处进行Taylor展开
+\begin{equation}\label{eq:01_lg_tl}
+ \begin{split}
+  y(x_{n+1})&=y(x_n+h)=y(x_n)+y'(x_n)h+\dfrac{1}{2!}y''(x_n)h^2+O(h^3)\\
+	    &=y(x_n)+f_n h + \dfrac{1}{2}(f_x+f_xf_n)h^2+O(h^3)
+ \end{split}
+\end{equation}
+逐项比较式~\eqref{eq:01_lg_b}~和式~\eqref{eq:01_lg_tl}.为了使$y(x_{n+1})-y_{n+1}=O(h^3)$,则有
+\begin{equation}\label{eq:01_lg_fcz}
+ \begin{cases}
+  \omega_1+\omega_2 =1 \\[0.6em]
+  \omega_2\alpha_2=\dfrac{1}{2} \\[0.6em]
+  \omega_2\beta_{21}=\dfrac{1}{2} 
+ \end{cases}
+\end{equation}\par
+若令$\omega_1=0$,从~\eqref{eq:01_lg_fcz}~解得$\omega_2=1,\alpha_2=1/2,\beta_{21}=1/2$,则得到一个二阶二段的
+龙格库塔公式
+\begin{equation}
+ \begin{cases}
+  y_{n+1} =y_n+k_2 \\
+  k_1=hf(x_n,y_n) \\
+  k_2=hf\left(x_n+\dfrac{1}{2}h,y_n+\dfrac{1}{2}k_1\right).
+ \end{cases}
+\end{equation}
+该格式称为\emph{中点公式}.
+\subsection{矩阵的三角分解、追赶法}
+将一个$n$阶矩阵分解成结构简单的三角形矩阵的过程称为\emph{矩阵的三角分解}\upcite{Apel2007}.\par
+考虑矩阵$A$,其中的主元素$a_{ii}^{(i)}\not=0(i=1,2,\ldots,n)$,则令
+\begin{equation}
+L_i=\begin{bmatrix}
+   1 &  \\
+     & \ddots & \\
+     &        &  1  & \\
+     &	      & m_{i+1,i} & 1 & \\
+     &        & \vdots    &   &  \ddots & \\
+     &	      & m_{n,i}   &   &         &  1 
+  \end{bmatrix}
+  ,\quad i=1,2,\ldots,n-1.
+\end{equation}
+使得
+\begin{equation}\label{eq:01_zgf_mt}
+ L_{n-1}\cdots L_2 L_1 A=\begin{bmatrix}
+                         a_11^{(1)}  &  a_12^{(1)}  &  \cdots & a_{1,n-1}^{(1)}    & a_{1n}^{(1)} \\
+                         0           &  a_22^{(2)}  &  \cdots & a_{a,n-1}^{(1)}    & a_{2n}^{(2)} \\
+                         \vdots      &  \vdots      &  \ddots &  \vdots            &   \vdots     \\
+                         0           &    0         &  \cdots &  a_{n-1,n}^{(n-1)} & a_{n-1,n}^{(n-1)} \\
+                         0           &    0         &  \cdots &     0              &    a_{mn}^{(n)}                    
+                         \end{bmatrix}
+\end{equation}
+计算得
+\begin{equation}
+L_i^{-1}=\begin{bmatrix}
+   1 &  \\
+     & \ddots & \\
+     &        &  1  & \\
+     &	      & -m_{i+1,i} & 1 & \\
+     &        & \vdots    &   &  \ddots & \\
+     &	      & -m_{n,i}   &   &         &  1 
+  \end{bmatrix}
+  ,\quad i=1,2,\ldots,n-1.
+\end{equation}
+若记式~\eqref{eq:01_zgf_mt}~上三角形阵为$U$,则有
+\begin{equation*}
+A=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}U.
+\end{equation*}
+通过矩阵的乘法运算,有
+\begin{equation}
+ L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}=
+ \begin{bmatrix}
+ 1 	 &	   &	         & \\
+ -m_{21} &   1     &             & \\
+ \vdots  &  \ddots &  \ddots     & \\
+ -m_{n1} &  \cdots &  -m_{n,n-1} & 1 \\
+ \end{bmatrix}.
+\end{equation}
+记$L=L_1^{-1}L_2^{-1}\cdots L_{n-1}^{-1}$,则有$A=LU$.其中,~$L$为单位下三角矩阵,~$U$是上三角矩阵.这样的分解称为
+Doolittle分解.\par
+我们考虑一种特殊的情况,令$A=LU$,其中$L$为下三角矩阵,~$U$是单位上三角矩阵,称为Crout分解.\par
+下面我们来介绍\emph{追赶法}\upcite{陈国2002}.设有$n$阶方程组$Ax=d$,其中A为三对角矩阵,即
+\begin{equation}
+A=\begin{bmatrix}
+  b_1 & c_1    &        &         &    & \\
+  a_2 & b_2    & c_2    &         &    & \\
+      & \ddots & \ddots & \ddots  &    & \\
+      &        & a_{n-1} & b_{n-1} & c_{n-1} \\
+      &        &         &  a_n   &   b_n    \\
+  \end{bmatrix}
+  ,\quad
+  d=\begin{bmatrix}
+     d_1 \\
+     d_2 \\
+     \vdots \\
+     d_{n-1} \\
+     d_n
+    \end{bmatrix}
+\end{equation}
+对$A$作Court分解,有
+\begin{equation}
+L=\begin{bmatrix}
+  l_1 &   	&     	     &   &   \\
+  v_2 & l_2 	&	     &   &   \\
+      & \ddots  &  \ddots    &   &  \\
+      &         &   v_{n-1}  & l_{n-1} & \\
+      &         &            &   v_n  &  l_n 
+  \end{bmatrix}
+,\quad
+U=\begin{bmatrix}
+   1  &  u_1 \\
+      &   1  &   u_2  \\
+      &      &   \cdots  &  \cdots  \\
+      &      &           &    1    &   u_{n-1} \\
+      &      &           &         &       1   
+  \end{bmatrix}
+\end{equation}
+设$y=(y_1,y_2,\ldots,y_n)^{\mathrm{T}}$,得到追赶法的计算方法:
+\begin{asparaenum}
+\item 对$i=1,2,\ldots,n-1$做
+\begin{equation*}
+ \begin{cases}
+ l_i=b_i-a_iu_{i-1},\\
+ y_1=(d_i-y_{i-1}a_i)/l_i,\\
+ u_i=c_i/l_i
+ \end{cases}
+\end{equation*}
+在此处令$u_0=y_0=a_1=0$;
+\item $l_n=b_n-a_n u_{n-1},y_n=(d_n-y_{n-1}a_n)/l_m$;
+\item $x_n=y_n$;
+\item 对$i=1,2,\ldots,n-1$做
+\begin{equation*}
+ x_i=y_i-u_i x_{i+1};
+\end{equation*}
+\end{asparaenum}\par
+这一解法称为\emph{追赶法}.
+\section{研究问题的方法}
+研究科学问题的方法不外乎有两种,一种为理论分析研究,另一种为实验研究.在本研究中,我们采用理论研究的方法.通过对微生物运动过程的分析,建立起数学模型,然后测定数学模型
+的各项参数,得到微生物运动在数学上的表达.对数学模型进行求解和仿真,得到结果后再验证.\par
+在本研究中,我们对数学模型的求解和仿真是其重点,采用的方法主要是计算机仿真.下面,我们介绍一些在计算机仿真中所用到的工具\upcite{2004b}.
+\subsection{MATLAB矩阵实验室系统}
+MATLAB(矩阵实验室)是Matrix Laboratory的缩写,是一款由美国The MathWorks公司出品的商业数学软件.
+MATLAB是一种用于算法开发、数据可视化、数据分析以及数值计算的高级技术计算语言和交互式环境.
+除了矩阵运算、绘制函数/数据图像等常用功能外,
+MATLAB还可以用来创建用户界面及与调用其它语言(包括C/C++和FORTRAN)编写的程序.\par
+尽管MATLAB主要用于数值运算,但利用为数众多的附加工具箱(Toolbox)它也适合不同领域的应用,
+例如控制系统设计与分析、图像处理、信号处理与通讯、金融建模和分析等.\par
+另外还有一个配套软件包Simulink,提供了一个可视化开发环境,常用于系统模拟、动态/嵌入式系统开发等方面.
+\subsection{Python}
+Python是一种面向对象、直译式计算机程序设计语言,由Guido van Rossum于1989年底发明,第一个公开发行版发行于1991年.~Python语法简捷而清晰,具有丰富和强大的类库.它常被称为胶水语言,它能够很轻松的把用其他语言制作的各种模块(尤其是C/C++)轻松地联结在一起.常见的一种应用情形是,使用Python快速生成程序的原型(有时甚至是程序的最终界面),然后对其中有特别要求的部分,用更合适的语言改写.比如3D游戏中的图形渲染模块,速度要求非常高,就可以用C++重写.\par
+利用它的快速开发的特定,可以使用这种语言来进行程序的编制.
+\subsection{OpenGL}
+OpenGL\upcite{王玉珉2004}是个定义了一个跨编程语言、跨平台的编程接口的规格,它用于三维图象（二维的亦可）.OpenGL是个专业的图形程序接口,是一个功能强大,调用方便的底层图形库.\par
+OpenGL(Open Graphics Library)是个定义了一个跨编程语言、跨平台的程序接口(Application Programming Interface)的规格,它用于生成二维、三维图像.这个接口由近三百五十个不同的函数调用组成,用来从简单的图形比特绘制复杂的三维景象.OpenGL常用于CAD、虚拟实境、科学可视化程序和电子游戏开发.\par
+PyOpenGL是OpenGL在Python语言上的一个绑定,提供了Python访问OpenGL库的接口.我们可以利用这个绑定访问OppenGL,从而实现PDE的图像绘制.
+\subsection{SciPy}
+SciPy\upcite{袁光伟2013}是一个开源的Python算法库和数学工具包.\par
+SciPy包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算,与MATLAB功能类似.由于它是基于BSD协议发布的,可以使用在我们的仿真程序中.
+\section{本章小结}
+本章介绍了本课题研究的背景与意义,说明了对微生物运动规律研究对环境修复的重要作用.同时介绍了研究中所涉及的数学理论与方法,介绍
+了相应的数值计算方法,尤其重点地介绍了微分方程的数值求解方法.最后,介绍了本研究中利用到的计算机程序设计语言和软件包.

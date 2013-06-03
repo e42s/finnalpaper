@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for f in $(find . -name '*.png')
+do
+    echo "$f"
+    convert $f -colorspace CMYK ${f%.png}.jpg
+done
+

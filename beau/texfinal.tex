@@ -1,0 +1,160 @@
+\documentclass[adobefonts,fancyhdr]{ctexbook}
+\usepackage[
+     paperheight=23.7cm,
+     paperwidth=17cm,
+     top=2.5cm,
+     bottom=1.8cm,
+     left=21mm,
+     right=1.7cm]{geometry}
+%-------------------------------------------------------------------------
+% \usepackage[a4,cam,center]{crop}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}   % bibtex 自然序号
+
+% \usepackage{hypernat} 
+\pagestyle{fancy}
+
+\fancyhf{}
+% \fancyhead[EC,OC]{\zihao{-5}北京化工大学毕业设计（论文）}
+% \fancyfoot[C]{\thepage}
+\fancyhead[EL,OR]{\zihao{-5}\thepage}
+\fancyhead[EC]{\zihao{-5}\heiti \leftmark}
+\fancyhead[OC]{\zihao{-5}\heiti \rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+%-------------------------------------------------------------------------
+\CTEXsetup[format={\bfseries\zihao{-4}}]{section}
+\CTEXsetup[format+={\zihao{5}}]{subsection}
+% \CTEXsetup[format+={\zihao{-4}}]{subsection}
+% \CTEXsetup[format+={\zihao{-4}}]{subsubsection}
+% \CTEXsetup[format+={\zihao{-3}}]{chapter}
+\CTEXsetup[nameformat+={\zihao{-2}},]{chapter}
+\CTEXsetup[titleformat+={\zihao{-2}}]{chapter}
+% \CTEXoptions[contentsname={目录}]
+%-------------------------------------------------------------------------
+\usepackage{mdwlist}
+\usepackage{sistyle}
+\usepackage{graphicx}
+
+\usepackage{tabularx}
+% \usepackage{longtable}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cases}
+
+\usepackage{tikz}
+\usetikzlibrary{mindmap,backgrounds}
+% \usepackage{wrapfig}
+\usepackage{floatflt}
+\usepackage{yhmath}
+\usepackage[normalem]{ulem}
+\usepackage{paralist}
+\usepackage{floatrow}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage[labelsep=quad]{caption}
+%\usepackage{mathptmx}
+\floatsetup[table]{capposition=top}  % floatrow宏包将表格的标题置于表格下方,这条命令把这样的设置更改.
+%上标定义-----------------------------------------------------------------------------
+\makeatletter
+% \def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\dif}{\mathrm{d}}
+\makeatother
+\newtheorem{Definition}{定义}[section]
+\newtheorem{Theorem}[Definition]{定理}
+%------------------------------------------------------------------------------------
+\newenvironment{paralist}{\begin{quote}	\begin{description}\setlength{\itemsep}{0em}}
+			 {\end{description}\end{quote}\par}
+
+			 
+			 
+\newcommand*{\me}{\ensuremath{\mathrm{e}}}    %自然对数的底
+\newcommand*{\mi}{\ensuremath{\mathrm{i}}}        %虚数单位
+%\newcommand*{\dif}{\ensuremath{\mathrm{d}}}        %微分算子
+
+\usepackage{listings} 
+\usepackage{xcolor}
+\lstset{numbers=none,
+  numberstyle=\scriptsize,
+%   frame=none,
+  backgroundcolor=\color{lightgray},
+  flexiblecolumns=false,
+  language=Python,
+  basicstyle=\ttfamily,
+  breaklines=true,
+  extendedchars=true,
+  escapechar=\%,
+  texcl=true,
+  showstringspaces=true,
+  tabsize=4,
+  aboveskip=1em
+  %xleftmargin=2em,xrightmargin=2em, aboveskip=1em 
+  }
+\renewcommand{\lstlistingname}{代码}%
+%出版物自定义
+\newcounter{pubctr} %自定义新计数器
+\newenvironment{publist}{%%%%%定义新环境
+\begin{list}{[\arabic{pubctr}]} %%标签格式
+    {
+     \usecounter{pubctr}
+     \setlength{\leftmargin}{2.5em}     % 左边界 \leftmargin =\itemindent + \labelwidth + \labelsep
+     \setlength{\itemindent}{0em}     % 标号缩进量
+     \setlength{\labelsep}{1em}       % 标号和列表项之间的距离,默认0.5em
+     \setlength{\rightmargin}{0em}    % 右边界
+     \setlength{\topsep}{0ex}         % 列表到上下文的垂直距离
+     \setlength{\parsep}{0ex}         % 段落间距
+     \setlength{\itemsep}{0ex}        % 标签间距
+     \setlength{\listparindent}{0pt} % 段落缩进量
+    }}
+{\end{list}}
+
+
+\begin{document}
+% \setlength{\baselineskip}{18pt}
+\input{front.tex}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\input{color.tex}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\input{titlepage.tex}
+% \clearpage{\pagestyle{empty}\cleardoublepage}
+% \begin{titlepage}
+%   \input{cxsm.tex}
+%   \clearpage{\pagestyle{empty}\cleardoublepage}
+% %   \input{rws.tex}
+%   \end{titlepage}
+\clearpage{\pagestyle{empty}\cleardoublepage}
+\frontmatter
+  \pagenumbering{Roman}
+  \input{zy.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \CTEXsetup[format={}]{chapter}
+  \CTEXsetup[beforeskip={2cm},afterskip={3cm\hrule\vspace{1cm}}]{chapter}
+  \input{perface.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \tableofcontents
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+\mainmatter
+  \input{chap_01.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \input{chap_02.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \input{chap_03.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \input{chap_04.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \input{simulink.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+  \input{conclusion.tex}
+  \clearpage{\pagestyle{empty}\cleardoublepage}
+\backmatter
+  \nocite{*}
+  \clearpage
+  \addcontentsline{toc}{chapter}{参考文献}
+  \bibliographystyle{ref/GBT7714-2005NLang-HIT}
+  \bibliography{ref/ref}
+   \input{thanks.tex}
+\end{document}

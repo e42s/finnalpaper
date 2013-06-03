@@ -242,11 +242,11 @@ C(x,t)=
 是对流方程~\eqref{equ:duiliu}~的解.
 \end{frame}
 \section{数值解}
-\begin{frame}
-对于大部分的偏微分方程模型问题来说,解得它们的解析解是比较困难的.在大部分的情况下,我们不能也没有必要求得它们的解析解.
-因此,研究它们的数值解的求解方法是很有必要的.\par
-我们同样从简单的方程开始解,建立数值解的求解方法的基本体系,然后我们再研究复杂模型的求解方法.
-\end{frame}
+% \begin{frame}
+% 对于大部分的偏微分方程模型问题来说,解得它们的解析解是比较困难的.在大部分的情况下,我们不能也没有必要求得它们的解析解.
+% 因此,研究它们的数值解的求解方法是很有必要的.\par
+% 我们同样从简单的方程开始解,建立数值解的求解方法的基本体系,然后我们再研究复杂模型的求解方法.
+% \end{frame}
 \begin{frame}{常系数扩散方程}
  考虑常系数扩散方程
 \begin{equation}\label{eq:04_cxsks_o}
@@ -257,96 +257,69 @@ C(x,t)=
 \end{equation}
 \end{frame}
 \begin{frame}
-构成了初值问题,其向前差分格式为
+其向前差分格式为
 \begin{gather}
  \dfrac{u_{j}^{n+1}-u_j^n}{\tau}-a\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}=0,\label{eq:04_cxsks_xq}\\
  u_j^0 = g(x_j)
 \end{gather}
-其截断误差为$O(\tau+h^2)$.\par
-考虑它的向后差分格式
+向后差分格式
 \begin{equation}\label{eq:04_cxsks_xh}
  \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\dfrac{u_{j+1}^n-2u_j^n+u_{j+1}^n}{h^2}=0
 \end{equation}
-其截断误差也是$O(\tau+h^2)$.
-\end{frame}
-\begin{frame}{加权隐式格式}
- 将式~\eqref{eq:04_cxsks_xq}~改写为
-\begin{equation}\label{eq:04_cxsks_xq_gx}
- \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\dfrac{u_{j+1}^{n-1}-2u_{j}^{n-1}+u_{j-1}^{n-1}}{h^2}=0
-\end{equation}
-在式~\eqref{eq:04_cxsks_xq}~乘以$\theta$,用$(1-\theta)$乘以~\eqref{eq:04_cxsks_xq_gx},得到差分格式
+加权隐式格式
 \begin{equation}\label{eq:04_cxsks_js}
  \dfrac{u_j^n-u_j^{n-1}}{\tau}-a\left[\theta\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^n}{h^2}
  +(1-\theta)\dfrac{u_{j+1}^{n-1}-2u_j^{n-1}+u_{j-1}^{n-1}}{h^2}\right]=0
 \end{equation}
-其中,~$0\leq\theta\leq 1$,这种差分格式称为加权差分格式.
 \end{frame}
-\begin{frame}
- 我们求差分格式~\eqref{eq:04_cxsks_js}~的截断误差,设$u(x,t)$是方程~\eqref{eq:04_cxsks_o}~的
-充分光滑的解,在$(x_j,t_n)$处进行Taylor级数展开得
-\begin{equation*}
-E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{\partial t}\right]_j^n
-+O(\tau^2+h^2)
-\end{equation*}
-当$\theta\not=1/2$时,其截断误差为$O(\tau+h^2)$.当$\theta=1/2$时,其截断误差为$O(\tau^2+h^2)$.\par
-采用Fourier方法分析差分格式~\eqref{eq:04_cxsks_js}~的稳定性,求得其增长因子为
-\begin{equation}
- G(\tau,k)=\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}
-\end{equation}
-\end{frame}
-\begin{frame}
-要$|G(\tau,k)|\leq 1$,即
-\begin{equation*}
- -1\leq\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}\leq 1
-\end{equation*}
-考虑左边的不等式,得
-\begin{equation*}
-4a\lambda(1-2\theta)\sin^2\dfrac{kh}{2}\leq2
-\end{equation*}
-因为$\sin^2\dfrac{kh}{2}\leq 1$,要求化为
-\begin{equation}
- 2a\lambda(1-2\theta)\leq 1.
-\end{equation}
-这是~\eqref{eq:04_cxsks_js}~的稳定性要求.
-\end{frame}
-\begin{frame}{初边值问题的处理}
-\begin{equation}
-\begin{cases}
-\dfrac{\partial u}{\partial t}-a\dfrac{\partial^2 u}{\partial x^2}=0,\quad 0<x<1,t>0 \\
-u(x,0)=g(x),\quad 0\leq x\leq 1 \\
-u(0,t)=\phi(t),\quad t\geq 0 \\
-u(1,t)=\psi(t),\quad t\geq 0 
-\end{cases}
-\end{equation}
-其计算区域为$x=[0,1]$,因此我们分开区间$0=x_0<x_1<\cdots<x_J=1$,第一边值问题的边界处理可取
-\begin{equation}
-\begin{cases}
-u_0^n=\phi(t_n),\quad n\geq0 \\
-u_J^n=\psi(t_n),\quad n\geq0
-\end{cases}
-\end{equation}\par
-\end{frame}
-\begin{frame}
-在初始线我们利用初始条件的离散
-\begin{equation}
- u_j^0=g(x_j)=g_j
-\end{equation}
-得到边界点上的差分格式.\par
-\end{frame}
+% \begin{frame}
+%  我们求差分格式~\eqref{eq:04_cxsks_js}~的截断误差,设$u(x,t)$是方程~\eqref{eq:04_cxsks_o}~的
+% 充分光滑的解,在$(x_j,t_n)$处进行Taylor级数展开得
+% \begin{equation*}
+% E=a\left(\dfrac{1}{2}-\theta\right)\tau\left[\dfrac{\partial^3 u}{\partial x^2}{\partial t}\right]_j^n
+% +O(\tau^2+h^2)
+% \end{equation*}
+% 当$\theta\not=1/2$时,其截断误差为$O(\tau+h^2)$.当$\theta=1/2$时,其截断误差为$O(\tau^2+h^2)$.\par
+% 采用Fourier方法分析差分格式~\eqref{eq:04_cxsks_js}~的稳定性,求得其增长因子为
+% \begin{equation}
+%  G(\tau,k)=\dfrac{1-4(1-\theta)a\lambda\sin^2\dfrac{kh}{2}}{1+4\theta a\lambda\sin^2\dfrac{kh}{2}}
+% \end{equation}
+% 其稳定性条件为
+% \begin{equation}
+%  2a\lambda(1-2\theta)\leq 1.
+% \end{equation}
+% 这是~\eqref{eq:04_cxsks_js}~的稳定性要求.
+% \end{frame}
+% \begin{frame}{初边值问题的处理}
+% \begin{equation}
+% \begin{cases}
+% \dfrac{\partial u}{\partial t}-a\dfrac{\partial^2 u}{\partial x^2}=0,\quad 0<x<1,t>0 \\
+% u(x,0)=g(x),\quad 0\leq x\leq 1 \\
+% u(0,t)=\phi(t),\quad t\geq 0 \\
+% u(1,t)=\psi(t),\quad t\geq 0 
+% \end{cases}
+% \end{equation}
+% 其计算区域为$x=[0,1]$,因此我们分开区间$0=x_0<x_1<\cdots<x_J=1$,第一边值问题的边界处理可取
+% \begin{equation}
+% \begin{cases}
+% u_0^n=\phi(t_n),\quad n\geq0 \\
+% u_J^n=\psi(t_n),\quad n\geq0
+% \end{cases}
+% \end{equation}\par
+% \end{frame}
+% \begin{frame}
+% 在初始线我们利用初始条件的离散
+% \begin{equation}
+%  u_j^0=g(x_j)=g_j
+% \end{equation}
+% 得到边界点上的差分格式.\par
+% \end{frame}
 \begin{frame}{常系数对流方程}
  考虑简单的双曲型对流方程
 \begin{equation}\label{eq:04_dl_o}
  \dfrac{\partial u}{\partial t}+a\dfrac{\partial u}{\partial x}=0
 \end{equation}
 我们来建立双曲型偏微分方程的求解差分格式.\par
-\end{frame}
-\begin{frame}
- 首先讨论方程~\eqref{eq:04_dl_o}~的特征线,考虑$u$在直线$x-at=c$上的方向的方向导数,有
-\begin{equation}
-\left.\dfrac{\dif u}{\dif t}\right|_l = \dfrac{\partial u}{\partial t}+\dfrac{\partial u}{\partial t}
-\dfrac{\partial x}{\partial t} = \dfrac{\partial u}{\partial t}+a\dfrac{\partial u}{\partial x}
-\end{equation}
-其中,由方程~\eqref{eq:04_dl_o}~知$u$沿$l$的值不变,这条直线即为方程的\emph{特征线}.\par
 \end{frame}
 \begin{frame}
  我们利用特征线方法来构造差分格式.
@@ -407,73 +380,48 @@ u_m^{n+1}=u_m^n-\dfrac{ar}{2}(u_{m+1}^n-u_{m-1}^n)+\dfrac{a^2 r^2}{2}
 \end{equation}
 构成了\emph{对流扩散方程}的初值问题，在我们的模型中，它是一个对流占优的扩散问题。\par
 \end{frame}
-\begin{frame}
-将方程~\eqref{equ:cf_dkfangc}~差分，有
-\begin{equation}\label{equ:cf_dkfangct}
-	\dfrac{u^{n+1}_j-u^{n}_{j}}{\tau}+a\dfrac{u^{n}_{j+1}-u^n_{j-1}}{2h}=\nu\dfrac{u^n_{j+1}-2u^n_j+u^n_{j-1}}{h^2}
-\end{equation}其截断误差为$O(\tau+h^2)$,分析差分格式~\eqref{equ:cf_dkfangct}~的稳定性,
-差分格式稳定的充分条件为
-\begin{equation}
-(2\lambda^2-8\mu^2)\dfrac{1-\cos kh}{2}+4\mu-2\lambda^2 \geq 0
-\end{equation}
-注意到$\dfrac{1}{2}(1-\cos kh)\in[0,1]$，上式应满足
-\begin{equation}
-(2\lambda^2-8\mu^2)+4\mu-2\lambda^2 \geq 0,\quad 4\mu-2\lambda^2 \geq 0
-\end{equation}
-由此得到差分格式~\eqref{equ:cf_dkfangct}~的稳定性限制为
-\begin{equation}
-\tau \leq \dfrac{2\nu}{a^2}
-\end{equation}
-\begin{equation}
-\nu\dfrac{\tau}{h^2}=\dfrac{1}{2}
-\end{equation}\par
-\end{frame}
 \begin{frame}{迎风差分格式}
-根据中心显式差分格式的稳定性要求可知,当$\nu/a^2$比较小时,时间步长是比较小的.我们在一阶空间偏导数的离散中采用单边差商,
-令$a>0$,得到方程~\eqref{equ:cf_dkfangc}~的迎风差分格式为
+迎风差分格式为
 \begin{equation}\label{eq:cf_dkfangc_yf}
  \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_j^n-u_{j-1}^n}{h}=\mu\dfrac{u_{j+1}^n-2u_j^n+u_{j-1}^{n}}{h^2}
 \end{equation}
-容易看出,其截断误差为$O(\tau+h)$.
+其截断误差为$O(\tau+h)$.
 差分格式的稳定性条件为
 \begin{equation}
  \left(\mu+\dfrac{ah}{2}\right)\dfrac{\tau}{h^2}\leq\dfrac{1}{2}
 \end{equation}\par
-\end{frame}
-\begin{frame}{隐式迎风差分格式}
-考虑到隐性差分格式带来的诸多好处(如无条件稳定),给出迎风差分格式的隐式格式为
 \begin{equation}\label{eq:04_yfcf_ys}
  \dfrac{u_j^{n+1}-u_j^n}{\tau}+a\dfrac{u_{j+1}^{n+1}-u_{j-1}^{n+1}}{2h}=\nu\sigma\dfrac{u_{j+1}^{n+1}
  -2u_j^{n+1}+u_{j-1}^{n+1}}{h^2}
 \end{equation}
-此格式是无条件稳定的.\par
+为隐式迎风差分格式，可以利用追赶法求解。
 \end{frame}
-\begin{frame}
- 现在考虑隐式差分格式的解法,将式~\eqref{eq:04_yfcf_ys}~化为
-\begin{equation*}
--\left(\dfrac{a}{2h}+\dfrac{\nu\sigma}{h^2}\right)u_{j-1}^{n+1}+\left(\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}\right)u_{j+1}^{n+1}
-+\left(\dfrac{1}{2}+\dfrac{2\sigma}{h^2}\right)u_j^{n+1}=\dfrac{1}{2}u_j^n
-\end{equation*}
-令
-\begin{equation*}
-\begin{aligned}
-A_j &= -\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2} & \qquad & B_j = \dfrac{1}{2}+\dfrac{2\sigma}{h^2} \\[0.6em]
-C_j &= \dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}  &  \qquad & D_j = \dfrac{1}{2}   \\
-\end{aligned}
-\end{equation*}
-\end{frame}
-\begin{frame}
- 则方程可以写为
-\begin{equation}\label{eq:04_yfcf_ys_b}
- A_j u_{j-1}^{n+1} + B_j u_j^{n+1} + C_j u_{j+1}^{n+1} = D_j
-\end{equation}
-其中,$j=1,2,\ldots,J-1$.我们令
-\begin{equation}\label{eq:04_yfcf_ys_bj}
- u_0^{n+1}=0,\quad u_J^{n+1}=0
-\end{equation}
-为边界条件,方程~\eqref{eq:04_yfcf_ys_b}~和方程~\eqref{eq:04_yfcf_ys_bj}~构成系数为三对角矩阵的方程组,我们可以利用
-追赶法求解这一方程组.
-\end{frame}
+% \begin{frame}
+%  现在考虑隐式差分格式的解法,将式~\eqref{eq:04_yfcf_ys}~化为
+% % \begin{equation*}
+% -\left(\dfrac{a}{2h}+\dfrac{\nu\sigma}{h^2}\right)u_{j-1}^{n+1}+\left(\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}\right)u_{j+1}^{n+1}
+% +\left(\dfrac{1}{2}+\dfrac{2\sigma}{h^2}\right)u_j^{n+1}=\dfrac{1}{2}u_j^n
+% \end{equation*}
+% % 令
+% \begin{equation*}
+% \begin{aligned}
+% A_j &= -\dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2} & \qquad & B_j = \dfrac{1}{2}+\dfrac{2\sigma}{h^2} \\[0.6em]
+% C_j &= \dfrac{a}{2h}-\dfrac{\nu\sigma}{h^2}  &  \qquad & D_j = \dfrac{1}{2}   \\
+% \end{aligned}
+% \end{equation*}
+% \end{frame}
+% \begin{frame}
+%  则方程可以写为
+% \begin{equation}\label{eq:04_yfcf_ys_b}
+%  A_j u_{j-1}^{n+1} + B_j u_j^{n+1} + C_j u_{j+1}^{n+1} = D_j
+% \end{equation}
+% 其中,$j=1,2,\ldots,J-1$.我们令
+% \begin{equation}\label{eq:04_yfcf_ys_bj}
+%  u_0^{n+1}=0,\quad u_J^{n+1}=0
+% \end{equation}
+% 为边界条件,方程~\eqref{eq:04_yfcf_ys_b}~和方程~\eqref{eq:04_yfcf_ys_bj}~构成系数为三对角矩阵的方程组,我们可以利用
+% 追赶法求解这一方程组.
+% \end{frame}
 \begin{frame}{空间上的对流扩散反应方程}
  现在我们开始讨论在空间上建立和求解数学模型,根据运动控制方程,我们得到物质在空间上的分布为
 % \begin{equation}
@@ -683,11 +631,18 @@ R_d\dfrac{\partial C}{\partial t}+v_i\dfrac{\partial C}{\partial x_i}=\dfrac{\pa
 %\caption{巨大芽孢杆菌的仿真结果}\label{pic:1}
 \end{figure}
 \end{frame}
-\section{结论}
-\begin{frame}{结论}
-在本课题中我们以此讨论了扩散方程、对流方程、对流扩散方程和对流扩散反应方程的解析解和数值解的求解方法.
-同时利用算子分裂法将三维空间模型分解为简单的微分方程,求得其数值解.这项工作给我们了解微生物在土壤中
-的运移规律打下了基础.\par
+\section{结论与展望}
+\begin{frame}{总结}
+在本研究中，我们讨论了
+\begin{fsitemize}
+\item 扩散方程、对流方程、非齐次方程的精确解方法;
+\item 中心差分格式、迎风差分格式等差分格式及相应的隐格式的形式、稳定性、误差;
+\item 差分格式的求解方法;
+\item 算子分裂法求解复杂偏微分方程的方法.
+\end{fsitemize}
+% 在本课题中我们以此讨论了扩散方程、对流方程、对流扩散方程和对流扩散反应方程的解析解和数值解的求解方法.
+% 同时利用算子分裂法将三维空间模型分解为简单的微分方程,求得其数值解.这项工作给我们了解微生物在土壤中
+% 的运移规律打下了基础.\par
 \end{frame}
 \begin{frame}{展望}
 利用控制理论中关于分布参数系统的相关理论,找到合适的被控变量和操纵变量,根据数学模型推得合适的控制规律

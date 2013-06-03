@@ -1,0 +1,739 @@
+% This file was created with JabRef 2.9b2.
+% Encoding: UTF8
+
+@ARTICLE{Apel2007,
+  author = {Thomas Apel and Serge Nicaise},
+  title = {A posteriori error estimations of a SUPG method for anisotropic diffusion–convection–reaction
+	problems},
+  journal = {Comptes Rendus Mathematique },
+  year = {2007},
+  volume = {345},
+  pages = {657 - 662},
+  number = {11},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {This Note presents an a posteriori residual error estimator for diffusion–convection–reaction
+	problems approximated by a \{SUPG\} scheme on isotropic or anisotropic
+	meshes in R d , d = 2 or 3. This estimator is based on the jump of
+	the flux and the interior residual of the approximated solution.
+	It is constructed to work on anisotropic meshes which account for
+	the eventual anisotropic behavior of the solution. The equivalence
+	between the energy norm of the error and the estimator is proved.
+	To cite this article: T. Apel, S. Nicaise, C. R. Acad. Sci. Paris,
+	Ser. I 345 (2007).},
+  doi = {10.1016/j.crma.2007.10.022},
+  issn = {1631-073X},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Ciotti2011,
+  author = {L. Ciotti and M.A. Budroni and M. Masia and N. Marchettini and M.
+	Rustici},
+  title = {Competition between transport phenomena in a reaction–diffusion–convection
+	system},
+  journal = {Chemical Physics Letters },
+  year = {2011},
+  volume = {512},
+  pages = {290 - 296},
+  number = {4–6},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {A reaction–diffusion–convection (RDC) model is introduced as a convenient
+	framework for studying instability scenarios by which chemical oscillators
+	are driven to chaos. Distinct bifurcations in the oscillating patterns
+	are found as diffusion coefficients or Grashof numbers are varied.
+	Singularly there emerge peculiar bifurcation paths in which quasi-periodicity
+	transmutes into a period-doubling sequence to chemical chaos. The
+	opposite influence exhibited by the two parameters in these transitions
+	clearly indicate that diffusion and natural convection are in ‘competition’
+	for the stability of ordered dynamics: the former has a stabilizing
+	effect while the latter exerts a destabilizing role. },
+  doi = {10.1016/j.cplett.2011.07.052},
+  issn = {0009-2614},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Henda2002,
+  author = {R. Henda and K. Alhumaizi},
+  title = {Spatiotemporal patterns in a two-dimensional reaction-diffusion-convection
+	system: Effect of transport parameters },
+  journal = {Mathematical and Computer Modelling },
+  year = {2002},
+  volume = {36},
+  pages = {1361 - 1373},
+  number = {11–13},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {We report on spatiotemporal patterns emerging in a system consisting
+	of an autocatalytic reaction in a continuous flow tubular reactor.
+	The autocatalyst undergoes a mutation and the resulting mutant is
+	assumed to compete with the original autocatalyst. The system is
+	modeled by a set of three partial differential equations with eight
+	design parameters. We examine and discuss the effect of transport
+	parameters, reactor inlet boundary condition, and reactor aspect
+	ratio on the dynamics of the system. The results show a variety of
+	regimes going from steady propagation of a reaction front to the
+	development of chemical waves in the form of pulsating, more or less
+	regularly, reaction front. },
+  doi = {10.1016/S0895-7177(02)00280-7},
+  issn = {0895-7177},
+  keywords = {Reaction-diffusion-convection},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Hernandez-Martinez2013,
+  author = {Eliseo Hernandez-Martinez and Hector Puebla and Francisco Valdes-Parada
+	and Jose Alvarez-Ramirez},
+  title = {Nonstandard finite difference schemes based on Green's function formulations
+	for reaction–diffusion–convection systems },
+  journal = {Chemical Engineering Science },
+  year = {2013},
+  volume = {94},
+  pages = {245 - 255},
+  number = {0},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {Nonstandard finite differences (NSFD) schemes can improve the accuracy
+	and reduce computational costs of traditional finite-difference schemes.
+	However, the development of these schemes is based on analytical
+	solutions and ad hoc rules. In this paper, we derive a \{NSFD\} scheme
+	based on Green's function formulations for reaction–diffusion–convection
+	systems. The formulation of the \{NSFD\} scheme is divided into three
+	stages. In the first one, the domain of the original boundary value
+	problem is decomposed into N subdomains. In the second stage, for
+	each subdomain, integral formulations based on Green's functions
+	are derived for each subdomain. Finally, the resulting integrals
+	are approximated by means of quadrature rules. The proposed \{NSFD\}
+	scheme based on Green's function formulation incorporates, in a natural
+	way, the effects of boundary nodes in the discretization approximation
+	(i.e., avoiding the use of heuristic rules), it also exhibits global
+	approximation orders of O ( h 2 ) and leads to smaller approximation
+	errors with respect to standard \{FD\} schemes. Numerical simulations
+	on a catalytic particle model and a benchmark tubular reactor model
+	are used for illustrating the accuracy and performance of the proposed
+	\{NSFD\} scheme as compared to standard finite differences schemes.
+	},
+  doi = {10.1016/j.ces.2013.03.001},
+  issn = {0009-2509},
+  keywords = {Nonstandard finite differences},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Nan1996,
+  author = {H.S. Nan and M.M. Dias and J.C.B. Lopes and A.E. Rodrigues},
+  title = {Diffusion, convection and reaction in catalyst particles: analogy
+	between slab and cylinder geometries },
+  journal = {The Chemical Engineering Journal and the Biochemical Engineering
+	Journal },
+  year = {1996},
+  volume = {61},
+  pages = {113 - 122},
+  number = {2},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {Forced intraparticle convection in a finite cylinder porous catalyst
+	particle is studied. An analytical solution for steady state, simultaneous
+	diffusion, convection and reaction is obtained and the effect of
+	intraparticle convection on the catalyst performance, i.e. its effectiveness
+	factor, is analysed. The relationship for the augmented intraparticle
+	effective diffusivity and an equivalence ratio between the slab and
+	the finite cylinder characteristic dimensions, valid in the whole
+	range of Thiele modulus, are obtained. },
+  doi = {10.1016/0923-0467(96)80019-4},
+  issn = {0923-0467},
+  keywords = {Diffusion},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Ng2012,
+  author = {James Ng and Stevan Dubljevic},
+  title = {Optimal boundary control of a diffusion–convection-reaction PDE model
+	with time-dependent spatial domain: Czochralski crystal growth process},
+  journal = {Chemical Engineering Science},
+  year = {2012},
+  volume = {67},
+  pages = {111 - 119},
+  number = {1},
+  note = {Dynamics, Control and Optimization of Energy Systems},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {In this paper the optimal boundary control problem for diffusion–convection-reaction
+	processes modeled by partial differential equations (PDEs) defined
+	on time-dependent spatial domains is considered. The model of the
+	transport system with time-varying domain arises in the context of
+	high energy consuming Czochralski crystal growth process in which
+	the crystal temperature regulation must successfully account for
+	the change in the crystal spatial domain due to the crystal growth
+	process realized by the pulling crystal out of melt. Starting from
+	the first principles of continuum mechanics and transport theorem
+	the time-varying parabolic \{PDE\} describing temperature evolution
+	is derived and represented as a nonautonomous parabolic evolution
+	system on an appropriately defined function space which is exactly
+	transformed in the infinite-dimensional boundary control problem
+	for which a boundary linear quadratic regulator is proposed. Properties
+	of the solution of the time-varying parabolic \{PDEs\} given by the
+	two-parameter evolutionary system are utilized in the synthesis of
+	the optimal boundary regulator, and the control law is applied to
+	the model given by a two-dimensional partial differential equation
+	in the cylindrical coordinates representing the Czochralski crystal
+	growth process with one-dimensional growth direction. Finally, numerical
+	results demonstrate optimal stabilization of the two-dimensional
+	temperature distribution in the crystal. },
+  doi = {10.1016/j.ces.2011.06.050},
+  issn = {0009-2509},
+  keywords = {Diffusion–convection-reaction processes},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@ARTICLE{Wang2011,
+  author = {Yuan-Ming Wang},
+  title = {A modified accelerated monotone iterative method for finite difference
+	reaction–diffusion–convection equations },
+  journal = {Journal of Computational and Applied Mathematics },
+  year = {2011},
+  volume = {235},
+  pages = {3646 - 3660},
+  number = {12},
+  __markedentry = {[luqiuwen:6]},
+  abstract = {This paper is concerned with monotone algorithms for the finite difference
+	solutions of a class of nonlinear reaction–diffusion–convection equations
+	with nonlinear boundary conditions. A modified accelerated monotone
+	iterative method is presented to solve the finite difference systems
+	for both the time-dependent problem and its corresponding steady-state
+	problem. This method leads to a simple and yet efficient linear iterative
+	algorithm. It yields two sequences of iterations that converge monotonically
+	from above and below, respectively, to a unique solution of the system.
+	The monotone property of the iterations gives concurrently improving
+	upper and lower bounds for the solution. It is shown that the rate
+	of convergence for the sum of the two sequences is quadratic. Under
+	an additional requirement, quadratic convergence is attained for
+	one of these two sequences. In contrast with the existing accelerated
+	monotone iterative methods, our new method avoids computing local
+	maxima in the construction of these sequences. An application using
+	a model problem gives numerical results that illustrate the effectiveness
+	of the proposed method. },
+  doi = {10.1016/j.cam.2011.02.025},
+  issn = {0377-0427},
+  keywords = {Monotone iterative method},
+  owner = {luqiuwen},
+  timestamp = {2013.05.29}
+}
+
+@PHDTHESIS{刘乃伟2009,
+  author = {刘乃伟},
+  title = {反应对流扩散方程的高维整体解及其应用},
+  school = {兰州大学},
+  year = {2009},
+  address = {兰州},
+  abstract = {
+	
+	
+	
+	非线性抛物型方程理论是现代数学的重要组成部分.本论文主要研究高维空间非线性抛物型方程的整体解(entire solution),这里所谓的整体解是指一类对所有时间t∈R都有定义的解.从动力系统的角度来看,一般意义上抛物型方程初值问题的解仅仅是半轨道,利用半轨道(t≥0)不能判定解的全部信息,而整体解(t∈R)实际上就是方程的一个全流,利用整体解可以确切的把握任何时刻有关方程解的信息.这使得研究非线性抛物型方程的整体解变得必要且有重要意义.本文主要研究行波解的交错作用,具体就是利用方程的单调行波解来构造新型整体解.我们知道,关于整体解的已有结果都是在一维齐次空间(或固定方向)下对单稳和双稳型非线性方程建立的.考虑到来自物理、化学、生态等领域的许多课题都是高维空间问题,因此本文试图建立高维空间反应扩散方程整体解理论.特别,我们需要指出的是,当空间变量为一维情形(或固定方向)时,相应的波方程是一个二阶常微分方程,而当空间变量为高维时,如果考虑非线性抛物型方程的曲面行波解,则相应的波方程为椭圆型方程.在椭圆型方程理论框架下利用曲面行波解研究高维空间变量方程的整体解变得比较困难而且有意义.
+	
+	
+	
+	
+	首先,我们研究了无穷柱体上单稳型和点火型反应对流扩散方程的整体解.对具有单稳型非线性项的方程,通过考虑两列沿柱体相向传播的行波解,并通过利用比较原理和上下解方法,建立了整体解的存在性.对于点火型非线性方程,利用方程唯一存在的沿柱体方向相向传播的行波解对,证明了方程整体解的存在性.并且证明了以上所有得到的整体解当时间t→—∞时表现为两列沿柱体方向相向传播的行波解,而且随着时间的推移,两列行波解在有限时间内相互碰撞并最终消失.
+	
+	
+	
+	
+	其次,我们考虑了无穷柱体上双稳型反应对流扩散方程整体解的存在性.双稳型反应对流扩散方程一般具有三个平衡点,其中两个为线性化稳定的,一个为线性化不稳定的.其三个平衡点中的任意两个之间有行波解连接.通过考虑连接不同平衡点的不同行波解,建立了三种不同类型的整体解,并给出了它们的渐近行为.进一步,通过考虑一个定义在无穷柱体上的拟不变流形,我们证明了当双稳型非线性方程任意的非平凡整体解满足一定条件时,其整体解是唯一的,并证明了所得到的唯一整体解是Liapunov稳定的.
+	
+	
+	
+	
+	最后,我们考虑了具有周期性介质单稳型空间各向异性方程的整体解.利用方程连接常数平衡态和周期函数形式平衡态的脉动行波解,证明了方程存在表现为两列相向传播的脉动行波解的脉动整体解,并且给出了在生物种群模型和化学反应模型中的应用.},
+  keywords = {整体解;反应对流扩散方程;行波解;空间各向异性;周期介质;单(双)稳型非线性项;点火型非线性项},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@BOOK{SHUXUEWULI,
+  title = {数学物理方法(第四版)},
+  publisher = {高等教育出版社},
+  year = {2010},
+  author = {刘法 and 缪国庆 and 梁昆淼},
+  address = {北京},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@BOOK{同济大学.计算数学教研室2009,
+  title = {现代数值计算},
+  publisher = {人民邮电出版社},
+  year = {2009},
+  author = {同济大学计算数学教研室},
+  address = {北京},
+  isbn = {9787115214003},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{吴梦喜2009,
+  author = {吴梦喜},
+  title = {饱和——非饱和土中渗流Richards方程有限元算法},
+  journal = {水利学报},
+  year = {2009},
+  pages = {1274--1279},
+  number = {10},
+  __markedentry = {[luqiuwen:]},
+  abstract = {发展了一种求解理查森方程的一般有限元算法。该方法采用积分法处理孔隙水压力对时间的导数项,采用集中质量技术处理有限元方程中质量矩阵来保证数值稳定。所采用的质量守恒迭代方法不须改变迭代方式,采用一般的Picard迭代方法。该方法能求解入渗、地下水位瞬变和排水等范围广泛的饱和-非饱和渗流问题。对3个已公开发表具有详细试验数据的算例的模拟表明,该方法对入渗锋、稳定渗流地下水位和非稳定渗流溢出面都模拟很好。Picard迭代方法效率很高,且无数值振荡发生。},
+  keywords = {理查森方程;非饱和渗流;有限单元法;入渗;瞬变水位},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{安新2009,
+  author = {安新 and 钱若军 and 于猛},
+  title = {基于特征线理论的算子分裂算法综述},
+  journal = {佳木斯大学学报(自然科学版)},
+  year = {2009},
+  pages = {490--492},
+  number = {04},
+  language = {chinese},
+  abstract = {文中论述了基于特征线理论的算子分裂算法的研究进展,从偏微分方程特征线理论及算子分裂算法出发,构建了其理论框架.对于CBS算法的基本方程,文中给出了推导过程,并编制了相应的三维计算程序,通过数值算例进一步验证了这一算法的有效性和准确性.},
+  keywords = {特征线;算子分裂;有限元法},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{张培文2002,
+  author = {张培文},
+  title = {降雨条件下饱和—非饱和土径流渗流耦合数值模拟研究},
+  school = {大连理工大学},
+  year = {2002},
+  address = {大连},
+  abstract = {滑坡的稳定性由内在因素和外在因素所决定,内在因素是边坡本身所固有的,外界因素主要包括地震、降雨、开挖等.进年来,由于降雨导致的边坡的失稳越来越频繁.因此对于降雨条件下坡面水运动的研究无论在理论上还是在工程应用上,都具有十分重要的意义.阐述了非饱和土中水流动的基本规律和土水特征曲线.由于土水特征曲线具有滞后的特点,提出了根据初始含水量来确定数值模拟初始时步非饱和土的渗透系数.编制了基于Richards控制方程的饱和-非饱和渗流有限元分析程序,一些算例证明了该程序的正确性.改进了传统流量的计算方法,使得计算精度明显提高.分析了降雨条件下地表水入渗的过程,提出了降雨条件下非饱和渗流的二维数学模型及边界条件.一些计算算例说明降雨条件下非饱和渗流的基本规律.编制了基于Saint-venant控制方程的坡面径流的有限元分析程序,利用解析解和试验数据证明了程序的正确性.根据非饱和土上水的转化机理,编制了降雨条件下地表水入渗和产流耦合的计算程序,并根据土-水特征曲线,提出了判断地表饱和的条件,根据此条件,加速了收敛速度,节省了CPU的时间.给出了降雨条件下水的入渗的实际过程.利用降雨条件下地表水入渗和产流耦合的计算程序,分析了降雨强度、初始含水量、饱和渗透系数、孔隙率以及饱和渗透系数比对非饱和土入渗和产流过程的影响,进一步证明了传统理论的正确性.利用降雨条件下地表水入渗和产流耦合的计算程序,模拟了小降雨强度和大雨强度对地下水位变化的影响,并用数值计算给出了地表排水沟对地下水变化的影响不是很显著的结论.},
+  keywords = {非饱和土 入渗 产流 降雨 Richards模型 Saint-Venant模型},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@ARTICLE{张志辉，薛禹群，谢春红，吴吉春1994,
+  author = {张志辉，薛禹群，谢春红，吴吉春},
+  title = {算子分裂法在对流占优三维对流弥散问题中的应用},
+  journal = {计算物理},
+  year = {1994},
+  pages = {38--44},
+  number = {01},
+  language = {chinese},
+  abstract = {本文提出了一种求解对流占优的三维对流－弥散问题的新方法。首先用算子分裂技术把对流－弥散方程在时间上分裂为三步，然后根据各步中方程的特点，分别用常数变易法、匹配伪弥散系数法和交替方向隐式差分法求解。对流－弥散方程中还考虑了吸附作用、衰变作用和化学反应项。最后把该法应用于一个理想的污染物三维运移问题的求解。通过与解析解及其它数值解对比，表明本法的模拟结果是令人满意的。},
+  keywords = {对流占优;三维对流－弥散问题;匹配伪弥散系数法;算子分裂技术},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@BOOK{2006,
+  title = {科学计算中的偏微分方程有限差分法},
+  publisher = {高等教育出版社},
+  year = {2006},
+  author = {张文生},
+  series = {中国科学院研究生院教材},
+  address = {北京},
+  isbn = {9787040192292},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{张瑞玲2007,
+  author = {张瑞玲},
+  title = {甲基叔丁基醚的生物降解机理与微生物在地下水中的迁移},
+  school = {天津大学},
+  year = {2007},
+  address = {天津},
+  abstract = {甲基叔丁基醚(Methyl ter-Butyl Ether，MTBE)作为一种汽油添加剂，广泛应用到汽油当中，其对土壤地下水环境造成的危害已引起人们的高度重视。生物修复是一种MTBE有效去除的环境治理技术。本论文在获得MTBE高效降解菌株的基础上，系统深入地研究了MTBE的降解特性、降解机理及生物修复中微生物的迁移规律。
+	本文从MTBE污染场地中筛选获得优势降解菌株A-3，经鉴定该菌株为Chryseobacterium sp.细菌，该菌株的获得为MTBE的降解提供了新的菌源。在此基础上，研究了该菌株降解MTBE的最佳环境条件如温度、pH值、接种量、溶解氧以及底物浓度等；通过比较Chryseobacterium
+	spA-3在葡萄糖和MTBE为碳源培养基中的生长情况，分析了菌株在MTBE中生长缓慢的原因；并进行了MTBE生物降解的矿化率实验来解释该分离菌对MTBE的降解能力。
+	为了更深入了解MTBE的降解机理，采用SPM-GC-MS方法对生物降解MTBE的中间产物进行了检测。研究了中间产物TBA对MTBE降解的影响，分析了生物降解MTBE与TBA过程中关键酶系的异同。粗蛋白SDS-PAGE分析结果表明MTBE与TBA诱导出均有7条相同蛋白带的细胞蛋白图谱。降解质粒的提取与消除实验证实MTBE的降解基因存在于染色体上而非质粒上。
+	为了进一步提高MTBE的生物降解能力，研究了环状糊精对MTBE生物降解的促进作用。通过非烷烃物质对MTBE共代谢的研究得出，适当浓度的丙三醇能够有效共代谢MTBE。这些都为MTBE的去除提供了新的方案。另外还考察了该菌的环境适应性以及环境中BTEX对MTBE降解的影响。
+	为了使生物修复更好地应用于现场，研究了微生物在土壤地下水环境中的迁移规律及影响因素。对微生物的吸附过程提出了吸附双过程模型，对模型进行了实验验证并考察了流速与微生物浓度对吸附过程的影响。在此基础上，以污染物作为限制底物，综合考虑了降解菌的吸附、解析、生长、衰亡以及底物的迁移转化，建立了迁移规律理论模型。应用此模型描述了微生物在生物修复中的迁移过程，比较了微生物与污染物的迁移特点。},
+  keywords = {甲基叔丁基醚 生物降解 降解机理 汽油添加剂 生物修复 环境治理 地下水污染},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@BOOK{2004b,
+  title = {数学物理方程的MATLAB解法与可视化/MATLAB编程应用},
+  publisher = {清华大学出版社},
+  year = {2004},
+  author = {彭芳麟},
+  address = {北京},
+  isbn = {9787302098843},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{曹志先1991,
+  author = {曹志先 and 魏良琰},
+  title = {用算子分裂法解Burgers方程},
+  journal = {武汉水利电力学院学报},
+  year = {1991},
+  pages = {193--201},
+  number = {02},
+  language = {chinese},
+  abstract = {本文给出了一种求解非线性对流扩散方程:Burgers方程的算子分裂法,用显式差分格式处理扩散算子,用特征线法处理纯对流算子。并分析了算法的稳定性条件。然后,对一、二维Burgers方程进行数值解,所得结果与分析解或已有数值解吻合,表明了算法的有效性。},
+  keywords = {对流;扩散;稳定性;分步法},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{曹志先1991a,
+  author = {曹志先 and 魏良琰},
+  title = {对流扩散反应型方程的一种稳定的算子分裂格式},
+  journal = {水动力学研究与进展(A辑)},
+  year = {1991},
+  pages = {60--68},
+  number = {01},
+  language = {chinese},
+  abstract = {首先提出了一种求解三维对流扩散反应型方程的算子分裂格式:DF-AD-REA分裂格式。处理纯对流算子时,采用特征线法,而扩散算子和反应项则采用显式差分格式。证明了:当Δt≤Min时,整个分裂算法是稳定的。这里,v是扩散系数的最大值,Nd是空间维数,h和U分别为i方向的空间步长和速度分量,Δt是时间步长。然后,选择一些线性和非线性的对流扩散反应型方程,用数值解与相应分析解的比较来检验算法的收敛性与精度,结果表明算法是有效的。由于算法简单、稳定,且对一、二维空间问题均适用,故可用于粘性流体流动、传质过程(如大气或河流等环境中污染物的传输)以及传热过程(如热、核电厂中的冷却水问题)等众多实际问题的计算中。},
+  keywords = {对流扩散;稳定性;算子分裂;非线性},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{朱海涛2009,
+  author = {朱海涛 and 欧阳洁},
+  title = {对流扩散反应方程的变分多尺度解法},
+  journal = {工程数学学报},
+  year = {2009},
+  pages = {997--1004},
+  number = {06},
+  language = {chinese},
+  abstract = {根据变分多尺度的思想求解了对流项和反应项占优的对流-扩散-反应方程。在变分多尺度思想的理论框架内,推导了附加于Galerkin变分弱形式的稳定化结构和具体的稳定化系数;阐述了这种稳定化结构和经典的SUPG稳定化结构之间的关系;数值算例表明,该稳定化系数可以适应均匀和非均匀的计算网格。通过网格的恰当加密,变分多尺度方法消除了算例中的数值伪振荡。},
+  keywords = {对流-扩散-反应方程;变分多尺度方法;SUPG;稳定化方法},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{李明春2004,
+  author = {李明春 and 徐曾和 and 翟玉春 and 田彦文},
+  title = {固定床一维对流扩散非线性反应方程的数值解析},
+  journal = {过程工程学报},
+  year = {2004},
+  pages = {490--495},
+  number = {06},
+  language = {chinese},
+  abstract = {考虑内扩散和化学反应联合控制时的情况,将单一固体颗粒的综合速率方程推广到微元体,导出了化学反应项的更适用形式,建立了一维对流-扩散-非线性反应数学模型,求出了该模型的数值解,并以铁矿石的间接还原为例,讨论了不同条件下的反应转化进程.
+	结果表明,颗粒大小、对流是影响反应转化的重要因素,其影响程度可用Thiele数和传质Pe*数衡量. 由于Thiele数y与反应器长度的平方成正比,而传质Pe*与反应器长度成正比,因此反应器长度也是影响其自身性能的重要因素.
+	当比值y/Pe*增大时,对流作用下降,气体转化率增高.},
+  keywords = {微元体动力学;非线性化学反应;对流;扩散;多孔介质},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{李正元1984,
+  author = {李正元},
+  title = {扩散反应方程的控制方程及其应用},
+  journal = {北京大学学报(自然科学版)},
+  year = {1984},
+  pages = {13--26},
+  number = {04},
+  language = {chinese},
+  abstract = {<正> 在不少文章(如[1],[2],[3])中,对扩散反应方程的定解问题建立了比较原理,通过比较函数得到解的存在性、解的估计及t→+∞时解的极限性质。
+	本文考察如下扩散反应方程的定解问题},
+  keywords = {扩散反应方程:7814;定解问题:4342;控制方程:2832;存在正解:1916;比较原理:1425;极限性质:1227;引理:1143;下解:1136;零测集:1061;李氏:1057},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{李焕荣2007,
+  author = {李焕荣},
+  title = {土壤水动力系统的数值解法的分析与应用研究},
+  school = {首都师范大学},
+  year = {2007},
+  address = {北京},
+  abstract = {土壤水动力学是以土壤中水分的能态为基础研究非饱和土壤中水分、溶质和热量运移问题的学科．本文就对土壤水动力系统中两个重要的研究对象-土壤含水量和溶质浓度进行了讨论分析．由于水分流动问题和溶质运移问题都可归结为偏微分方程系统，本文就分别用广义差分法、混合元法及适当投影分解法(POD)对这些方程进行了数值研究，讨论了他们的变分问题的广义解的存在性、数值解(包括半离散和全离散数值逼近格式)的存在性及其误差估计，并给出了这些方程的数值解的例子．因此，本文的工作既有理论研究，又有实际计算的方法和例子．在理论方面，为土壤水动力系统提供了可靠的数值求解的数学基础；在实际计算的方法和例子方面，也为土壤水动力系统提供了合理有效的数值求解的方法，研究土壤水动力学的工程技术人员和专家可以借鉴这些计算方法，并应用于更加复杂的实际土壤水动力系统的预测计算中．
+	本文共分为六章来阐述．第一章是本文的绪论；第二章至第四章分别利用广义差分法、混合元方法和守恒混合元-迎风广义差分法对一维的非饱和水流的含水量、溶质浓度及水流与溶质耦合运移问题进行了数值模拟，并给出了数值算例．第五章利用基于重心对偶剖分的有限体积元法建立了二维非饱和土壤水流动的数值模拟，并给出了数值算例；数值模拟结果表明，利用有限体积元格式来求解二维水分运动问题是可靠的，且该格式具有稳定性和可实用性，可以用来数值模拟更加复杂的二维水分运动的物理过程．第六章基于适当投影分解技术(POD)能提供具有适当逼近度而自由度又较少的低维模型的优点，用适当投影分解方法去处理了二维溶质运移方程的有限元格式，并给出了数值模拟；从模拟的过程可以看出，POD技术大大降低了求解问题的自由度，简化了计算，节省了CPU和内存．
+	本文的工作是我们近三年的主要研究工作．用广义差分法、混合元方法和守恒混合元-迎风广义差分法数值模拟一维土壤水动力系统是我们提出的一种新的尝试．而用有限体积元来数值模拟二维水分运动问题和用POD技术去处理二维溶质运移问题，就我们所知，尚未见到国内外有类似的或并行的文章的报道，因而可以说是具有一定的独创性．},
+  keywords = {土壤水分流动 广义差分法 有限元法 混合元法 POD技术},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@PHDTHESIS{杨德军2009,
+  author = {杨德军},
+  title = {基于SPAC系统的土壤水动力学模型研究},
+  school = {浙江大学建筑工程学院},
+  year = {2009},
+  address = {杭州},
+  abstract = {开展对土壤-作物-大气系统(简称SPAC系统)土壤水动力学和水肥优化使用决策支持系统的研究，可以提高水资源尤其是农业用水效率，降低农作物成本，提高农药和化肥的利用率，有效地缓解过量农药和化肥进入地表或地下水体导致的环境污染问题。本文采取了理论分析、数值模拟和算例验证相结合的方法对以下几个问题进行研究和探讨。
+	1.通过引入生长折减系数等理论，完善了过量施肥导致土壤中过量氮存在、产生的负渗透压抑制作物生长的理论，进一步发展了EU-ROTATE_N模型。实例验证表明：新研发的模块相对较合理，能够对多种作物在施肥条件下作物干重和作物上部(除须根)的含氮量进行一定的模拟，并能有效地反映过量施肥导致土壤负渗透压的影响效果。
+	2.通过引入相关的根系生长动力学模型、根长密度分布函数以及蒸发和蒸腾计算模型等理论，与二维有限元程序SWMS_2D相耦合，发展了模拟SPAC系统的土壤水动力学有限元模型。实例验证表明：降雨对土层含水率分布的影响随着深度的增加而减小；蒸腾量和蒸发量的模拟结果较为可靠；根长密度分布具有一定的阶段性。
+	3.通过改进上下边界条件，发展了裸地条件下土壤水动力学IRE模型(即积分型的Richards方程解法)。降雨数值试验结果表明：新模型的模拟结果介于FEM和Green
+	Ampt模型模拟结果之间，更符合实际情况；蒸发试验结果表明：模拟结果与实验数据基本吻合，克服了FEM模型不稳定等不足；现场试验结果表明：累积入渗量、累积蒸发量和下边界累积排水量的模拟结果与FEM模拟结果基本吻合；土壤含水率分布接近FEM的计算结果和实验数据，其主要差别出现在顶层6cm的土体内。
+	4.由于外界条件的复杂性和土体性质的多样性，土体在一定外界条件下的响应问题难以得到定量化描述。通过对欧洲5种典型土体进行100天的蒸发数值试验，在含水率分布和蒸发总量等数据上进行对比，探讨了欧洲5种典型土体的响应规律，为实际应用提供了一定的参考价值。
+	5.针对EU-ROTATE_N模型中以CASCADE方法为核心的水模块参数难确定，预测结果不够准确等问题，通过引入裸地条件下改进的IRE模型，与现有的EU-ROTATE_N模型进行耦合，发展了有植被条件下土壤水动力学IRE模型，进一步发展了EU-ROTATE_N决策支持系统，实例验证表明：不同深度处土壤含水率随时间的变化与试验数据基本吻合，根长及根长密度模拟结果与实验值吻合，蒸腾量和蒸发量的模拟结果较为可靠，土壤中含氮量模拟结果较吻合。},
+  keywords = {土壤水动力学 水资源 农业用水 化肥使用},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@ARTICLE{王新艳2001,
+  author = {王新艳 and 王新伟 and 张勇 and 田晓正},
+  title = {反应对流扩散方程的差分方法},
+  journal = {郑州工业高等专科学校学报},
+  year = {2001},
+  pages = {18--23},
+  number = {03},
+  language = {chinese},
+  abstract = {本文研究了反应－对流－扩散方程的一种差分格式及其迭代解法在等距网格情况下的局部截断误差、稳定性条件及非线性方程组的适定性,基于拟线性化的思想,建立了一个迭代解法并证明了其收敛性。},
+  keywords = {差分;等距网格;截断误差;稳定;收敛},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{王栋2009,
+  author = {王栋},
+  title = {算子分裂法及其在解抛物型方程中的应用},
+  school = {吉林大学},
+  year = {2009},
+  address = {长春},
+  abstract = {
+	
+	
+	
+	算子分裂法的基本思想是算子的分裂,它将一个复杂的算子分裂成一些单一的算子,从而把一个复杂的数学物理问题分裂成一些简单的问题来求解.
+	
+	
+	
+	
+	本文介绍了算子分裂法的基本理论,包括算法、稳定性和收敛性.介绍了求解求解抛物方程的AGE,ASE-I,ASC-N等并行差分格式.
+	
+	
+	
+	
+	本文对AGE算法在靠近边界处进行了修改,得到两种截断误差较小的并行差分格式;给出了一种新的ASE-I格式.并从理论上证明以上格式的绝对稳定性,分析了收敛性,给出了数值例子,数值结果与理论分析相符合.},
+  keywords = {抛物型差分方程;算子分裂法;并行差分格式;并行计算},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{王玉珉2004,
+  author = {王玉珉 and 王印杰},
+  title = {非饱和土壤Richards方程入渗求解探讨},
+  journal = {水文地质工程地质},
+  year = {2004},
+  volume = {31},
+  pages = {6},
+  number = {1},
+  language = {chinese},
+  abstract = {根据理查兹(Richards)方程求解非饱和土壤垂直一维入渗率历时规律,因缺乏土壤水分特性函数K(θ)、D(θ)的一般有效公式,而采用与实际相差甚远的定值或线性函数假设,使成果隐含过多经验成分或需要反复迭代计算.笔者在文献[1]中提出的非饱和土壤水分特性函数的一般有效基础公式,用分离变量法直接求解Richards方程,用土壤水动力学方法分别导出了含有渗前土湿因子的新入渗公式.它摆脱了同类入渗公式对水分函数过于简单的概化假设和经验成分.为放弃迄今水文学产流计算中惯用的下渗容量曲线"截首留尾"的经验做法,以直接使用含有渗前土湿因子的下渗公式提供了理论依据,从而将有利于产流计算方法的改进和计算精度的提高.},
+  keywords = {非饱和土壤 Richards方程 土壤水分 入渗},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@ARTICLE{田富强2007,
+  author = {田富强 and 胡和平},
+  title = {基于常微分方程求解器的Richards方程数值模型},
+  journal = {清华大学学报（自然科学版）},
+  year = {2007},
+  volume = {47},
+  pages = {4},
+  number = {6},
+  language = {chinese},
+  abstract = {为了协调Richards方程数值模型在精度、稳定性和计算效率之间的矛盾,对时间步长进行优化控制,发展了一种变步长的计算模型.采用van
+	Genuchten模型,将描述土壤水分运动的Richards方程(为偏微分方程)在空间上半离散后得到常微分方程组,借助于该求解器求解.针对以含水率θ为变量的Richards方程进行了试验,常微分方程组求解采用CVODE求解器,并对土壤水分特征曲线和水量平衡进行了检验.结果表明,该模型具有较高的计算精度、求解效率和稳定性.},
+  keywords = {土壤水分运动 Richards方程 常微分方程组 CVODE求解器 van Genuchten模型},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@ARTICLE{田振夫1995,
+  author = {田振夫},
+  title = {一维对流扩散方程的四阶精度有限差分法},
+  journal = {宁夏大学学报(自然科学版)},
+  year = {1995},
+  pages = {30--35},
+  number = {01},
+  language = {chinese},
+  abstract = {文章基于Ｈｅｒｍｉｔｅ插值多项式的构造思路，推导出了一维含源扩散方程、扩散反应方程和无源项对流扩散方程的高精度紧致差分格式，并在导出三类特殊方程差分格式的基础上，建立了统一的含源项一维对流扩散方程的差分格式。本文方法是精确的，稳定的，且易应用到其它问题中。数值算例证明了所建立差分格式的有效性。},
+  keywords = {对流扩散方程;差分格式;迎风效应},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{范世平2013,
+  author = {范世平 and 杨建明 and 冯民权 and 郑邦民},
+  title = {三维对流扩散方程27点加权自动迎风格式蒙特卡洛解及其应用},
+  journal = {武汉大学学报(工学版)},
+  year = {2013},
+  pages = {32--36},
+  number = {01},
+  language = {chinese},
+  abstract = {为了研究三维对流扩散方程在高雷诺数情况下的合理解法,采用在高雷诺数情况下保持自动迎风与斜迎风特征的27点加权自动迎风格式对方程进行离散,并采用蒙特卡洛法求解;通过与一般差分法进行比较得知,该计算方法具有优势且结果较为可靠,后将其应用于高雷诺数下河流侧向和底部排污数值模拟.结果表明,27点加权自动迎风蒙特卡洛方法易于解决三维对流扩散问题,且可以接受高雷诺数的考验.该方法可以广泛应用于流体三维流动及任意曲线坐标网格.},
+  keywords = {对流扩散;蒙特卡洛法;自动迎风},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@BOOK{2004a,
+  title = {高等应用数学问题的MATLAB求解},
+  publisher = {清华大学出版社},
+  year = {2004},
+  author = {薛定宇},
+  address = {北京},
+  isbn = {9787302093114},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{袁光伟2013,
+  author = {袁光伟 and 岳晶岩 and 盛志强 and 沈隆钧},
+  title = {非线性抛物型方程计算方法},
+  journal = {中国科学:数学},
+  year = {2013},
+  pages = {235--248},
+  number = {03},
+  language = {chinese},
+  abstract = {本文简要回顾非线性抛物型方程差分方法若干研究工作,包括周毓麟先生在该研究方向取得的部分研究成果,并对近年来相关的部分研究进展进行综述,展望拟开展的研究工作.},
+  keywords = {抛物型方程;差分方法;非线性},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{贾宏恩2012,
+  author = {贾宏恩 and 李开泰 and 钟贺},
+  title = {算子分裂法求解对流扩散反应方程},
+  journal = {工程数学学报},
+  year = {2012},
+  pages = {89--95},
+  number = {01},
+  language = {chinese},
+  abstract = {采用一阶精度的Lie分裂求解对流–扩散–反应方程,在每个时间步内,对于要求解的两个方程,关于时间分别采用特征线和欧拉方法进行离散,空间采用P2元进行离散.这两个方程,一个沿着特征线为常微分方程,另一个为典型的抛物型方程.同时导出了适合分裂方程的中间边界条件,分析了其分裂误差.数值结果表明,所提方法能够有效的求解对流–扩散–反应方程.},
+  keywords = {算子分裂;特征线方法;中间边界条件;分裂误差},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{郑宁2006,
+  author = {郑宁},
+  title = {煤自燃过程中对流扩散反应方程组的数值模拟},
+  school = {西安科技大学},
+  year = {2006},
+  address = {西安},
+  abstract = {本文结合陕西省自然科学基金项目“采空区煤炭自燃耦合场的有限元求解及动态模拟”，主要结合我校XK—Ⅲ型煤自然发火实验台的实际情况，在能量与质量守衡的原则下，通过传质传热过程分析，建立了煤在低温氧化放热过程中温度与氧浓度变化的控制方程，并引入了相应的初始条件与边界条件。可以看出温度场与氧浓度场控制方程格式相同，二者通过氧化放热反应项发生耦合，组成一个二维的对流-扩散-反应偏微分方程组。针对建立的对流-扩散-反应耦合偏微分方程组，分别用交替隐式预估校验方法和特征有限差分格式进行离散和编程求解，对义马和兖州煤的自然发火过程进行了数值模拟。模拟计算得到的义马煤和兖州煤在与实验条件相同的条件下取得结果相符。从而印证了本论文中所建模型与模拟方法的正确性，可以在预测煤的自然发火过程中发挥作用。
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	本文的创新点有：
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	1、首次在耦合场中动态模拟煤自燃过程中渗流场、温度场及氧浓度场的变化规律。这比其它单场模拟更科学，更接近现场情况，取得更合理的结果。
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	2、本文构造了适合二维半线性耦合对流扩散反应方程组的预估校正格式。
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	3、本文首次把秦新强提出的新型特征有限差分法用于解决二维耦合半线性对流扩散方程组的求解。},
+  keywords = {对流扩散反应方程;特征差分;预估校正;煤炭自燃;预测预报},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@BOOK{2004,
+  title = {偏微分方程数值解法},
+  publisher = {清华大学出版社},
+  year = {2004},
+  author = {陆金甫 and 关治},
+  address = {北京},
+  isbn = {9787302075295},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{陈国2002,
+  author = {陈国 and 马远乐 and 朱书堂},
+  title = {无相间物质传递化学驱浓度方程算子分裂隐式解法},
+  journal = {清华大学学报(自然科学版)},
+  year = {2002},
+  pages = {1032--1034},
+  number = {08},
+  language = {chinese},
+  abstract = {为了改进化学驱数学模型 U TCHEM显式求解浓度方程计算速度慢、计算结果精度低的缺点 ,研究了隐式求解组份浓度方程的方法。根据具有无相间物质传递关系的化学驱油藏流体渗流过程满足的相行为
+	,推导出了化学驱数学模型 UTCHEM物质守恒方程的等价形式 :饱和度方程和组份浓度方程。利用算子分裂技术将组份浓度方程分裂为扩散方程和对流方程
+	,隐式交替求解对流方程和扩散方程得到组份浓度方程的隐式解。扩散方程采用隐式局部一维格式差分离散 ,利用追赶法求解 ;对流方程选用了隐式迎风格式差分
+	,并且结合油藏模拟问题的流场是有势场的特点 ,实现了对流方程隐式差分显式求解。所建立的隐式求解浓度方程的方法提高了计算精度 ,可以加大计算时间步长
+	,加快计算速度。},
+  keywords = {化学驱采油;浓度方程;算子分裂;隐式解法},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@ARTICLE{韦春霞2003,
+  author = {韦春霞 and 张永祥 and 陈景秋},
+  title = {溃坝洪水的二维算子分裂——特征线模拟},
+  journal = {重庆大学学报(自然科学版)},
+  year = {2003},
+  pages = {18--21},
+  number = {09},
+  language = {chinese},
+  abstract = {根据特征线法的基本原理,推导了一维浅水运动的特征线方程和相容性方程,构造了用于溃坝计算的显格式,模拟了一维矩形断面低坝全溃的洪水波演进过程,并基于算子分裂建立了相应的二维问题特征线数值格式,对瞬间部分溃坝时二维洪水波的演进过程进行了数值模拟。得到的数值模拟结果表明,这种方法精度高,有较强的溃坝涌波捕捉能力,展示了溃坝波的运动特性,为溃坝引起的灾害预测和分析及防灾减灾等工程问题提供一种有效的数值模拟方法。},
+  keywords = {溃坝;算子分裂;特征线;涌波捕捉},
+  owner = {luqiuwen},
+  timestamp = {2013.05.28}
+}
+
+@PHDTHESIS{高琼2011,
+  author = {高琼},
+  title = {大肠杆菌在土壤中的迁移特性实验研究},
+  school = {天津大学},
+  year = {2011},
+  address = {天津},
+  language = {Chinese},
+  owner = {distance},
+  timestamp = {2012.11.02}
+}
+
+@comment{jabref-meta: selector_review:}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+
