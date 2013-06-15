@@ -1,0 +1,214 @@
+\begin{thebibliography}{38}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[张瑞玲(2007)]{张瑞玲2007}
+张瑞玲.
+\newblock
+  甲基叔丁基醚的生物降解机理与微生物在地下水中的迁移[D].
+\newblock 天津: 天津大学, 2007.
+
+\bibitem[高琼(2011)]{高琼2011}
+高琼.
+\newblock 大肠杆菌在土壤中的迁移特性实验研究[D].
+\newblock 天津: 天津大学, 2011.
+
+\bibitem[刘法~等(2010)]{SHUXUEWULI}
+刘法, 缪国庆, 梁昆淼.
+\newblock 数学物理方法(第四版)[M].
+\newblock 北京: 高等教育出版社, 2010.
+
+\bibitem[同济大学计算数学教研室(2009)]{同济大学.计算数学教研室2009}
+同济大学计算数学教研室.
+\newblock 现代数值计算[M].
+\newblock 北京: 人民邮电出版社, 2009.
+
+\bibitem[Hernandez-Martinez et al.(2013)]{Hernandez-Martinez2013}
+Hernandez-Martinez E, Puebla H, Valdes-Parada F, et al.
+\newblock Nonstandard finite difference schemes based on Green's function
+  formulations for reaction–diffusion–convection systems[J].
+\newblock Chemical Engineering Science, 2013, 94(0):245 -- 255.
+
+\bibitem[Henda and Alhumaizi(2002)]{Henda2002}
+Henda R, Alhumaizi K.
+\newblock Spatiotemporal patterns in a two-dimensional
+  reaction-diffusion-convection system: Effect of transport parameters[J].
+\newblock Mathematical and Computer Modelling, 2002, 36(11–13):1361 -- 1373.
+
+\bibitem[Ciotti et al.(2011)]{Ciotti2011}
+Ciotti L, Budroni M, Masia M, et al.
+\newblock Competition between transport phenomena in a
+  reaction–diffusion–convection system[J].
+\newblock Chemical Physics Letters, 2011, 512(4–6):290 -- 296.
+
+\bibitem[陆金甫 and 关治(2004)]{2004}
+陆金甫, 关治.
+\newblock 偏微分方程数值解法[M].
+\newblock 北京: 清华大学出版社, 2004.
+
+\bibitem[张文生(2006)]{2006}
+张文生.
+\newblock 科学计算中的偏微分方程有限差分法[M].
+\newblock 中国科学院研究生院教材.
+\newblock 北京: 高等教育出版社, 2006.
+
+\bibitem[Apel and Nicaise(2007)]{Apel2007}
+Apel T, Nicaise S.
+\newblock A posteriori error estimations of a SUPG method for anisotropic
+  diffusion–convection–reaction problems[J].
+\newblock Comptes Rendus Mathematique, 2007, 345(11):657 -- 662.
+
+\bibitem[陈国~等(2002)]{陈国2002}
+陈国, 马远乐, 朱书堂.
+\newblock
+  无相间物质传递化学驱浓度方程算子分裂隐式解法[J].
+\newblock 清华大学学报(自然科学版), 2002(08):1032--1034.
+
+\bibitem[彭芳麟(2004)]{2004b}
+彭芳麟.
+\newblock 数学物理方程的MATLAB解法与可视化/MATLAB编程应用[M].
+\newblock 北京: 清华大学出版社, 2004.
+
+\bibitem[王玉珉和王印杰(2004)]{王玉珉2004}
+王玉珉, 王印杰.
+\newblock 非饱和土壤Richards方程入渗求解探讨[J].
+\newblock 水文地质工程地质, 2004, 31(1):6.
+
+\bibitem[袁光伟~等(2013)]{袁光伟2013}
+袁光伟, 岳晶岩, 盛志强,等.
+\newblock 非线性抛物型方程计算方法[J].
+\newblock 中国科学:数学, 2013(03):235--248.
+
+\bibitem[王新艳~等(2001)]{王新艳2001}
+王新艳, 王新伟, 张勇,等.
+\newblock 反应对流扩散方程的差分方法[J].
+\newblock 郑州工业高等专科学校学报, 2001(03):18--23.
+
+\bibitem[刘乃伟(2009)]{刘乃伟2009}
+刘乃伟.
+\newblock 反应对流扩散方程的高维整体解及其应用[D].
+\newblock 兰州: 兰州大学, 2009.
+
+\bibitem[张培文(2002)]{张培文2002}
+张培文.
+\newblock
+  降雨条件下饱和—非饱和土径流渗流耦合数值模拟研究[D].
+\newblock 大连: 大连理工大学, 2002.
+
+\bibitem[韦春霞~等(2003)]{韦春霞2003}
+韦春霞, 张永祥, 陈景秋.
+\newblock 溃坝洪水的二维算子分裂——特征线模拟[J].
+\newblock 重庆大学学报(自然科学版), 2003(09):18--21.
+
+\bibitem[范世平~等(2013)]{范世平2013}
+范世平, 杨建明, 冯民权,等.
+\newblock
+  三维对流扩散方程27点加权自动迎风格式蒙特卡洛解及其应用[J].
+\newblock 武汉大学学报(工学版), 2013(01):32--36.
+
+\bibitem[Wang(2011)]{Wang2011}
+Wang Y~M.
+\newblock A modified accelerated monotone iterative method for finite
+  difference reaction–diffusion–convection equations[J].
+\newblock Journal of Computational and Applied Mathematics, 2011, 235(12):3646
+  -- 3660.
+
+\bibitem[Nan et al.(1996)]{Nan1996}
+Nan H, Dias M, Lopes J, et al.
+\newblock Diffusion, convection and reaction in catalyst particles: analogy
+  between slab and cylinder geometries[J].
+\newblock The Chemical Engineering Journal and the Biochemical Engineering
+  Journal, 1996, 61(2):113 -- 122.
+
+\bibitem[Ng and Dubljevic(2012)]{Ng2012}
+Ng J, Dubljevic S.
+\newblock Optimal boundary control of a diffusion–convection-reaction PDE
+  model with time-dependent spatial domain: Czochralski crystal growth
+  process[J].
+\newblock Chemical Engineering Science, 2012, 67(1):111 -- 119.
+
+\bibitem[吴梦喜(2009)]{吴梦喜2009}
+吴梦喜.
+\newblock 饱和——非饱和土中渗流Richards方程有限元算法[J].
+\newblock 水利学报, 2009(10):1274--1279.
+
+\bibitem[安新~等(2009)]{安新2009}
+安新, 钱若军, 于猛.
+\newblock 基于特征线理论的算子分裂算法综述[J].
+\newblock 佳木斯大学学报(自然科学版), 2009(04):490--492.
+
+\bibitem[张志辉，薛禹群，谢春红，吴吉春(1994)]{张志辉，薛禹群，谢春红，吴吉春1994}
+张志辉，薛禹群，谢春红，吴吉春.
+\newblock
+  算子分裂法在对流占优三维对流弥散问题中的应用[J].
+\newblock 计算物理, 1994(01):38--44.
+
+\bibitem[曹志先和魏良琰(1991){\natexlab{a}}]{曹志先1991}
+曹志先, 魏良琰.
+\newblock 用算子分裂法解Burgers方程[J].
+\newblock 武汉水利电力学院学报, 1991(02):193--201.
+
+\bibitem[曹志先和魏良琰(1991){\natexlab{b}}]{曹志先1991a}
+曹志先, 魏良琰.
+\newblock 对流扩散反应型方程的一种稳定的算子分裂格式[J].
+\newblock 水动力学研究与进展(A辑), 1991(01):60--68.
+
+\bibitem[朱海涛和欧阳洁(2009)]{朱海涛2009}
+朱海涛, 欧阳洁.
+\newblock 对流扩散反应方程的变分多尺度解法[J].
+\newblock 工程数学学报, 2009(06):997--1004.
+
+\bibitem[李明春~等(2004)]{李明春2004}
+李明春, 徐曾和, 翟玉春,等.
+\newblock 固定床一维对流扩散非线性反应方程的数值解析[J].
+\newblock 过程工程学报, 2004(06):490--495.
+
+\bibitem[李正元(1984)]{李正元1984}
+李正元.
+\newblock 扩散反应方程的控制方程及其应用[J].
+\newblock 北京大学学报(自然科学版), 1984(04):13--26.
+
+\bibitem[李焕荣(2007)]{李焕荣2007}
+李焕荣.
+\newblock 土壤水动力系统的数值解法的分析与应用研究[D].
+\newblock 北京: 首都师范大学, 2007.
+
+\bibitem[杨德军(2009)]{杨德军2009}
+杨德军.
+\newblock 基于SPAC系统的土壤水动力学模型研究[D].
+\newblock 杭州: 浙江大学建筑工程学院, 2009.
+
+\bibitem[王栋(2009)]{王栋2009}
+王栋.
+\newblock 算子分裂法及其在解抛物型方程中的应用[D].
+\newblock 长春: 吉林大学, 2009.
+
+\bibitem[田富强和胡和平(2007)]{田富强2007}
+田富强, 胡和平.
+\newblock 基于常微分方程求解器的Richards方程数值模型[J].
+\newblock 清华大学学报（自然科学版）, 2007, 47(6):4.
+
+\bibitem[田振夫(1995)]{田振夫1995}
+田振夫.
+\newblock 一维对流扩散方程的四阶精度有限差分法[J].
+\newblock 宁夏大学学报(自然科学版), 1995(01):30--35.
+
+\bibitem[薛定宇(2004)]{2004a}
+薛定宇.
+\newblock 高等应用数学问题的MATLAB求解[M].
+\newblock 北京: 清华大学出版社, 2004.
+
+\bibitem[贾宏恩~等(2012)]{贾宏恩2012}
+贾宏恩, 李开泰, 钟贺.
+\newblock 算子分裂法求解对流扩散反应方程[J].
+\newblock 工程数学学报, 2012(01):89--95.
+
+\bibitem[郑宁(2006)]{郑宁2006}
+郑宁.
+\newblock 煤自燃过程中对流扩散反应方程组的数值模拟[D].
+\newblock 西安: 西安科技大学, 2006.
+
+\end{thebibliography}

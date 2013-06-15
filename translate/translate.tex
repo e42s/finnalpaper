@@ -15,6 +15,10 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+\newCJKfontfamily[shusong]\shusong{方正书宋_GBK}
+\newCJKfontfamily[biaosong]\biaosong{方正小标宋_GBK}
+
+
 %-------------------------------------------------------------------------
 \CTEXsetup[format+=\zihao{-3}]{chapter}
 \CTEXsetup[format+=\zihao{-3}]{section}
@@ -61,6 +65,8 @@
 
 
 \begin{document}
+\setlength{\baselineskip}{22pt}
+\input{front.tex}
 \title{\kaishu 基于格林函数定律的用于对流扩散反应方程的非标准有限差分格式
       \footnote{英文标题:Nonstandard finite difference schemes based on Green's function
 formulations for reaction--diffusion--convection systems,发表在\textit{Chemical Engineering Science}.}}

@@ -1,13 +1,16 @@
-\documentclass[adobefonts,fancyhdr]{ctexbook}
-\usepackage[
-     paperheight=23.7cm,
-     paperwidth=17cm,
-     top=2.5cm,
-     bottom=1.8cm,
-     left=21mm,
-     right=1.7cm]{geometry}
+\documentclass[a5paper,adobefonts,fancyhdr]{ctexbook}
+% \usepackage[
+% %      paperheight=23.7cm,
+% %      paperwidth=17cm,
+% %      top=2.5cm,
+% %      bottom=1.8cm,
+% %      left=21mm,
+%       body={390pt,530pt}]{geometry}
+\usepackage[centering,paperwidth=185mm,paperheight=230mm,%
+right=17mm,
+body={390pt,530pt}]{geometry}
 %-------------------------------------------------------------------------
-% \usepackage[a4,cam,center]{crop}
+\usepackage[a4,cam,center,frame]{crop}
 \usepackage{fancyhdr}
 \usepackage[numbers,sort&compress]{natbib}   % bibtex 自然序号
 
@@ -112,6 +115,9 @@
     }}
 {\end{list}}
 
+\usepackage{titlesec}
+% \titlecontents{chapter}[0em]{}{}{}{\titlerule*[0.5pc]{$\ldots$}}{}
+% \usepackage{ctexcap}
 
 \begin{document}
 % \setlength{\baselineskip}{18pt}

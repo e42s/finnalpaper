@@ -1,0 +1,426 @@
+\documentclass[a4paper,cs4size,adobefonts,fancyhdr]{ctexart}[2005/11/25]
+\usepackage[
+     left=2.7cm,
+     right=2.7cm,
+     top=3.5cm,
+     bottom=2.6cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[EC,OC]{\zihao{-5}北京化工大学毕业设计（论文）开题报告}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}     
+
+\usepackage[numbers,sort&compress]{natbib}   % bibtex 自然序号
+
+\CTEXsetup[format+=\zihao{-3}]{chapter}
+\CTEXsetup[format+=\zihao{-3}]{section}
+\CTEXsetup[format+=\zihao{-4}]{subsection}
+\CTEXsetup[format+=\zihao{-4}]{subsubsection}
+%-------------------------------------------------------
+
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+\newCJKfontfamily[shusong]\shusong{方正书宋_GBK}
+\newCJKfontfamily[biaosong]\biaosong{方正小标宋_GBK}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage[version=3]{mhchem}
+\usepackage{tikz}
+\usepackage{sistyle}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{floatflt}
+\usepackage{caption2}
+\usepackage{amsfonts}
+\usepackage{mdwlist}
+\usepackage{tabularx}
+\numberwithin{equation}{section} %公式章节编号
+%\usepackage{times}
+%\usepackage{mathtime}
+%\usepackage{minionpro}
+%\CTEXsetup[name={,},number={\arabic{chapter}},format={\Large\bfseries}]{chapter}
+% \CTEXsetup[format={\Large\bfseries}]{section}
+%引用上标定义
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand{\dif}{\mathrm{d}}
+\makeatother
+\title{\heiti\zihao{-3} 微生物在土壤中运动规律的研究\\开题报告}
+\author{\kaishu 陆秋文 \\ \kaishu 北京化工大学生命科学与技术学院}
+\date{}
+\begin{document}
+\setlength{\baselineskip}{22pt}
+\input{front.tex}
+% \maketitle
+\section{题目背景和意义}
+土壤微生物是自然物质循环不可缺少的成员，在有机物质的矿物化、腐殖质的形成和分解、植物营养元素的转化等诸多过程中起着不可替代的作用，微生物物质虽然仅占土壤有机组成的一小部分，但它是生活着的有机体和物质转化者，也是土壤肥力的重要因素，对植物养料具有储存和调节作用。土壤微生物主要指土壤中那些个体微小的生物体，主要包括细菌、放线菌、真菌还有酵母菌等，它们在土壤形成和演化过程中起着主导作用，并且不同类型的土壤中的微生物种类和数量也相应不同。\par
+在解决传染病、垃圾处理、污水灌溉处理等问题上，人们逐渐认识到了微生物在这些介质中运动是有一定规律的，并有一些学者在这些领域上对微生物的运动规律进行了研究。随着研究的深入和微生物在提高石油开采量、放射性物质和有机污染物的携带运移、提高冶炼率等问题中的应用，更加需要对微生物运动规律的了解，而且要求越来越精确。这样，对微生物运动规律的研究就显得格外有意义。\par
+在环境工程领域，我们需要对受污染的土壤进行治理。一个比较好的方法就是生物原位修复，即将分离的到的或基因工程合成的细菌或营养物质注入土壤，使其运移到受污染处并大量繁殖，分解有毒物质，达到治理目的。这样，我们需要对土壤中微生物的运动规律进行研究。\par
+微生物在土壤中的运移过程看似简单，实际很复杂。其运移机理包括生长、吸附、解吸、沉积（过滤、布朗扩散、截流、沉降）、腐解、钝化、滞留等过程，确定微生物运移速率、时间、分布范围，最大限度地提高细菌降解作用，减少细菌本身的再污染，有必要对微生物在土壤中运移及其影响因素进行定量研究，建立数学模型\upcite{高琼2011}。
+\section{主要内容与研究现状}
+为了对微生物运动位移进行定量研究，首先应当清楚影响其运动的原因。这个原因有两个方面，一为土壤地下水环境造成的影响，另外一个是微生物自身的因素。
+\subsection{土壤地下水环境中微生物的迁移}
+微生物在土壤多孔介质中的迁移受到各种非生物和生物因素的影响。这些因素可概括为两个主要方面，即水文地质因素和微生物因素。其中水文地质因素包括多孔介质的结构、质地、有机质含量、氧化膜以及地下水水流速度、溶液化学成分、溶液pH值、离子强度等；微生物因素包括细胞的生理状态、细胞的生长与衰亡、细胞的趋磁性、细胞的吸附过程、过滤效应等。除上述因子控制细菌迁移以外，各因子互相影响也很复杂，而且微生物本身是活体，常被称为“活胶体”，受环境影响较大。以上这些复杂因素就增加了微生物迁移研究的难度。现将影响微生物迁移的主要因子的研究进展概括如下\upcite{张瑞玲2007}：
+\subsubsection{水文地质因素}
+\subparagraph{水动力因子} 
+微生物生活的环境总是存在稳定或不连续的水相，存在固-液-气界面。水分和三相界面强烈影响着微生物的迁移。Tan等人发现，在土柱实验中明显的随着土柱水流速度的增加，细菌流出量也增加。田间观察也表明，水的用量和流速将会影响微生物的迁移范围。总的来说，高水流速率减少作用时间，降低微生物吸附的可能性。从微生物分布数量和移动距离来看，在饱和状态，微生物更适合迁移和生存，而在非饱和状态下，增加了微生物的过滤、吸附和死亡。
+\subparagraph{土壤颗粒特性和土壤结构}
+土壤颗粒大小和孔径大小是影响微生物迁移的重要因子，主要是影响微生物细胞在液相中的滤除作用。有研究表明，当平均细胞大小超过土壤颗粒大小的5\%时，物理过滤作用成为微生物迁移的重要机制。因此，对于颗粒直径为~\num{0.2}---\SI{50}{\micro m}~的粘质土壤比直径为~\num{0.02}---\SI{2}{mm}~的砂质壤会过滤更多的微生物。Sharma等人认为土壤的孔径大小限制了微生物在多孔介质中的迁移。Barton等人认为随土柱中装入介质颗粒的增大，微生物迁移的速率呈线性增加。 土壤介质表面的粗糙程度对于吸附的位点数起重要作用。Characklis等人认为表面粗糙可能降低细胞在表面附近的平流移动，使表面剪切强度降低，从而使颗粒吸附更强烈。
+\subsubsection{微生物因素}
+\subparagraph{微生物吸附}
+一旦微生物细胞和颗粒表面接触，吸附就会发生。为了理解微生物吸附和它对迁移的影响，必须对微生物细胞表面和多孔介质表面之间的各种相互化学作用加以考虑。吸附是物理化学过程，可分为可逆与不可逆过程。可逆吸附主要有静电作用、疏水作用和范德华力。\par
+一般来说，细胞和颗粒表面的静电作用是排斥的，因为细胞和颗粒表面都是带负电荷的。微生物表面的负电荷通常来源于革兰氏阳性菌表面的脂磷壁质和革兰氏阴性菌表面的脂多糖。而土壤矿物质表面的负电荷是与一些有机质中含有的大量羟基官能团等有关的。疏水作用和范德华力趋于相互吸引。疏水作用指水环境中非极性基团的聚合趋势。疏水作用对微生物迁移的影响作用依赖于细胞表面的疏水性以及基质表面特性和孔隙溶液特性。范德华力通常导致中性分子间的相互作用。这些中性分子有着动态的电荷分布。当两个分子相互靠近时，这种电荷分布对两个分子之间的作用起到促进作用，范德华力增加到最大值，随后减小直至成为斥力。当引力超过斥力时，就发生初始的吸附。初始吸附后，细胞能够不可逆地吸附到颗粒表面。不可逆吸附过程的发生是细胞表面结构和固体表面相互作用的结果，或者说是产生的胞外多糖把微生物细胞黏附到表面造成的。 
+\subparagraph{微生物生理状态}
+微生物的大小和形状会决定它们在土壤中的吸附效果，从而影响它们的迁移潜力。Fontes等人发现微生物细胞越小越容易迁移。因为细菌越小，它与固相间的相互作用就越小。细菌所处的生理状态会对它们的形状大小产生影响，从而对迁移也产生影响。当微生物所需的营养物不受限制时，即微生物细胞处于正常的生理状态时，多数细胞会产生包裹于细胞外表面的胞外多聚物，这些胞外多聚物会增加细胞的有效直径并且会促进细胞吸附在固体表面。而当微生物处于饥饿条件下时，微生物细胞会缩小并脱去糖被或夹膜层，从而增加了它们的迁移潜力。Lappan等人发现饥饿细胞穿透砂石的量会增加。Selim等人研究发现在饥饿状态时，微生物表面特性发生了明显的改变，疏水性明显降低从而使微生物的吸附作用减小。若添加营养物质促进时，饥饿细胞会进入生长状态。这个现象说明如果使用饥饿细胞接种，饥饿细胞能够远距离迁移，具有增加到达靶污染地的可能性。一旦到达靶位点，污染物可以作为一种营养源，促进微生物进入代谢活跃状态。如此接种方法具有生物强化效果的潜力。
+\subparagraph{微生物运动性和趋化性}
+鞭毛是微生物的运动器官，鞭毛的运动能够引起菌体的运动。关于鞭毛的有无对于微生物迁移的影响结果并不一致。Reynolds等人发现在无水流的饱和砂土土柱中，有鞭毛的可运动菌比不可运动变异菌种迁移速度快4倍。McCaulou等人通过比较细菌的穿透曲线发现可运动菌在吸附之前移动的距离是不可运动菌的一倍；吸附之后，不可运动菌解吸需9---17天，而可运动菌解吸只需4---5天，所以认为细菌的运动性有利于其对流运动进而显著影响微生物的迁移时间。相反也有研究表明，微生物的迁移与菌鞭毛的有无关系不大。 微生物趋化性是细菌对不同化学物浓度所产生的吸引聚集或避离排斥的反应运动。有研究报道认为趋化性对细菌在土层中迁移起很重要的作用。
+\subsection{微生物迁移过程数学模型的建立}
+为了建立微生物在饱和地下环境中迁移过程的数学模型，在对微生物迁移过程研究中，作如下基本假定：
+\begin{enumerate}\setlength{\itemsep}{0em}
+\item 土壤是一个均质体； 
+\item 水流是稳定的； 
+\item 土壤孔隙率是一定的； 
+\item 微生物细胞在液相中均匀悬浮； 
+\end{enumerate}\par
+根据资料，我们看到液相微生物的质量守恒方程，表示为：
+\begin{equation}\label{equ:yexiangshouheng}
+\dfrac{\partial(\theta S_w C_w)}{\partial t}
+=-\nabla(\theta S_w C_w v_w)+\nabla[\theta S_wD_w\nabla v_w]+I+B_w
+\end{equation}
+式中，
+	\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\theta$]为介质的孔隙度;
+	\item[$S_w$]为含水饱和度;
+	\item[$C_w$]为液相中微生物的浓度，\SI{}{mol/L^3};
+	\item[$V_w$]为液相的总流动速度，\SI{}{L/T};
+	\item[$D_w$]液相微生物的物理弥散系数，\SI{}{L^2/T};
+	\item[$I$]为单位体积土壤中微生物在液相固相之间的传质速率，\SI{}{mol/(TL^3)}；
+	\item[$B_w$]为微生物生长的生物反应速率，\SI{}{mol/(TL^3)}
+	\end{description}
+	\end{quote}\par
+式~\ref{equ:yexiangshouheng}~左侧表示微生物的累积，右侧第一项为对流项，第二项为水动力弥散项，第三项为相间传质项，第四项为生物反应项，以下对各项进行详细描述。
+\subsubsection{对流运动}
+对流运动是由于体系流体内的压力梯度引起的。对于微生物来说，总流体速度除了孔隙流速以外，还包括微生物向营养物富集源运动的趋化速度。
+方程中的总流动速度定义如下：
+\begin{equation}
+V_w=v+v_c
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$V$]流动项孔隙流速，\SI{}{L/T};
+	\item[$V_c$]为微生物向营养物富集源运动的趋化速度，\SI{}{L/T};
+	\end{description}
+	\end{quote}
+\begin{equation}
+v=\dfrac{L}{t_{0.5}}
+\end{equation}                              
+式中，L为土柱的有效长度，\SI{}{m}。\par
+生物的趋化性是指一个细胞朝诱导物的一种定向运动。在三维空间中，微生物能感觉出营养物富集的环境，能够检测到营养物梯度并做出反应，在压力梯度作用下，产生流动，称之为趋化性。微生物细胞的运动方向更多的是受营养物中分子的影响而非布朗运动。微生物的化学趋化性运动假定与营养物浓度的对数梯度方向一致。假定微生物趋化迁移速度与基质浓度成指数变化关系，表达式如下：
+\begin{equation}
+v_c=K_c\nabla(\ln C_f)
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$K_c$]为趋化系数，\SI{}{mol/(TL^3)};
+	\item[$C_f$]为基质浓度，\SI{}{mol/L^3};
+	\end{description}
+	\end{quote}\par
+与对流相比较，微生物趋化运动很小，往往可以忽略。仅仅在静态的条件下，趋化作用才变得比较明显。
+\subsubsection{水动力弥散}
+水动力弥散现象包括分子扩散和机械弥散。 对于污染物来说分子扩散是由于热运动而引起的混合和分散作用。对于微生物来说，其尺寸通常处于~\SI{}{\micro m}~级，像胶体分子一样，也遵循布朗运动，每一个颗动的轨迹是无规律的，微生物的这种混乱的、随机的运动被称为泳动。微生物由浓度高的区域向浓度低的区域泳动的量将多于由浓度低的区域向浓度高的区域运动的量，于是便形成了宏观上的分子扩散现象。\par
+机械弥散作用是由于土壤孔隙中微观流速的变化而引起的，具体有几个方面的原因：
+\begin{itemize}\setlength{\itemsep}{0em}
+\item 孔隙的中心和边缘的流速不同;
+\item 孔隙直径大小不一，其流速不同;
+\item 孔隙的弯曲程度不同和封闭孔隙或团粒内部孔隙水流基本上不流动，而使微观流速不同。
+\end{itemize}\par
+根据Fick定律：
+\begin{equation}
+J=-D\dfrac{\partial c}{\partial x}
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$D$]为水相中微生物的分子扩散系数，\SI{}{L^2/T}。
+	\end{description}
+	\end{quote}\par
+穿透曲线(break through curve,BTC)是指将土样装入土柱中，严格控制容重，用示踪剂连续恒定注入土壤中，然后根据溶质在土壤中运移时，通过某截面的相对浓度$[C(t)-C_0]/(C_1-C_0)$与时间或体积的关系曲线，它是反映溶质在土壤中运移的基本曲线。\par
+根据求解饱和土壤纵向弥散系数近似解的“三点公式”：
+\begin{equation}
+D=\dfrac{v^2}{8t_{0.5}}(t_{0.84}-t_{0.16})^2
+\end{equation}\par
+在土柱入口连续恒定地注入示踪剂氯离子浓度为~\SI{1500}{mg/l}，出口取样测定氯离子的浓度。以出口处氯离子浓度C为Y轴，相应时间为X轴绘制穿透曲线。作出$C/C_0$\~$t$关系曲线图，根据穿透曲线读出相应于$C/C_0$=0.84、0.5、0.16 的三个时间值，同时代入实测的$v$值，便得到溶质在土壤中的弥散系数的近似值D。
+\subsubsection{相间传质}
+相间传质用来描述各相间速率限制的质量交换，可以采用局部平衡假定来进行描述。对微生物来说，相间传质主要是土壤对液相微生物的吸附作用和过滤滞留作用。过滤是指当细菌流经某一空隙时，由于菌体体积太大而不能穿过该空隙产生的滞留现象，被认为是微生物在土壤中的一种不可逆吸附作用。通常用一级动力学来表示滞留过程。\par
+土壤颗粒表面对微生物的吸附是影响迁移最主要的过程，几乎影响微生物迁移的所有因素都是通过影响吸附来起作用的。因此研究微生物在土壤表面的吸附特性是研究微生物土壤中迁移机理必不可少的部分。土壤对大肠杆菌的吸附研究主要采用静态批量平衡吸附试验，对巨大芽孢杆菌进行吸附特性的研究，采用吸附等温线模型描述细菌在土壤上的吸附行为，分析细菌在土壤中的吸附类型及其吸附机理。
+\subparagraph{平衡吸附模型}
+根据菌液平衡浓度的测定结果和质量衡算，可确定吸附类型。常见的等温吸附按实验结果可划分为线性平衡吸附、Freundlich平衡吸附、Langmiur平衡吸附、Temkin平衡吸附等类型。
+线性平衡吸附的模型为：
+\begin{equation}
+S=KC
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$S$]为微生物的固相浓度，\SI{cfu/gsoil};
+	\item[$K$]为微生物的吸附分配系数，\SI{}{mL/g};
+	\item[$C$]为微生物的液相浓度，\SI{cfu/mL};
+	\end{description}
+	\end{quote}\par
+Freundlich等温吸附方程形式如下：
+\begin{equation}
+S=KC^{1/n}
+\end{equation}
+式中，K,n为常数。\par
+Langmiur平衡吸附的表达式为：
+\begin{equation}
+S=\dfrac{KS_{max}C}{1+KC}
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$K$]为常数，\SI{}{mL/g};
+	\item[$S_{max}$]为最大吸附容量，\SI{cfu/g};
+	\end{description}
+	\end{quote}\par
+采用线性化变化，Langmiur等温吸附方程可转化为如下形式：
+\begin{equation}
+\dfrac{C}{S}=\dfrac{1}{KS_{max}}+\dfrac{C}{S_{max}}
+\end{equation}
+通过$C/S$与$C$作图，由直线关系可以确定吸附参数$S_{max}$和$K$。
+\subparagraph{吸附动力学模型}
+一般情况下非饱和土壤中等温过程可逆吸附形式可表示为：
+\begin{equation}
+\rho\dfrac{\partial S}{\partial t}=S_wk_{att}C-k_{det}\rho S
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$K_{att}$]为可逆吸附常数，\SI{}{s^{-1}};
+	\item[$K_{det}$]为可逆解析常数，\SI{}{s^{-1}};
+	\item[$S_w$]为土壤体积含水率，即饱和度。
+	\end{description}
+	\end{quote}\par
+\subsubsection{微生物生长项}
+土壤中微生物的生长代谢是与污染物的生物降解相互联系的，Monod动力学模型能够将该过程很好的进行模拟。假设溶解氧不是限制因素。Monod方程则可简化为如下形式：
+\begin{equation}
+\sigma = \dfrac{\sigma_{max}C_f}{K_s+C_f}
+\end{equation}
+式中，
+\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\sigma$]为微生物的比增长速率，\SI{}{T^{-1}};
+	\item[$\sigma_{max}$]微生物的最大比增长速率，\SI{}{T^{-1}};
+	\item[$C_f$]基质浓度，\SI{}{mol/L^3}；
+	\item[$K_s$]为基质半饱和常数，\SI{}{mol/L^3}.
+	\end{description}
+	\end{quote}\par
+\subsection{微生物在饱和土壤中迁移模型}
+体系不含生物反应项，微生物的迁移方程简化为\upcite{杨德军2009}：
+	\begin{equation}\label{qianyif}
+	\theta\dfrac{\partial C}{\partial t}+\rho_b\dfrac{\partial S}{\partial t}
+	=\theta D\dfrac{\partial^2 C}{\partial x^2}-\theta v\dfrac{\partial C}{\partial x}
+	-\lambda_1\theta C-\lambda_s\rho_b S
+	\end{equation}
+式中，
+	\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\theta$]为介质体积含水率，对于饱和土壤，则是介质有效孔隙度;
+	\item[$C$]为微生物在水相中的浓度，\SI{}{mg/m^3};
+	\item[$S$]为微生物在固体表面可逆吸附的浓度，\SI{}{mg/g};
+	\item[$\rho_b$]为土壤的容重，\SI{}{g/m^3};
+	\item[$D$]为水动力弥散系数，\SI{}{m^2/s};
+	\item[$v$]为流速，\SI{}{m/s}
+	\item[$\lambda_l$]为液相微生物发生滞留的反应系数，\SI{}{s^{-1}}
+	\item[$\lambda_s$]为吸附在土壤颗粒表面附着态微生物发生滞留的反应系数，\SI{}{s^{-1}}
+	\end{description}
+	\end{quote}\par
+其中，流速只考虑孔隙流速，孔隙流速可以表示为：
+\begin{equation}
+	v=\dfrac{Q}{A\theta}
+\end{equation}
+式中，
+	\begin{quote}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$Q$]表示测定微生物穿透曲线的控制流量，\SI{}{m^3/s}
+	\item[$A$]为土柱横截面积，\SI{}{m^2}
+	\end{description}
+	\end{quote}\par
+在一维情况下，水动力弥散系数为：
+\begin{equation}
+	D=\alpha v+D_e
+\end{equation}
+式中，
+\begin{quote}
+\unskip
+\begin{description}\setlength{\itemsep}{0em}
+	\item[$\alpha$]弥散度，\SI{}{m};
+	\item[$v$]孔隙流速，\SI{}{m/s};
+	\item[$D_e$]有效扩散系数，\SI{m/s^2};
+\end{description}\par
+\ignorespaces
+\end{quote}
+根据实验条件，方程~\ref{qianyif}~的定解条件为：
+\begin{equation}
+	t=0,0<x<L,C(x,0)=0
+\end{equation}
+\begin{equation}
+	t>0,x=0,-D\dfrac{\partial C}{\partial x}+vC=vC_m
+\end{equation}
+\begin{equation}
+	t>0,x=L,\dfrac{\partial C(L,t)}{\partial x}=0
+\end{equation}
+\section{待解决的问题}
+从文献中我们可以得知微生物在土壤运动的一维方程，由于土壤是存在于三维空间的，其坐标$(x,y,z,t)$是四维向量。所以，我们的工作在于建立微生物在土壤中运动的三维模型，并对 模型进行仿真和分析。
+\subsection{一维偏微分方程模型的数值求解}
+解出复杂的偏微分方程的解析解是较为困难的。根据本课题的要求，我们能够解出其数值解（近似解）即可。\par
+一般地说，解偏微分方程的数值解有有限差分法、有限元法和变分法等方法。为了简便，计划在一维偏微分方程运用有限差分法解其数值解。\par
+有限差分法的基本思想是把连续的定解区域用有限个离散点构成的网格来代替，然后把连续定解区域上的连续变量的函数用在网格上定义的离散变量函数来近似。把原方程和定解条件中的微商用差商来近似，积分用积分和来近似，于是原微分方程和定解条件就近似地代之以代数方程组，即有限差分方程组。解此方程组就可以得到原问题在离散点上的近似解。然后再利用插值方法便可以从离散解得到定解问题在整个区域上的近似解\upcite{ZHANGWENSHENG_KEXUE}。
+\subsection{三维偏微分方程模型的建立和求解}
+三维偏微分方程的建立方法可以参考非饱和土壤中水运动模型Richards方程的建立方法\upcite{张培文2002}。\par
+Richards方程最先是由Richards这个人在1931年研究流体通过多孔介质中毛细管传导作用时推导出来的。\par
+首先我们看到达西(Darcy)定律\upcite{王玉珉2004}：
+\begin{equation}\label{equ:daxi}
+q(v)=K_s\dfrac{\Delta H}{L}
+\end{equation}
+对于三维非恒定流动或非匀质土壤，达西定律可以写成：
+\begin{equation}\label{equ:sanwei_daxi}
+q=-K_s\nabla H
+\end{equation}
+对于非饱和流动的土壤水的流动，有：
+\begin{equation}\label{equ:lidong_daxi}
+q=-K(h)\nabla H
+\end{equation}
+在方程~\ref{equ:daxi}、\ref{equ:sanwei_daxi}、\ref{equ:lidong_daxi}~中，
+\begin{quote}
+\begin{description}\setlength{\itemsep}{0em}
+	\item[$L$]为渗流路径的直线长度;
+	\item[$H$]为总水势（水头）;
+	\item[$\Delta H$]为总水头差;
+	\item[$K_s$]为饱和渗透系数;
+\end{description}
+\end{quote}\par
+将达西(Darcy)定律和质量守恒定律结合起来，对于各向同性的土壤、不可压缩的液体、三维情形的非饱和水流运动的控制方程即Richards方程：
+\begin{equation}\label{equ:Richards_3}
+\dfrac{\partial \theta}{\partial t}=\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial x}\right]}{\partial x}+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial y}\right]}{\partial y}+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial  z}\right]}{\partial z}
+\end{equation}
+式中，
+\begin{quote}
+\begin{description}\setlength{\itemsep}{0em}
+	\item[$\theta$]含水量;
+	\item[$K$]为渗透系数;
+	\item[$\Psi$]为非饱和土壤的总水势;
+	\item[$x$、$y$、$z$]为坐标轴方向;
+	\item[$t$]为时间;
+\end{description}
+\end{quote}
+当土壤饱和时，
+\begin{equation}
+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial x}\right]}{\partial x}+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial y}\right]}{\partial y}+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial  z}\right]}{\partial z}=0
+\end{equation}\par
+至此，三维的土壤水模型就建立起来了。
+\subsection{三维偏微分方程模型的求解}
+解偏微分方程模型的方法还有待研究，这里我们介绍文献上报道的一种解法\upcite{李焕荣2007}。\par
+为方便解~\ref{equ:Richards_3}~，将此方程变换成以负压水头为因变量的基本方程，当主渗透系数方向与坐标方向一致，将$z$轴忽略，如：
+\begin{equation}
+\rho_w gm_2^w\dfrac{\partial h}{\partial t}
+=\dfrac{\partial}{\partial x}\left[K_x(h)\dfrac{\partial H}{\partial x}\right]+
+\dfrac{\partial}{\partial y}\left[K_y(h)\dfrac{\partial H}{\partial y}\right]
+\end{equation}
+初始条件为：
+\begin{equation}
+H(x,y,0)=\phi(x,y,0)
+\end{equation}
+第一类边界条件，已知水头边界$\Gamma_1$
+\begin{equation}
+\left.H(x,y,t)\right|_{\Gamma_1}=\gamma(x,y,t),t>0
+\end{equation}
+第二类边界条件，已知流量边界条件$\Gamma_2$
+\begin{equation}
+\left.K\dfrac{\partial H(x,y,t)}{\partial n}\right|_{\Gamma_2}=q(x,y,z,t),t>0
+\end{equation}
+$n$为边界$\Gamma_2$外法向向量\upcite{高雷阜2011}。
+等价于泛函的极值问题，即为
+\begin{equation}\label{fanhanjizhi}
+I(H)=\iint\limits_\Omega\left[\dfrac{1}{2}\left[k_x(h)(\dfrac{\partial H}{\partial x})^2+k_y(h)(\dfrac{\partial H}{\partial y})^2\right]+\rho_w gm_2^w\dfrac{\partial h}{\partial t}\dif \Omega\right] - \varint\limits_{\Gamma_2}qH\dif \Gamma
+\end{equation}
+根据研究区域的结构特性，将计算区域离散为多个单元，某单元的水头插值函数为
+\begin{equation}
+H(x,y,t)=\sum\,N_i(x,y)H_i
+\end{equation}
+式中，$N_i(x,y)$为单元的形函数，$H_i$为节点水头。
+对~\ref{fanhanjizhi}~取其变分为零，对各单元迭加，可得有限元方程
+\begin{equation}\label{yxyfangcheng}
+[D]{H}+[E]\{\dfrac{\partial H}{\partial t}\}=[F]
+\end{equation}
+式~\ref{yxyfangcheng}~采用有限差分的求解，
+\begin{equation}
+([D])+\dfrac{2[E]}{\Delta t}\{H\}_{t+\Delta t}=(\dfrac{2[E]}{\Delta t}-[D])\{H\}_t+2[F]
+\end{equation}
+迭代计算，即可得出结果。
+\section{设计方法与实施方案}
+本课题大部分的任务是计算与模拟、仿真。
+要将本课题做好，首先应当对相应的数学知识有一定的了解\upcite{SHUXUEWULI}，另外需要进行计算机仿真。主要涉及到的知识有：
+\begin{itemize}\setlength{\itemsep}{0em}
+\item 泛函分析
+\item 偏微分方程理论、数学物理方法
+\item 偏微分方程的有限差分法、有限元法求解
+\item 系统科学与仿真技术
+\item 3D计算机图形学
+\end{itemize}\par
+计划采用以下的工具与方法在不同的阶段对本课题进行研究。
+\subsection{MATLAB和MATLAB PDE Toolbox}
+MATLAB是由美国mathworks公司发布的主要面对科学计算、可视化以及交互式程序设计的高科技计算环境。它将数值分析、矩阵计算、科学数据可视化以及非线性动态系统的建模和仿真等诸多强大功能集成在一个易于使用的视窗环境中，为科学研究、工程设计以及必须进行有效数值计算的众多科学领域提供了一种全面的解决方案，并在很大程度上摆脱了传统非交互式程序设计语言（如C、Fortran）的编辑模式，代表了当今国际科学计算软件的先进水平。\par
+MATLAB PDE Toolbox包含了求解二维偏微分方程的命令行函数和图形界面，是一个强大而灵活的环境。其功能主要包括：
+\begin{itemize}\setlength{\itemsep}{0em}
+\item 设置PDE的定解问题，即设置二维定解区域、边界条件及方程的形式和系数;
+\item 有限元法求解PDE，即网格的生成、方程的离散以及求出数值解;
+\item 解的可视化
+\end{itemize}\par
+MATLAB及其PDE工具箱可以在研究的前期使用，其数值计算算法对以后仿真程序的编制也有很大的参考价值。
+\subsection{Python}
+Python是一种面向对象、直译式计算机程序设计语言，由Guido van Rossum于1989年底发明，第一个公开发行版发行于1991年。Python语法简捷而清晰，具有丰富和强大的类库。它常被称为胶水语言，它能够很轻松的把用其他语言制作的各种模块（尤其是C/C++）轻松地联结在一起。常见的一种应用情形是，使用Python快速生成程序的原型（有时甚至是程序的最终界面），然后对其中有特别要求的部分，用更合适的语言改写，比如3D游戏中的图形渲染模块，速度要求非常高，就可以用C++重写。\par
+利用它的快速开发的特定，可以使用这种语言来进行程序的编制。
+\subsection{OpenGL}
+OpenGL是个定义了一个跨编程语言、跨平台的编程接口的规格，它用于三维图象（二维的亦可）。OpenGL是个专业的图形程序接口，是一个功能强大，调用方便的底层图形库。\par
+OpenGL(Open Graphics Library)是个定义了一个跨编程语言、跨平台的程序接口(Application programming interface)的规格，它用于生成二维、三维图像。这个接口由近三百五十个不同的函数调用组成，用来从简单的图形比特绘制复杂的三维景象。OpenGL常用于CAD、虚拟实境、科学可视化程序和电子游戏开发。\par
+PyOpenGL是OpenGL在Python语言上的一个绑定，提供了Python访问OpenGL库的接口。我们可以利用这个绑定访问OpenGL，从而实现PDE的图像绘制。
+\subsection{SciPy}
+SciPy是一个开源的Python算法库和数学工具包。\par
+SciPy包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算，与MATLAB功能类似。由于它是基于BSD协议发布的，可以使用在我们的仿真程序中。
+\section{进度计划}
+本课题预期完成的工作由：
+\begin{itemize}\setlength{\itemsep}{0em}
+\item 土壤微生物三维运动模型的偏微分方程表达;
+\item 土壤微生物三维运动模型的偏微分方程的数值仿真程序的编制.
+\end{itemize}\par
+本课题工作量较大，大部分所用的知识本科生没有学过，根据课题组和本人的时间安排，综合难度等各方面因素，提出工作计划，如表~\ref{tab:test}~所示。
+\begin{table}[htbp]
+\centering\caption{\label{tab:test}工作计划表}
+\begin{tabularx}{14cm}{cXc}
+\toprule
+时间范围 & \centering 工作内容 & 工作地点 \\
+\midrule
+2012年12月 					& 文献查阅与相关知识学习，技术准备	&  实验室	\\
+2013年1、2月			 		& 完成一维方程的求解与仿真			 &   机房\\
+2013年3月					& 完成三维方程的建模和边界条件的确定   &   实验室		  \\
+2013年4月					& 三维方程求解算法的研究				&	机房			  \\
+2013年5月					& 数值仿真程序的编制				&	机房			  \\
+2013年6月					& 完成论文						&   实验室		  \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\newpage
+\bibliographystyle{ref/GBT7714-2005NLang-HIT}
+\bibliography{ref/init}
+\end{document}

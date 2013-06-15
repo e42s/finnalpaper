@@ -1,0 +1,326 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\usetheme{AnnArbor}
+\usecolortheme{rose}
+\usepackage{ctex}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{sistyle}
+\usefonttheme{professionalfonts}
+\setCJKmainfont{黑体} 
+\title{\kaishu 土壤中微生物运动规律的研究\\开题报告}
+\author{陆秋文}
+\institute[北京化工大学]{北京化工大学生命科学与技术学院}
+\date{2012年11月7日}
+\begin{document}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \tableofcontents[currentsection,hideallsubsections]
+    \end{frame}
+}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}{目录}
+\tableofcontents
+\end{frame}
+\section{研究背景}
+	\begin{frame}
+	\frametitle{研究背景与意义}
+	土壤中微生物的运动是有规律的。在下面这些领域需要对这些规律进行研究：
+	\begin{itemize}
+	\fangsong
+	\item 环境工程领域，对污染的土壤进行治理；
+	\item 石油开采，提高开采量；
+	\item 放射性物质的携带运输
+	\end{itemize}
+	\end{frame}
+	\begin{frame}
+	\frametitle{研究目标}
+	\begin{itemize}
+	\fangsong
+	\item 微生物在土壤中运移过程进行量化，建立数学模型;
+	\item 对数学模型进行模拟和仿真;
+	\item 通过某种方法，对运动进行控制;
+	\end{itemize}
+	\end{frame}
+\section{影响微生物运动的因素}
+	\begin{frame}
+	\frametitle{影响微生物运动的因素}
+	首先要清楚影响微生物运动的因素，影响其运动的因素有
+	\begin{itemize}
+	\fangsong
+	\item 水文地质因素
+	\item 微生物自身的因素
+	\end{itemize}\par
+	水文地质因素：\kaishu 水动力因子、土壤颗粒结构和土壤结构\par
+	\heiti 微生物因素：\kaishu 微生物吸附、生理状态、运动性、趋向性\par
+	\end{frame}
+\section{微生物迁移过程的数学模型的建立}
+	\begin{frame}
+	\frametitle{假定}
+	为了建立数学模型，对过程做如下的假定：
+	\begin{itemize}
+	\fangsong
+	\item 土壤是一个均质体； 
+	\item 水流是稳定的； 
+	\item 土壤孔隙率是一定的； 
+	\item 微生物细胞在液相中均匀悬浮； 
+	\end{itemize}\par
+	\end{frame}
+	\begin{frame}
+	\frametitle{基本方程}
+	\begin{block}{\fangsong 液相微生物的质量守恒方程}
+	\begin{equation}\label{equ:yexiangshouheng}
+	\dfrac{\partial(\theta S_w C_w)}{\partial t}
+	=-\nabla(\theta S_w C_w v_w)+\nabla[\theta S_wD_w\nabla v_w]+I+B_w
+	\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\theta$]为介质的孔隙度;
+	\item[$S_w$]为含水饱和度;
+	\item[$C_w$]为液相中微生物的浓度，\SI{}{mol/L^3};
+	\item[$V_w$]为液相的总流动速度，\SI{}{L/T};
+	\item[$D_w$]液相微生物的物理弥散系数，\SI{}{L^2/T};
+	\item[$I$]为单位体积土壤中微生物在液相固相之间的传质速率，\SI{}{mol/(TL^3)}；
+	\item[$B_w$]为微生物生长的生物反应速率，\SI{}{mol/(TL^3)}
+	\end{description}
+	\end{frame}
+	\begin{frame}
+	\frametitle{对流运动}
+	对流运动是由于体系流体内的压力梯度引起的。对于微生物来说，总流体速度除了孔隙流速以外，还包括微生物向营养物富集源运动的趋化速度。
+	\begin{block}{\fangsong 总流动流速}
+	\begin{equation}
+		V_w=v+v_c
+	\end{equation}
+	\end{block}
+		\begin{description}\setlength{\itemsep}{0em}
+	\item[$V$]流动项孔隙流速，\SI{}{L/T};
+	\item[$V_c$]为微生物向营养物富集源运动的趋化速度，\SI{}{L/T};
+	\end{description}\par
+	与对流相比较，微生物趋化运动很小，往往可以忽略。
+	\end{frame}
+	\begin{frame}{水动力弥散}
+	微生物由浓度高的区域向浓度低的区域泳动的量将多于由浓度低的区域向浓度高的区域运动的量，于是便形成了宏观上的分子扩散现象。
+	\begin{block}{\fangsong Fick定律}
+		\begin{equation}
+		J=-D\dfrac{\partial c}{\partial x}
+		\end{equation}
+	\end{block}
+	测定分子扩散系数$D$，可以采用穿透曲线法，根据三点公式
+	\begin{block}{\fangsong 三点公式}
+	\begin{equation}
+		D=\dfrac{v^2}{8t_{0.5}}(t_{0.84}-t_{0.16})^2
+	\end{equation}
+	\end{block}
+	作出$C/C_0$\~$t$关系曲线图，读出相应于$C/C_0$=0.84、0.5、0.16同时代入实测的$v$值，便得到$D$。
+	\end{frame}
+	\begin{frame}{相间传质}
+	土壤颗粒表面对微生物的吸附是影响迁移最主要的过程，几乎影响微生物迁移的所有因素都是通过影响吸附来起作用的。
+	线性平衡吸附的模型为：
+	\begin{block}{\fangsong 线性平衡吸附}
+	\begin{equation}
+	S=KC
+	\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$S$]为微生物的固相浓度，\SI{cfu/gsoil};
+	\item[$K$]为微生物的吸附分配系数，\SI{}{mL/g};
+	\item[$C$]为微生物的液相浓度，\SI{cfu/mL};
+	\end{description}
+	\end{frame}
+	\begin{frame}{相间传质}
+	\begin{block}{\fangsong Freundlich等温吸附方程}
+		\begin{equation}
+		S=KC^{1/n}
+		\end{equation}
+	\end{block}
+	\begin{description}
+	\item[$K$,$n$]为常数。
+	\end{description}
+	\begin{block}{\fangsong Langmiur平衡吸附}
+	\begin{equation}
+	S=\dfrac{KS_{max}C}{1+KC}
+	\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$K$]为常数，\SI{}{mL/g};
+	\item[$S_{max}$]为最大吸附容量，\SI{cfu/g};
+	\end{description}
+	\end{frame}
+	\begin{frame}{相间传质}
+	一般情况下非饱和土壤中等温过程可逆吸附形式可表示为：
+	\begin{block}{\kaishu 吸附动力学模型}
+	\begin{equation}
+		\rho\dfrac{\partial S}{\partial t}=S_wk_{att}C-k_{det}\rho S
+	\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$K_{att}$]为可逆吸附常数，\SI{}{s^{-1}};
+	\item[$K_{det}$]为可逆解析常数，\SI{}{s^{-1}};
+	\item[$S_w$]为土壤体积含水率，即饱和度。
+	\end{description}
+	\end{frame}
+	\begin{frame}{微生物生长项}
+	土壤中微生物的生长代谢是与污染物的生物降解相互联系的，假设溶解氧不是限制因素。Monod方程则可简化为如下形式：
+	\begin{block}{\fangsong Monod方程}
+		\begin{equation}
+		\sigma = \dfrac{\sigma_{max}C_f}{K_s+C_f}
+		\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\sigma$]为微生物的比增长速率，\SI{}{T^{-1}};
+	\item[$\sigma_{max}$]微生物的最大比增长速率，\SI{}{T^{-1}};
+	\item[$C_f$]基质浓度，\SI{}{mol/L^3}；
+	\item[$K_s$]为基质半饱和常数，\SI{}{mol/L^3}.
+	\end{description}
+	\end{frame}
+	\begin{frame}{微生物生长项的计算}
+	根据实验数据，计算出$K_s$和$\sigma_{max}$为：
+	\centering
+	\begin{tabularx}{12cm}{Xcc}
+	\toprule
+	微生物名称 		& 		$K_s$ 		& $\sigma_{max}$ \\
+	\midrule
+	大肠杆菌 	 		&  \SI{-2.382e-9}{} & \SI{2.150e-4}{} \\
+	假单胞杆菌	 	&  \SI{3.067e-9}{}  & \SI{7.770e-5}{} \\
+	金黄色葡萄球菌		&  \SI{2.475e-10}{} & \SI{2.824e-4}{} \\
+	巨大芽孢杆菌      &  \SI{5.731e-10}{} &  \SI{3.968e-4}{} \\
+	枯草芽孢杆菌		&  \SI{3.968e-4}{}  &  \SI{5.882e-3}{} \\
+	\bottomrule
+	\end{tabularx}
+	\end{frame}
+	\begin{frame}[containsverbatim,shrink]
+	\begin{verbatim}
+	#/usr/bin/env python
+	import numpy as np
+	import math
+	import sys
+	from scipy.optimize import leastsq
+	def residuals(p,cs,ts,c0,cf0):
+    	'''function to genelized err'''
+    	ks,omga = p
+    	err = (ks*np.log(cs/cf0)+cs-cf0)/((-1)*omga*c0)-ts
+    	return err
+	def main():
+ 	   cf = np.array([float(x) for x in sys.stdin.readline().split()])
+	    print cf
+	    t  = np.array([float(x) for x in sys.stdin.readline().split()])
+	    c0,cf0 = [float(x) for x in sys.stdin.readline().split()]
+	    r  = leastsq(residuals,[1,1],args=(cf,t,c0,cf0))
+	    print r[0]
+	    return 0
+	\end{verbatim}
+	\end{frame}
+	\begin{frame}{微生物在饱和土壤中的迁移方程}
+	\begin{block}{\fangsong 迁移方程}
+	\begin{equation}\label{qianyif}
+	\theta\dfrac{\partial C}{\partial t}+\rho_b\dfrac{\partial S}{\partial t}
+	=\theta D\dfrac{\partial^2 C}{\partial x^2}-\theta v\dfrac{\partial C}{\partial x}
+	-\lambda_1\theta C-\lambda_s\rho_b S+C\sigma
+	\end{equation}
+	\end{block}
+	\begin{description}\setlength{\itemsep}{0em}
+	\item[$\theta$]为介质体积含水率，对于饱和土壤，则是介质有效孔隙度;
+	\item[$C$]为微生物在水相中的浓度，\SI{}{mg/m^3};
+	\item[$S$]为微生物在固体表面可逆吸附的浓度，\SI{}{mg/g};
+	\item[$\rho_b$]为土壤的容重，\SI{}{g/m^3};
+	\item[$D$]为水动力弥散系数，\SI{}{m^2/s};
+	\item[$v$]为流速，\SI{}{m/s}
+	\item[$\lambda_l$]为液相微生物发生滞留的反应系数，\SI{}{s^{-1}}
+	\item[$\lambda_s$]为吸附在土壤颗粒表面微生物发生滞留的反应系数，\SI{}{s^{-1}}
+	\end{description}
+	\end{frame}
+\section{三维模型与数值求解}
+	\begin{frame}{三维PDE模型的建立}
+	三维偏微分方程的建立方法可以参考非饱和土壤中水运动模型Richards方程的建立方法。\par
+	首先我们看到达西(Darcy)定律：
+	\begin{block}{\fangsong Darcy定律}
+	\begin{equation}\label{equ:daxi}
+	q(v)=K_s\dfrac{\Delta H}{L}
+	\end{equation}
+	\end{block}
+	对于三维非恒定流动或非匀质土壤，达西定律可以写成：
+	\begin{exampleblock}{\fangsong 三维Darcy定律}
+	\begin{equation}\label{equ:sanwei_daxi}
+	q=-K_s\nabla H
+	\end{equation}
+	\end{exampleblock}
+	\end{frame}
+	\begin{frame}{三维PDE模型的建立}
+	将达西(Darcy)定律和质量守恒定律结合起来，对于各向同性的土壤、不可压缩的液体、三维情形的非饱和水流运动的控制方程即Richards方程：
+	\begin{block}{\fangsong Richards方程}
+		\begin{equation}\label{equ:Richards_3}
+	\dfrac{\partial \theta}{\partial t}=\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial x}\right]}{\partial x}+\dfrac{\partial 				    \left[K(\theta)\dfrac{\partial\Psi}{\partial y}\right]}{\partial y}+\dfrac{\partial \left[K(\theta)\dfrac{\partial\Psi}{\partial  z}\right]}{\partial z}
+    \end{equation}
+	\end{block}
+	至此，三维的土壤水模型就建立起来了。
+	\end{frame}
+	\begin{frame}{三维PDE求解}
+	解出复杂的偏微分方程的解析解是较为困难的。根据本课题的要求，我们能够解出其数值解（近似解）即可。\par
+	求解PDE的数值方法有:
+	\begin{itemize}
+	\fangsong
+	\item 有限差分法
+	\item 有限元法
+	\item 无网格差分法
+	\end{itemize}
+	\end{frame}
+\section{研究方法与计划}
+	\begin{frame}{知识范围}
+	本课题大部分的任务是计算与模拟、仿真。
+	要将本课题做好，首先应当对相应的数学知识有一定的了解，另外需要进行计算机仿真。主要涉及到的知识有：
+	\begin{itemize}\setlength{\itemsep}{0em}
+	\fangsong
+	\item 泛函分析
+	\item 偏微分方程理论、数学物理方法
+	\item 偏微分方程的有限差分法、有限元法求解
+	\item 系统科学与仿真技术
+	\item 3D计算机图形学
+	\end{itemize}\par
+	\end{frame}
+	\begin{frame}{工作内容}
+	本课题需要进行的工作有：
+	\begin{itemize}
+	\fangsong
+	\item 一维迁移方程的求解与仿真
+	\item 三维方程的建模和求解条件（边界条件）的确定
+	\item 三维方程求解算法的研究
+	\item 数值仿真程序的编制
+	\end{itemize}
+	\end{frame}
+	\begin{frame}{工具与方法}
+	在课题研究的不同阶段，计划采用如下的工具进行研究和分析:
+	\begin{itemize}
+	\fangsong
+	\item MATLAB
+	\item MATLAB PDE Toolbox
+	\item Python 2.7
+	\item OpenGL、PyOpenGL
+	\item SciPy
+	\end{itemize}
+	\end{frame}
+	\begin{frame}{进度计划}
+	\kaishu
+	\begin{tabularx}{10cm}{cXc}
+	\toprule
+	时间范围 & \centering 工作内容 &  \\
+	\midrule
+	2012年12月 					& 文献查阅与相关知识学习，技术准备	&  \\
+	2013年1、2月			 		& 完成一维方程的求解与仿真			 &  \\
+	2013年3月					& 完成三维方程的建模和边界条件的确定   &  \\
+	2013年4月					& 三维方程求解算法的研究				&	 \\
+	2013年5月					& 数值仿真程序的编制				&	 \\
+	2013年6月					& 完成论文						&     \\
+	\bottomrule
+	\end{tabularx}
+	\end{frame}
+	\section*{}
+	\begin{frame}
+	\begin{center}
+	\Large
+	谢谢！\par
+	欢迎提问
+	\end{center}
+	\end{frame}
+\end{document}

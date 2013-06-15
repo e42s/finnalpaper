@@ -14,17 +14,23 @@
 \fancyhf{}
 \fancyhead[EC,OC]{\zihao{-5}北京化工大学毕业设计（论文）}
 \fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 %-------------------------------------------------------------------------
-\CTEXsetup[format+={\zihao{-3}},name={第,节}]{section}
-\CTEXsetup[format+={\zihao{-4}}]{subsection}
-\CTEXsetup[format+={\zihao{-4}}]{subsubsection}
+
+\newCJKfontfamily[shusong]\shusong{方正书宋_GBK}
+\newCJKfontfamily[biaosong]\biaosong{方正小标宋_GBK}
+
+\CTEXsetup[format={\centering\zihao{-3}\biaosong},name={第,节}]{section}
+\CTEXsetup[format={\biaosong\zihao{-4}}]{subsection}
+\CTEXsetup[format={\biaosong\zihao{-4}}]{subsubsection}
 % \CTEXsetup[format+={\zihao{-3}}]{chapter}
-\CTEXsetup[nameformat+={\zihao{3}}]{chapter}
-\CTEXsetup[titleformat+={\zihao{3}}]{chapter}
+\CTEXsetup[nameformat={\biaosong\zihao{3}}]{chapter}
+\CTEXsetup[titleformat={\biaosong\zihao{3}}]{chapter}
 \CTEXoptions[contentsname={目\qquad 录}]
+% \newfontinstance\biaosong{方正大标宋简体}
+
 %-------------------------------------------------------------------------
 \usepackage{mdwlist}
 \usepackage{sistyle}
@@ -117,21 +123,32 @@
   \pagenumbering{Roman}
   \input{zy.tex}
   \clearpage{\pagestyle{empty}\cleardoublepage}
+  \tableofcontents
+  \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{perface.tex}
   \clearpage{\pagestyle{empty}\cleardoublepage}
-  \tableofcontents
 \mainmatter
+\CTEXsetup[beforeskip={10pt}]{chapter}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[EC,OC]{\zihao{-5}北京化工大学毕业设计（论文）}\fancyfoot[C]{\thepage}}
   \input{chap_01.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{chap_02.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{chap_03.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{chap_04.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{simulink.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
   \input{conclusion.tex}
+    \clearpage{\pagestyle{empty}\cleardoublepage}
 \backmatter
   \nocite{*}
   \clearpage
   \addcontentsline{toc}{chapter}{参考文献}
   \bibliographystyle{ref/GBT7714-2005NLang-HIT}
+%   \setlength{\bibhang}{-2em}
+%   \renewcommand{\bibnumfmt}[1]{\qquad[#1]}
   \bibliography{ref/ref}
    \input{thanks.tex}
 \end{document}
